@@ -123,3 +123,33 @@ def delete_project(id):
   db.session.commit()
 
   return {'Message': 'The project has been deleted!'}, 200
+
+
+@project_routes.route('/:<int:id>', methods=["POST"])
+@login_required
+def post_project_image(id):
+  """
+  Add new project images
+  """
+  form = ProjectImageForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+  if form.validate_on_submit():
+    # Add and commit new project
+    newProjectImage = ProjectImages(
+      url = form.data['url'],
+      project_id = id
+    )
+    db.session.add(newProjectImage)
+    db.session.commit()
+    # Add and commit project image
+    newProjectImage = ProjectImages(
+      url = form.data['url'],
+      project_id = newProject.id
+    )
+    db.session.add(newProjectImage)
+    db.session.commit()
+
+    return {"Message": "Images added successfully"}, 201
+
+  if form.errors:
+    return {"errors": validation_errors_to_error_messages(form.errors)}, 400
