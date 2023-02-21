@@ -23,10 +23,10 @@ def seed():
         undo_projects()
         undo_pledges()
         undo_project_images()
-    seed_users()
-    seed_projects()
-    seed_pledges()
     seed_project_images()
+    seed_pledges()
+    seed_projects()
+    seed_users()
     # Add other seed functions here
 
 

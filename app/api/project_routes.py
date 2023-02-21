@@ -148,7 +148,7 @@ def post_project_image(id):
     return {"errors": validation_errors_to_error_messages(form.errors)}, 400
 
 
-@project_routes.route('/<int:id/pledges')
+@project_routes.route('/<int:id>/pledges')
 def get_all_pledges():
   """
   Query for all pledges and return them in a list of project dictionaries
