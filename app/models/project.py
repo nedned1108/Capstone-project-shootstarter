@@ -15,8 +15,8 @@ class Project(db.Model):
   goal = db.Column(db.Integer, nullable=False)
   current_fund = db.Column(db.Integer, nullable=False, default=0)
   backers = db.Column(db.Integer, nullable=False, default=0)
-  end_day = db.Column(db.String, nullable=False),
-  project_type = db.Column(db.String, nullable=False),
+  end_day = db.Column(db.String, nullable=False)
+  project_type = db.Column(db.String, nullable=False)
   created_at = db.Column(db.DateTime, server_default=func.now(), nullable=False)
   updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 
