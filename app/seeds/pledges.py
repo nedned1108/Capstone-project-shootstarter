@@ -112,7 +112,7 @@ def seed_pledges():
   db.session.add(make_100_5)
   db.session.commit()
 
-def undo_projects():
+def undo_pledges():
   if environment == "production":
     db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
   else:
