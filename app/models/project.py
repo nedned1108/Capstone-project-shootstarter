@@ -34,5 +34,6 @@ class Project(db.Model):
       "goal": self.goal,
       "current_fund": self.current_fund,
       "backers": self.backers,
-      "end_day": self.end_day
+      "end_day": self.end_day,
+      "project_type": self.project_type
     }

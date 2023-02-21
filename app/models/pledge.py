@@ -10,7 +10,7 @@ class Pledge(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   pledge_name = db.Column(db.String, nullable=False)
   price = db.Column(db.Integer, nullable=False)
-  ships = db.Column(db.String, nullable=False)
+  ships_to = db.Column(db.String, nullable=False)
   rewards = db.Column(db.String, nullable=False)
   estimated_delivery = db.Column(db.String, nullable=False)
   created_at = db.Column(db.DateTime, server_default=func.now(), nullable=False)
@@ -24,7 +24,7 @@ class Pledge(db.Model):
       "id": self.id,
       "pledge_name": self.pledge_name,
       "price": self.price,
-      "ships": self.ships,
+      "ships_to": self.ships_to,
       "rewards": self.rewards,
       "estimated_delivery": self.estimated_delivery
     }
