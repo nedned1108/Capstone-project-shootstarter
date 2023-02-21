@@ -15,8 +15,8 @@ class ProjectImages(db.Model):
   project_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("projects.id")))
 
 
-def to_dict(self):
-  return {
-    "id": self.id,
-    "url": self.url
-  }
+  def to_dict(self):
+    return {
+      "id": self.id,
+      "url": self.url
+    }

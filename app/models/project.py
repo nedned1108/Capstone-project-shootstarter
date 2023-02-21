@@ -23,15 +23,15 @@ class Project(db.Model):
   project_images = db.relationship("ProjectImage", back_populates="projects")
 
 
-def to_dict(self):
-  return {
-    "id": self.id,
-    "project_name": self.project_name,
-    "description": self.description,
-    "story": self.story,
-    "risks": self.risks,
-    "goal": self.goal,
-    "current_fund": self.current_fund,
-    "backers": self.backers,
-    "end_day": self.end_day
-  }
+  def to_dict(self):
+    return {
+      "id": self.id,
+      "project_name": self.project_name,
+      "description": self.description,
+      "story": self.story,
+      "risks": self.risks,
+      "goal": self.goal,
+      "current_fund": self.current_fund,
+      "backers": self.backers,
+      "end_day": self.end_day
+    }

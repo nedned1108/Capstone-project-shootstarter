@@ -19,12 +19,12 @@ class Pledge(db.Model):
   project_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("projects.id")))
 
 
-def to_dict(self):
-  return {
-    "id": self.id,
-    "pledge_name": self.pledge_name,
-    "price": self.price,
-    "ships": self.ships,
-    "rewards": self.rewards,
-    "estimated_delivery": self.estimated_delivery
-  }
+  def to_dict(self):
+    return {
+      "id": self.id,
+      "pledge_name": self.pledge_name,
+      "price": self.price,
+      "ships": self.ships,
+      "rewards": self.rewards,
+      "estimated_delivery": self.estimated_delivery
+    }
