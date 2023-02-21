@@ -108,6 +108,7 @@ def update_project(id):
 
 
 @project_routes.route('/<int:id>', methods=["DELETE"])
+@login_required
 def delete_project(id):
   """
   Delete project
@@ -125,7 +126,7 @@ def delete_project(id):
   return {'Message': 'The project has been deleted!'}, 200
 
 
-@project_routes.route('/<int:id>', methods=["POST"])
+@project_routes.route('/<int:id>/images', methods=["POST"])
 @login_required
 def post_project_image(id):
   """
