@@ -53,7 +53,7 @@ def post_project():
       url = form.data['url'],
       project_id = newProject.id
     )
-    db.session.add(newBusinessImage)
+    db.session.add(newProjectImage)
     db.session.commit()
 
     return newProject.to_dict(), 201
@@ -134,17 +134,9 @@ def post_project_image(id):
   form = ProjectImageForm()
   form['csrf_token'].data = request.cookies['csrf_token']
   if form.validate_on_submit():
-    # Add and commit new project
     newProjectImage = ProjectImages(
       url = form.data['url'],
       project_id = id
-    )
-    db.session.add(newProjectImage)
-    db.session.commit()
-    # Add and commit project image
-    newProjectImage = ProjectImages(
-      url = form.data['url'],
-      project_id = newProject.id
     )
     db.session.add(newProjectImage)
     db.session.commit()
