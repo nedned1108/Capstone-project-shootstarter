@@ -1,7 +1,7 @@
 from flask import Blueprint, redirect,session, request
 from flask_login import login_required, current_user
-from app.models import db, Project, ProjectImages
-from app.forms import ProjectForm, ProjectImageForm
+from app.models import db, Project, ProjectImages, Pledge
+from app.forms import ProjectForm, ProjectImageForm, PledgeForm
 
 project_routes = Blueprint('project', __name__)
 
@@ -11,15 +11,15 @@ def validation_errors_to_error_messages(validation_errors):
   """
   errorMessages = []
   for field in validation_errors:
-      for error in validation_errors[field]:
-          errorMessages.append(f'{field} : {error}')
+    for error in validation_errors[field]:
+      errorMessages.append(f'{field} : {error}')
   return errorMessages
 
 
 @project_routes.route('/')
 def get_all_projects():
   """
-  Query for all projects an return them in a list of project dictionaries
+  Query for all projects and return them in a list of project dictionaries
   """
   projects = Project.query.all()
   return {"projects": [project.to_dict() for project in projects]}
@@ -125,7 +125,7 @@ def delete_project(id):
   return {'Message': 'The project has been deleted!'}, 200
 
 
-@project_routes.route('/:<int:id>', methods=["POST"])
+@project_routes.route('/<int:id>', methods=["POST"])
 @login_required
 def post_project_image(id):
   """
@@ -142,6 +142,46 @@ def post_project_image(id):
     db.session.commit()
 
     return {"Message": "Images added successfully"}, 201
+
+  if form.errors:
+    return {"errors": validation_errors_to_error_messages(form.errors)}, 400
+
+
+@project_routes.route('/<int:id/pledges')
+def get_all_pledges():
+  """
+  Query for all pledges and return them in a list of project dictionaries
+  """
+  pledges = Pledge.query.all()
+  return {"pledges": [pledge.to_dict() for pledge in pledges]}
+
+
+@project_routes.route('/<int:id>/pledges', methods=["POST"])
+@login_required
+def post_pledge(id):
+  """
+  Create a new pledge and return that pledge in a dictionary
+  """
+  project = Project.query.get(id)
+  if not project:
+    return {"errors": "Project not found"}, 404
+  if current_user.id != project.user_id:
+    return {"errors": "Forbidden"}, 403
+  
+  form = PledgeForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+  if form.validate_on_submit():
+    newPledge = Project(
+      pledge_name = form.data['pledge_name'],
+      price = form.data['price'],
+      ships_to = form.data['ships_to'],
+      rewards = form.data['rewards'],
+      estimated_delivery = form.data['estimated_delivery'],
+      project_id = id
+    )
+    db.session.add(newPledge)
+    db.session.commit()
+    return newPledge.to_dict(), 201
 
   if form.errors:
     return {"errors": validation_errors_to_error_messages(form.errors)}, 400
