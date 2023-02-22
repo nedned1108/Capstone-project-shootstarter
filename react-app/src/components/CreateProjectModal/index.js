@@ -8,7 +8,6 @@ import './CreateProjectModal.css'
 
 export default function CreateProjectModal() {
   const dispatch = useDispatch();
-  const { user } = useSelector(state => state.session)
   const history = useHistory();
   const [project_name, setProjectName] = useState('');
   const [description, setDescription] = useState('');
