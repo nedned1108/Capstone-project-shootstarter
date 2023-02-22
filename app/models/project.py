@@ -9,7 +9,7 @@ class Project(db.Model):
 
   id = db.Column(db.Integer, primary_key=True)
   project_name = db.Column(db.String, nullable=False)
-  description = db.Column(db.Integer, nullable=False)
+  description = db.Column(db.String, nullable=False)
   story = db.Column(db.String, nullable=False)
   risks = db.Column(db.String, nullable=False)
   goal = db.Column(db.Integer, nullable=False)
