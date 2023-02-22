@@ -33,7 +33,7 @@ export const deleteProject = (id) => {
 };
 
 // Thunk
-export const thunkLoadAllProject = () => async (dispatch) => {
+export const thunkLoadAllProjects = () => async (dispatch) => {
   const response = await fetch('/api/project/');
 
   if (response.ok) {

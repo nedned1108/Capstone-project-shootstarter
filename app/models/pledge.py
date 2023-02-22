@@ -17,7 +17,7 @@ class Pledge(db.Model):
   updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 
   project_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("projects.id")))
-
+  users = db.relationship("User", secondary=users_pledges, back_populates="pledges")
 
   def to_dict(self):
     return {
@@ -26,5 +26,6 @@ class Pledge(db.Model):
       "price": self.price,
       "ships_to": self.ships_to,
       "rewards": self.rewards,
-      "estimated_delivery": self.estimated_delivery
+      "estimated_delivery": self.estimated_delivery,
+      "total_user": len(list(self.users.items))
     }

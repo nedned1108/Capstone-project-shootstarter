@@ -35,5 +35,6 @@ class Project(db.Model):
       "current_fund": self.current_fund,
       "backers": self.backers,
       "end_day": self.end_day,
-      "project_type": self.project_type
+      "project_type": self.project_type,
+      "project_images": [image.to_dict() for image in self.project_images]
     }

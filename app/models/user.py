@@ -18,6 +18,8 @@ class User(db.Model, UserMixin):
     profile_image = db.Column(db.String, nullable=False)
     hashed_password = db.Column(db.String(255), nullable=False)
 
+    pledges = db.relationship("Pledge", secondary=users_pledges, back_populates="users")
+
     @property
     def password(self):
         return self.hashed_password
@@ -37,5 +39,6 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email,
             'bio': self.bio,
-            'profile_image': self.profile_image
+            'profile_image': self.profile_image,
+            'pledges': [pledge.to_dict() for pledge in self.pledges]
         }
