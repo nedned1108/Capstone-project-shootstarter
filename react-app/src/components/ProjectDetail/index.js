@@ -19,6 +19,10 @@ const ProjectDetail = () => {
     dispatch(thunkLoadAllProjects())
   }, [dispatch, projectId])
 
+  const deleteProject = (e) => {
+    return dispatch(thunkDeleteProject(e))
+  }
+
   if (!currentProject) {
     return null
   }
@@ -46,7 +50,7 @@ const ProjectDetail = () => {
                 buttonText="Update Project"
                 modalComponent={<UpdateProjectModal project={currentProject}/>}
               />
-              <button>Delete</button>
+              <button onClick={() => deleteProject(currentProject.id)}>Delete</button>
             </>
             : ''
             }
