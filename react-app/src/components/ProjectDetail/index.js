@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { useModal } from "../../context/Modal";
 import { thunkLoadAllProjects } from "../../store/project";
+import { thunkDeleteProject } from "../../store/project";
 import UpdateProjectModal from "../UpdateProjectModal";
 import OpenModalButton from "../OpenModalButton";
 
