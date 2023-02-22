@@ -1,5 +1,6 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from sqlalchemy.sql import func
+from .users_pledges import users_pledges
 
 class Pledge(db.Model):
   __tablename__ = 'pledges'

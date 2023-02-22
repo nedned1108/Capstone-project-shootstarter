@@ -29,7 +29,7 @@ const HomePage = () => {
       <div>
         <div>
           <div>
-            <img src={projects[0].project_images[0].url}/>
+            {/* <img src={projects[0].project_images[0].url}/> */}
           </div>
         </div>
       </div>
