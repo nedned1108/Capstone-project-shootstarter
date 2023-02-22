@@ -10,13 +10,13 @@ export default function CreateProjectModal() {
   const dispatch = useDispatch();
   const { user } = useSelector(state => state.session)
   const history = useHistory();
-  const [projectName, setProjectName] = useState('');
+  const [project_name, setProjectName] = useState('');
   const [description, setDescription] = useState('');
   const [story, setStory] = useState('');
   const [risks, setRisks] = useState('');
   const [goal, setGoal] = useState();
-  const [endDay, setEndDay] = useState('');
-  const [projectType, setProjectType] = useState('');
+  const [end_day, setEndDay] = useState('');
+  const [project_type, setProjectType] = useState('');
   const [url, setUrl] = useState('');
   const [errors, setErrors] = useState([]);
   const { closeModal } = useModal();
@@ -25,16 +25,18 @@ export default function CreateProjectModal() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-    if (currentUser == undefined) return history.push('/login')
-
+    if (currentUser == undefined) {
+      closeModal()
+      return history.push('/login')
+    }
     const project = {
-      projectName,
+      project_name,
       description,
       story,
       risks,
       goal,
-      endDay,
-      projectType,
+      end_day,
+      project_type,
       url,
     };
 
@@ -43,6 +45,7 @@ export default function CreateProjectModal() {
       setErrors(data.errors)
     } else {
       setErrors([]);
+      closeModal()
       history.push(`/project/${data.id}`);
     }
   }
@@ -61,7 +64,7 @@ export default function CreateProjectModal() {
             <label>Project Name:</label>
             <input
               type='text'
-              value={projectName}
+              value={project_name}
               onChange={(e) => setProjectName(e.target.value)}
               required
             />
@@ -96,7 +99,7 @@ export default function CreateProjectModal() {
           <div className="input-form">
             <label>Goal:</label>
             <input
-              type='text'
+              type='number'
               value={goal}
               onChange={(e) => setGoal(e.target.value)}
               required
@@ -106,7 +109,7 @@ export default function CreateProjectModal() {
             <label>End Day:</label>
             <input
               type='text'
-              value={endDay}
+              value={end_day}
               onChange={(e) => setEndDay(e.target.value)}
               required
             />
@@ -115,7 +118,7 @@ export default function CreateProjectModal() {
             <label>Project Type:</label>
             <input
               type='text'
-              value={projectType}
+              value={project_type}
               onChange={(e) => setProjectType(e.target.value)}
               required
             />
