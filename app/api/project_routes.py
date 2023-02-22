@@ -44,7 +44,8 @@ def post_project():
       current_fund = form.data['current_fund'],
       backers = form.data['backers'],
       end_day = form.data['end_day'],
-      project_type = form.data['project_type']
+      project_type = form.data['project_type'],
+      user_id = form.data['user_id']
     )
     db.session.add(newProject)
     db.session.commit()
