@@ -83,7 +83,7 @@ def update_project(id):
   """
   thisProject = Project.query.get(id)
   # thisProjectImage = ProjectImages.query.get(thisProject.project_images[0].id)
-  form = Project()
+  form = ProjectForm()
   form['csrf_token'].data = request.cookies['csrf_token']
 
   if not thisProject:
