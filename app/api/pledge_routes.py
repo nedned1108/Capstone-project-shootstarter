@@ -16,7 +16,7 @@ def validation_errors_to_error_messages(validation_errors):
   return errorMessages
 
 
-@project_routes.route('/')
+@pledge_routes.route('/')
 def get_all_pledges():
   """
   Query for all pledges and return them in a list of project dictionaries

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import { useModal } from "../../context/Modal";
 import { thunkLoadAllProjects } from "../../store/project";
 import { thunkDeleteProject } from "../../store/project";
@@ -44,6 +44,11 @@ const ProjectDetail = () => {
             <h4>{currentProject.backers}</h4>
             <p>backers</p>
             <h4>{currentProject.end_day}</h4>
+            <div>
+              <NavLink to={`/project/${currentProject.id}/pledge`}>
+                Back this project
+              </NavLink>
+            </div>
             {currentUser && currentUser.id == currentProject.user_id ?
             <>
               <OpenModalButton 

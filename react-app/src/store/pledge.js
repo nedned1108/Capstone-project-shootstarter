@@ -43,7 +43,7 @@ export const thunkLoadAllPledges = () => async (dispatch) => {
 };
 
 export const thunkCreatePledge = (pledge) => async (dispatch) => {
-  const response  = await fetch(`/api/project/${project_id}/pledge`, {
+  const response  = await fetch(`/api/project/${pledge.project_id}/pledge`, {
     method: "POST",
     headers: {
       'Content-Type': 'application/json'

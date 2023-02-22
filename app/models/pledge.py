@@ -28,5 +28,5 @@ class Pledge(db.Model):
       "ships_to": self.ships_to,
       "rewards": self.rewards,
       "estimated_delivery": self.estimated_delivery,
-      "total_user": len(list(self.users.items))
+      # "total_user": len(list(self.users.items))
     }
