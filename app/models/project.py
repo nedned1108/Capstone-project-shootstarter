@@ -36,5 +36,6 @@ class Project(db.Model):
       "backers": self.backers,
       "end_day": self.end_day,
       "project_type": self.project_type,
-      "project_images": [image.to_dict() for image in self.project_images]
+      "project_images": [image.to_dict() for image in self.project_images],
+      "user_id": self.user_id
     }

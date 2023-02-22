@@ -65,7 +65,7 @@ export const thunkCreateProject = (project) => async (dispatch) => {
 };
 
 
-export const thunkUpdateBusiness = (data) => async (dispatch) => {
+export const thunkUpdateProject = (data) => async (dispatch) => {
   const response = await fetch(`/api/project/${data.id}`, {
     method: "PUT",
     headers: {

@@ -28,7 +28,9 @@ function Navigation({ isLoaded }){
 					<ProfileButton user={sessionUser} />
 				</div>
         : 
-        <button>login</button>
+        <NavLink to="/login">
+          login
+        </NavLink>
 			)}
 		</div>
 	);
