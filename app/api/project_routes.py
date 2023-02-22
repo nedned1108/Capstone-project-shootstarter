@@ -149,15 +149,6 @@ def post_project_image(id):
     return {"errors": validation_errors_to_error_messages(form.errors)}, 400
 
 
-@project_routes.route('/<int:id>/pledges')
-def get_all_pledges():
-  """
-  Query for all pledges and return them in a list of project dictionaries
-  """
-  pledges = Pledge.query.all()
-  return {"pledges": [pledge.to_dict() for pledge in pledges]}
-
-
 @project_routes.route('/<int:id>/pledges', methods=["POST"])
 @login_required
 def post_pledge(id):

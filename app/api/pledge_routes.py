@@ -16,6 +16,15 @@ def validation_errors_to_error_messages(validation_errors):
   return errorMessages
 
 
+@project_routes.route('/')
+def get_all_pledges():
+  """
+  Query for all pledges and return them in a list of project dictionaries
+  """
+  pledges = Pledge.query.all()
+  return {"pledges": [pledge.to_dict() for pledge in pledges]}
+
+
 @pledge_routes.route('/<int:id>', methods=["PUT"])
 @login_required
 def update_pledge(id):
