@@ -6,10 +6,9 @@ import { useModal } from '../../context/Modal';
 import './CreatePledgeModal.css'
 
 
-const CreatePledgeModal = () => {
+const CreatePledgeModal = ({ projectId }) => {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.session.user)
-  const { projectId } = useParams();
   const { closeModal } = useModal();
   const [pledge_name, setPledgeName] = useState('');
   const [price, setPrice] = useState();
@@ -17,7 +16,6 @@ const CreatePledgeModal = () => {
   const [rewards, setRewards] = useState('');
   const [estimated_delivery, setEstimatedDelivery] = useState();
   const [errors, setErrors] = useState([]);
-  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);

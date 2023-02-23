@@ -158,13 +158,13 @@ def post_pledge(id):
   project = Project.query.get(id)
   if not project:
     return {"errors": "Project not found"}, 404
-  if current_user.id != project.user_id:
+  if current_user.id != project.owner_id:
     return {"errors": "Forbidden"}, 403
   
   form = PledgeForm()
   form['csrf_token'].data = request.cookies['csrf_token']
   if form.validate_on_submit():
-    newPledge = Project(
+    newPledge = Pledge(
       pledge_name = form.data['pledge_name'],
       price = form.data['price'],
       ships_to = form.data['ships_to'],
