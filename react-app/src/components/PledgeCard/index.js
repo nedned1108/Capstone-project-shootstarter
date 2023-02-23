@@ -38,6 +38,7 @@ const PledgeCard = ({ pledge }) => {
           </div> 
           // : "" 
         }
+        <button>Choose this reward</button>
       </div>
     </div>
   )

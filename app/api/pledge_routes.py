@@ -68,3 +68,6 @@ def delete_pledge(id):
   db.session.commit()
 
   return {'Message': 'The pledge has been deleted!'}, 200
+
+
+
