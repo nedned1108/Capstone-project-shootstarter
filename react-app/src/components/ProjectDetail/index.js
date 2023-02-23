@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, NavLink, useParams } from "react-router-dom";
-import { useModal } from "../../context/Modal";
+import { NavLink, useParams } from "react-router-dom";
 import { thunkLoadAllProjects } from "../../store/project";
 import { thunkDeleteProject } from "../../store/project";
 import UpdateProjectModal from "../UpdateProjectModal";
@@ -14,8 +13,7 @@ const ProjectDetail = () => {
   const projects = useSelector(state => state.project.projects)
   const currentProject = Object.values(projects).find(project => project.id == projectId)
   const currentUser = useSelector(state => state.session.user)
-  // console.log(currentUser, 'currentUser')
-  console.log(currentProject, 'currentProject')
+
   useEffect(() => {
     dispatch(thunkLoadAllProjects())
   }, [dispatch, projectId])
@@ -45,7 +43,7 @@ const ProjectDetail = () => {
             <p>backers</p>
             <h4>{currentProject.end_day}</h4>
             <div>
-              <NavLink to={`/project/${currentProject.id}/pledges`}>
+              <NavLink to={`/project/${currentProject.id}/pledge`}>
                 Back this project
               </NavLink>
             </div>
