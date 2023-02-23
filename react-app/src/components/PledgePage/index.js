@@ -26,7 +26,7 @@ const PledgePage = () => {
     dispatch(thunkLoadAllProjects())
   }, [dispatch])
 
-  if (pledges.length == 0) {
+  if (pledges.length == 0 && !currentProject) {
     return null
   }
 

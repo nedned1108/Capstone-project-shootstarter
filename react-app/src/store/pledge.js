@@ -44,7 +44,6 @@ export const thunkLoadAllPledges = () => async (dispatch) => {
 };
 
 export const thunkCreatePledge = (pledge) => async (dispatch) => {
-  console.log(pledge, 'pledgeeeeeeeeeeeeeeeee')
   const response  = await fetch(`/api/project/${pledge.project_id}/pledges`, {
     method: "POST",
     headers: {

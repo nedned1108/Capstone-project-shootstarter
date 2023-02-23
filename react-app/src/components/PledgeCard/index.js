@@ -8,9 +8,8 @@ import './PledgeCard.css'
 const PledgeCard = ({ pledge }) => {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.session.user)
-
   const deletePledge = (e) => {
-    return dispatch(thunkDeletePledge())
+    return dispatch(thunkDeletePledge(e))
   } 
 
   if (!pledge) {
