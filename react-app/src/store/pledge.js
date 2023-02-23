@@ -38,6 +38,7 @@ export const thunkLoadAllPledges = () => async (dispatch) => {
 
   if (response.ok) {
     const data = await response.json();
+    console.log(data)
     dispatch(loadAllPledges(data.pledges))
   }
 };

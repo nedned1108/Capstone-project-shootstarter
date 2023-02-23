@@ -11,3 +11,4 @@ class PledgeForm(FlaskForm):
   rewards = StringField('rewards', validators=[DataRequired()])
   estimated_delivery = StringField('estimated_delivery', validators=[DataRequired()])
   project_id = IntegerField('project_id', validators=[DataRequired()])
+

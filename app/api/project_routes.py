@@ -45,7 +45,7 @@ def post_project():
       backers = form.data['backers'],
       end_day = form.data['end_day'],
       project_type = form.data['project_type'],
-      user_id = form.data['user_id']
+      owner_id = current_user.id
     )
     db.session.add(newProject)
     db.session.commit()
@@ -170,7 +170,8 @@ def post_pledge(id):
       ships_to = form.data['ships_to'],
       rewards = form.data['rewards'],
       estimated_delivery = form.data['estimated_delivery'],
-      project_id = id
+      project_id = id,
+      owner_id = current_user.id
     )
     db.session.add(newPledge)
     db.session.commit()

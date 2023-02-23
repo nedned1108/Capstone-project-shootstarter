@@ -17,6 +17,7 @@ class Pledge(db.Model):
   created_at = db.Column(db.DateTime, server_default=func.now(), nullable=False)
   updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 
+  owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
   project_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("projects.id")))
   users = db.relationship("User", secondary=users_pledges, back_populates="pledges")
 
@@ -33,5 +34,7 @@ class Pledge(db.Model):
       "ships_to": self.ships_to,
       "rewards": self.rewards,
       "estimated_delivery": self.estimated_delivery,
-      "total_user": total_user
+      "total_user": total_user,
+      "project_id": self.project_id,
+      "owner_id": self.owner_id
     }

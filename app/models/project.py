@@ -20,7 +20,7 @@ class Project(db.Model):
   created_at = db.Column(db.DateTime, server_default=func.now(), nullable=False)
   updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 
-  user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
+  owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
   project_images = db.relationship("ProjectImages", back_populates="project")
 
 
@@ -37,5 +37,5 @@ class Project(db.Model):
       "end_day": self.end_day,
       "project_type": self.project_type,
       "project_images": [image.to_dict() for image in self.project_images],
-      "user_id": self.user_id
+      "owner_id": self.owner_id
     }
