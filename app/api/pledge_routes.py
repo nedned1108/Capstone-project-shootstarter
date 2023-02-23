@@ -16,6 +16,15 @@ def validation_errors_to_error_messages(validation_errors):
   return errorMessages
 
 
+@pledge_routes.route('/')
+def get_all_pledges():
+  """
+  Query for all pledges and return them in a list of project dictionaries
+  """
+  pledges = Pledge.query.all()
+  return {"pledges": [pledge.to_dict() for pledge in pledges]}
+
+
 @pledge_routes.route('/<int:id>', methods=["PUT"])
 @login_required
 def update_pledge(id):
@@ -24,7 +33,7 @@ def update_pledge(id):
   """
   thisPledge = Pledge.query.get(id)
   # thisProjectImage = ProjectImages.query.get(thisProject.project_images[0].id)
-  form = Pledge()
+  form = PledgeForm()
   form['csrf_token'].data = request.cookies['csrf_token']
 
   if not thisPledge:

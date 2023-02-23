@@ -7,6 +7,7 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
 import ProjectDetail from "./components/ProjectDetail";
+import PledgePage from "./components/PledgePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route exact path="/project/:projectId">
             <ProjectDetail />
+          </Route>
+          <Route exact path="/project/:projectId/pledge">
+            <PledgePage />
           </Route>
         </Switch>
       )}

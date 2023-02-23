@@ -44,7 +44,8 @@ def post_project():
       current_fund = form.data['current_fund'],
       backers = form.data['backers'],
       end_day = form.data['end_day'],
-      project_type = form.data['project_type']
+      project_type = form.data['project_type'],
+      owner_id = current_user.id
     )
     db.session.add(newProject)
     db.session.commit()
@@ -148,15 +149,6 @@ def post_project_image(id):
     return {"errors": validation_errors_to_error_messages(form.errors)}, 400
 
 
-@project_routes.route('/<int:id>/pledges')
-def get_all_pledges():
-  """
-  Query for all pledges and return them in a list of project dictionaries
-  """
-  pledges = Pledge.query.all()
-  return {"pledges": [pledge.to_dict() for pledge in pledges]}
-
-
 @project_routes.route('/<int:id>/pledges', methods=["POST"])
 @login_required
 def post_pledge(id):
@@ -166,19 +158,20 @@ def post_pledge(id):
   project = Project.query.get(id)
   if not project:
     return {"errors": "Project not found"}, 404
-  if current_user.id != project.user_id:
+  if current_user.id != project.owner_id:
     return {"errors": "Forbidden"}, 403
   
   form = PledgeForm()
   form['csrf_token'].data = request.cookies['csrf_token']
   if form.validate_on_submit():
-    newPledge = Project(
+    newPledge = Pledge(
       pledge_name = form.data['pledge_name'],
       price = form.data['price'],
       ships_to = form.data['ships_to'],
       rewards = form.data['rewards'],
       estimated_delivery = form.data['estimated_delivery'],
-      project_id = id
+      project_id = id,
+      owner_id = current_user.id
     )
     db.session.add(newPledge)
     db.session.commit()

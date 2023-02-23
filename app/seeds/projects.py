@@ -22,7 +22,7 @@ def seed_projects():
     backers=0,
     end_day="March 1st 2023",
     project_type="game",
-    user_id=1
+    owner_id=1
   )
   make_100 = Project(
     project_name='Make 100 - "Unforgotten" Handmade Pendants by Sprite',
@@ -43,7 +43,7 @@ def seed_projects():
     backers=0,
     end_day="March 25 2023",
     project_type="art",
-    user_id=2
+    owner_id=2
   )
 
   db.session.add(ascension_tactics)

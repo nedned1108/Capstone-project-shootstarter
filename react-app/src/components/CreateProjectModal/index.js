@@ -36,7 +36,7 @@ export default function CreateProjectModal() {
       goal,
       end_day,
       project_type,
-      url,
+      url
     };
 
     const data = await dispatch(thunkCreateProject(project))
