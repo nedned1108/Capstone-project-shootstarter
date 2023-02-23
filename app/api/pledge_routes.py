@@ -33,7 +33,7 @@ def update_pledge(id):
   """
   thisPledge = Pledge.query.get(id)
   # thisProjectImage = ProjectImages.query.get(thisProject.project_images[0].id)
-  form = Pledge()
+  form = PledgeForm()
   form['csrf_token'].data = request.cookies['csrf_token']
 
   if not thisPledge:

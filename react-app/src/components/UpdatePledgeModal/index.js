@@ -1,35 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { thunkCreatePledge } from '../../store/pledge';
+import { thunkUpdatePledge } from '../../store/pledge';
 import { useParams } from 'react-router-dom';
 import { useModal } from '../../context/Modal';
-import './CreatePledgeModal.css'
+import './UpdatePledgeModal.css'
 
 
-const CreatePledgeModal = ({ projectId }) => {
+const UpdatePledgeModal = ({ pledge }) => {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.session.user)
   const { closeModal } = useModal();
-  const [pledge_name, setPledgeName] = useState('');
-  const [price, setPrice] = useState();
-  const [ships_to, setShipTo] = useState('');
-  const [rewards, setRewards] = useState('');
-  const [estimated_delivery, setEstimatedDelivery] = useState('');
+  const [pledge_name, setPledgeName] = useState(pledge.pledge_name);
+  const [price, setPrice] = useState(pledge.price);
+  const [ships_to, setShipTo] = useState(pledge.ships_to);
+  const [rewards, setRewards] = useState(pledge.rewards);
+  const [estimated_delivery, setEstimatedDelivery] = useState(pledge.estimated_delivery);
   const [errors, setErrors] = useState([]);
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
 
-    const pledge = {
+    const pledgeData = {
+      ...pledge,
       pledge_name,
       price,
       ships_to,
       rewards,
-      estimated_delivery,
-      project_id: projectId
+      estimated_delivery
     }
-    const data = await dispatch(thunkCreatePledge(pledge))
+    const data = await dispatch(thunkUpdatePledge(pledgeData))
     if (data.errors) {
       setErrors(data.errors)
     } else {
@@ -40,9 +40,9 @@ const CreatePledgeModal = ({ projectId }) => {
 
   return (
     <div className='mainDiv'>
-      <div className='createPledge'>
+      <div className='updatePledge'>
         <h1>
-          Create Pledge
+          Update Pledge
         </h1>
         <form onSubmit={handleSubmit}>
           <ul>
@@ -94,7 +94,7 @@ const CreatePledgeModal = ({ projectId }) => {
             />
           </div>
           <div>
-            <button className='submit-button' type="submit">Create New Pledge</button>
+            <button className='submit-button' type="submit">Update Pledge</button>
           </div>
         </form>
       </div>
@@ -102,4 +102,5 @@ const CreatePledgeModal = ({ projectId }) => {
   )
 }
 
-export default CreatePledgeModal;
+
+export default UpdatePledgeModal;

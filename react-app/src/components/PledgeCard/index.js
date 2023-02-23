@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import OpenModalButton from "../OpenModalButton";
+import UpdatePledgeModal from "../UpdatePledgeModal";
 import { thunkDeletePledge } from "../../store/pledge";
 import './PledgeCard.css'
 
@@ -28,7 +30,10 @@ const PledgeCard = ({ pledge }) => {
         <p>Ships to {pledge.ships_to}</p>
         {currentUser && pledge.owner_id == currentUser.id ? 
           <div>
-            <button>Update Pledge</button>
+            <OpenModalButton 
+              buttonText='Update Pledge'
+              modalComponent={<UpdatePledgeModal pledge={pledge}/>}
+            />
             <button onClick={() => deletePledge(pledge.id)}>Delete Pledge</button>
           </div> 
           : "" 
