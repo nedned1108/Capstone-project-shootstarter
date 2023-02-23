@@ -89,7 +89,7 @@ def update_project(id):
 
   if not thisProject:
     return {"Error": "Project not Found"}, 404
-  if current_user.id != thisProject.user_id:
+  if current_user.id != thisProject.owner_id:
     return {"Error": "Forbidden"}, 403
 
   if form.validate_on_submit():

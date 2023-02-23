@@ -14,11 +14,11 @@ const ProjectDetail = () => {
   const projects = useSelector(state => state.project.projects)
   const currentProject = Object.values(projects).find(project => project.id == projectId)
   const currentUser = useSelector(state => state.session.user)
-
+  // console.log(currentUser, 'currentUser')
+  console.log(currentProject, 'currentProject')
   useEffect(() => {
     dispatch(thunkLoadAllProjects())
   }, [dispatch, projectId])
-
   const deleteProject = (e) => {
     return dispatch(thunkDeleteProject(e))
   }
@@ -45,11 +45,11 @@ const ProjectDetail = () => {
             <p>backers</p>
             <h4>{currentProject.end_day}</h4>
             <div>
-              <NavLink to={`/project/${currentProject.id}/pledge`}>
+              <NavLink to={`/project/${currentProject.id}/pledges`}>
                 Back this project
               </NavLink>
             </div>
-            {currentUser && currentUser.id == currentProject.user_id ?
+            {currentUser && currentUser.id == currentProject.owner_id ? 
             <>
               <OpenModalButton 
                 buttonText="Update Project"
@@ -57,8 +57,8 @@ const ProjectDetail = () => {
               />
               <button onClick={() => deleteProject(currentProject.id)}>Delete</button>
             </>
-            : ''
-            }
+            : '' 
+            } 
           </div>
         </div>
       </div>
