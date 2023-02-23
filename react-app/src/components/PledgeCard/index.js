@@ -28,7 +28,7 @@ const PledgeCard = ({ pledge }) => {
       <div>
         <p>ESTIMATED DELIVERY {pledge.estimated_delivery}</p>
         <p>Ships to {pledge.ships_to}</p>
-        {currentUser && pledge.owner_id == currentUser.id ? 
+        {currentUser && pledge.owner_id == currentUser.id && 
           <div>
             <OpenModalButton 
               buttonText='Update Pledge'
@@ -36,7 +36,7 @@ const PledgeCard = ({ pledge }) => {
             />
             <button onClick={() => deletePledge(pledge.id)}>Delete Pledge</button>
           </div> 
-          : "" 
+          // : "" 
         }
       </div>
     </div>
