@@ -118,7 +118,7 @@ def delete_project(id):
 
   if not thisProject:
     return {"Error": "Project not Found"}, 404
-  if current_user.id != thisProject.user_id:
+  if current_user.id != thisProject.owner_id:
     return {"Error": "Forbidden"}, 403
 
   db.session.delete(thisProject)
@@ -179,5 +179,3 @@ def post_pledge(id):
 
   if form.errors:
     return {"errors": validation_errors_to_error_messages(form.errors)}, 400
-
-
