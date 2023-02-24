@@ -53,9 +53,10 @@ const PledgeCard = ({ pledge }) => {
             />
             <button onClick={() => deletePledge(pledge.id)}>Delete Pledge</button>
           </div> 
-          // : "" 
         }
-        <button onClick={choosePledge} >Choose this reward</button>
+        {currentUser && pledge.owner_id != currentUser.id && 
+          <button onClick={choosePledge} >Choose this reward</button>
+        }
       </div>
     </div>
   )
