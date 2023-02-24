@@ -22,10 +22,6 @@ class Pledge(db.Model):
   users = db.relationship("User", secondary=users_pledges, back_populates="pledges")
 
   def to_dict(self):
-    if not self.users:
-      total_user = 0
-    else:
-      total_user = len(list(self.users.items))
 
     return {
       "id": self.id,
@@ -34,7 +30,7 @@ class Pledge(db.Model):
       "ships_to": self.ships_to,
       "rewards": self.rewards,
       "estimated_delivery": self.estimated_delivery,
-      "total_user": total_user,
       "project_id": self.project_id,
-      "owner_id": self.owner_id
+      "owner_id": self.owner_id,
+      "users": [user.to_dict() for user in self.users]
     }

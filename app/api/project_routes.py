@@ -180,20 +180,4 @@ def post_pledge(id):
   if form.errors:
     return {"errors": validation_errors_to_error_messages(form.errors)}, 400
 
-@project_routes.route('/<int:project_id>/pledge/<int:pledge_id>', methods=['POST'])
-@login_required
-def choose_pledge(pledge_id):
-  """
-  Add pledge to user and add user to pledge
-  """
-  thisPledge = Pledge.query.get(pledge_id)
-  form = ChoosePledgeForm()
-  form['csrf_token'].data = request.cookies['csrf_token']
-  if form.validate_on_submit():
-    current_user.pledges.append(form.data['pledge_id'])
-    thisPledge.users.append(form.data['user_id'])
 
-    db.session.commit()
-    return thisPledge.to_dict(), 200
-  if form.errors:
-    return {"errors": validation_errors_to_error_messages(form.errors)}, 400
