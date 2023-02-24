@@ -1,0 +1,38 @@
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mainDiv h1 {
+  font-weight: 300;
+}
+.mainDiv h5 {
+  font-weight: 300;
+}
+
+.onShootstarter {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  border: 1px black solid;
+  padding: 10px;
+  
+}
+.onShootstarter div {
+  /* border: 1px black solid; */
+}
+
+.projectsDiv {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.mainProject img {
+  width: 500px;
+}
+.recommendedProjectsDiv {
+  width: 200px;
+}
+.recommendedProjectsDiv img {
+  width: 100px;
+}
