@@ -38,10 +38,10 @@ const HomePage = () => {
         </div>
         <div className="recommendedProjectsDiv">
           <h5>RECOMMEND FOR YOU</h5>
-          <div>
+          <div className="singleProject">
             <NavLink to={`/project/${projects[1].id}`}>
               <img src={projects[1].project_images[0].url}/>
-              <h3>{projects[1].project_name}</h3>
+              <h5>{projects[1].project_name}</h5>
             </NavLink>
           </div>
         </div>
