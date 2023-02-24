@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, useHistory } from "react-router-dom";
 import { thunkLoadAllProjects } from "../../store/project";
 import { thunkDeleteProject } from "../../store/project";
 import UpdateProjectModal from "../UpdateProjectModal";
@@ -11,6 +11,7 @@ import './ProjectDetail.css'
 const ProjectDetail = () => {
   const { projectId } = useParams();
   const dispatch = useDispatch();
+  const history = useHistory();
   const projects = useSelector(state => state.project.projects)
   const currentProject = Object.values(projects).find(project => project.id == projectId)
   const currentUser = useSelector(state => state.session.user)
@@ -19,7 +20,9 @@ const ProjectDetail = () => {
     dispatch(thunkLoadAllProjects())
   }, [dispatch, projectId])
   const deleteProject = (e) => {
-    return dispatch(thunkDeleteProject(e))
+    dispatch(thunkDeleteProject(e))
+    history.push('/')
+    return 
   }
 
   if (!currentProject) {
