@@ -9,8 +9,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 30px;
-  position: sticky;
+  padding: 15px 30px;
+  /* position: sticky; */
   top: 0;
   background-color: white;
   border-bottom: 1px rgb(206, 206, 206) solid;
