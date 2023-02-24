@@ -21,8 +21,8 @@ class Project(db.Model):
   updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 
   owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
-  project_images = db.relationship("ProjectImages", back_populates="project")
-
+  project_images = db.relationship("ProjectImages", back_populates="project", cascade="all, delete-orphan")
+  pledges = db.relationship("Pledge", back_populates="project", cascade="all, delete-orphan")
 
   def to_dict(self):
     return {
