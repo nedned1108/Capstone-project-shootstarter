@@ -12,7 +12,7 @@ function Navigation({ isLoaded }){
 
 	return (
 		<div className='navBar'>
-      <div>
+      <div className='createProject'>
         <OpenModalButton 
           buttonText="Start a project"
           modalComponent={<CreateProjectModal />}
@@ -29,7 +29,7 @@ function Navigation({ isLoaded }){
 				</div>
         : 
         <NavLink to="/login">
-          login
+          Log in
         </NavLink>
 			)}
 		</div>
