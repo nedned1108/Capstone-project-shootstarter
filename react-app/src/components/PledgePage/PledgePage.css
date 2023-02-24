@@ -1,0 +1,23 @@
+.pledgeMainDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projectTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projectTitle p {
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+.pledgesDiv {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  width: 70vw;
+  row-gap: 30px;
+}

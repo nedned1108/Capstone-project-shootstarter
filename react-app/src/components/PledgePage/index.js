@@ -6,6 +6,7 @@ import { thunkLoadAllProjects } from "../../store/project";
 import CreatePledgeModal from "../CreatePledgeModal";
 import OpenModalButton from "../OpenModalButton";
 import PledgeCard from "../PledgeCard";
+import './PledgePage.css'
 
 
 const PledgePage = () => {
@@ -15,7 +16,7 @@ const PledgePage = () => {
   const currentUser = useSelector(state => state.session.user)
   const projects = useSelector(state => state.project.projects)
   const currentProject = Object.values(projects).find(project => project.id == projectId)
-
+  console.log(currentProject)
   let pledges;
   if (allPledgesData) {
     pledges = Object.values(allPledgesData).filter(pledge => pledge.project_id == projectId);
@@ -26,23 +27,26 @@ const PledgePage = () => {
     dispatch(thunkLoadAllProjects())
   }, [dispatch])
 
-  if (pledges.length == 0 && !currentProject) {
+  if (pledges.length == 0 || currentProject == undefined) {
     return null
   }
 
   return (
-    <div>
-      <div>
-        {currentUser && currentProject && currentUser.id == currentProject.owner_id ?
-          <OpenModalButton 
-            buttonText='Add Pledge'
-            modalComponent={<CreatePledgeModal projectId={projectId}/>}
-          />
-          : ''
-        }
+    <div className="pledgeMainDiv">
+      <div className="projectTitle">
+        <h2>{currentProject.project_name}</h2>
+        <p>By {currentProject.owner.first_name} {currentProject.owner.last_name}</p>
       </div>
-      <div>
+      <div className="pledgesDiv">
         <h2>Select your reward</h2>
+        <div>
+          {currentUser && currentProject && currentUser.id == currentProject.owner_id &&
+            <OpenModalButton 
+              buttonText='Add Pledge'
+              modalComponent={<CreatePledgeModal projectId={projectId}/>}
+            />
+          }
+        </div>
         {pledges.map(pledge => <PledgeCard pledge={pledge} key={pledge.id} />)}
       </div>
     </div>
