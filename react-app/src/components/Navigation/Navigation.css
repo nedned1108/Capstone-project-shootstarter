@@ -9,9 +9,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 5px 30px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 1px rgb(206, 206, 206) solid;
+}
+.navBar a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+.logo {
+  height: 40px;
 }
 
-.logo {
-  width: 200px;
-  height: 100px;
+.createProject button {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 18px;
+  cursor: pointer;
 }

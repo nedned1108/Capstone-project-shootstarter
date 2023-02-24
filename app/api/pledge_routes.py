@@ -1,7 +1,7 @@
 from flask import Blueprint, redirect,session, request
 from flask_login import login_required, current_user
-from app.models import db, Pledge
-from app.forms import PledgeForm
+from app.models import db, Pledge, Project
+from app.forms import PledgeForm, ChoosePledgeForm
 
 pledge_routes = Blueprint('pledge', __name__)
 
@@ -68,3 +68,26 @@ def delete_pledge(id):
   db.session.commit()
 
   return {'Message': 'The pledge has been deleted!'}, 200
+
+
+@pledge_routes.route('/<int:id>/choice', methods=["POST"])
+@login_required
+def choose_pledge(id):
+  """
+  Add pledge to user and add user to pledge
+  """
+  thisPledge = Pledge.query.get(id)
+  thisProject = Project.query.get(thisPledge.project_id)
+
+  form = ChoosePledgeForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+  if form.validate_on_submit():
+    current_user.pledges.append(thisPledge)
+    thisPledge.users.append(current_user)
+    thisProject.backers += 1
+    thisProject.current_fund += thisPledge.price
+
+    db.session.commit()
+    return thisPledge.to_dict(), 200
+  if form.errors:
+    return {"errors": validation_errors_to_error_messages(form.errors)}, 400

@@ -1,7 +1,7 @@
 from flask import Blueprint, redirect,session, request
 from flask_login import login_required, current_user
 from app.models import db, Project, ProjectImages, Pledge
-from app.forms import ProjectForm, ProjectImageForm, PledgeForm
+from app.forms import ProjectForm, ProjectImageForm, PledgeForm, ChoosePledgeForm
 
 project_routes = Blueprint('project', __name__)
 
@@ -89,7 +89,7 @@ def update_project(id):
 
   if not thisProject:
     return {"Error": "Project not Found"}, 404
-  if current_user.id != thisProject.user_id:
+  if current_user.id != thisProject.owner_id:
     return {"Error": "Forbidden"}, 403
 
   if form.validate_on_submit():
@@ -179,3 +179,5 @@ def post_pledge(id):
 
   if form.errors:
     return {"errors": validation_errors_to_error_messages(form.errors)}, 400
+
+

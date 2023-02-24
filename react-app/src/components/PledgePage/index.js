@@ -33,7 +33,7 @@ const PledgePage = () => {
   return (
     <div>
       <div>
-        {currentUser && currentUser.id == currentProject.owner_id ?
+        {currentUser && currentProject && currentUser.id == currentProject.owner_id ?
           <OpenModalButton 
             buttonText='Add Pledge'
             modalComponent={<CreatePledgeModal projectId={projectId}/>}

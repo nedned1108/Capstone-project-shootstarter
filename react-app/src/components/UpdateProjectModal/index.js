@@ -5,7 +5,6 @@ import { thunkUpdateProject } from "../../store/project";
 import './UpdateProjectModal.css'
 
 const UpdateProjectModal = ({ project }) => {
-  console.log(project)
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.session.user)
   const [project_name, setProjectName] = useState(project.project_name);
@@ -25,7 +24,6 @@ const UpdateProjectModal = ({ project }) => {
 
     const projectData = {
       ...project,
-      id: project.id,
       project_name,
       description,
       story,

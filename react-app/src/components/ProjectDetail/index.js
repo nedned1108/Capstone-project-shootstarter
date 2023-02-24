@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, NavLink, useParams } from "react-router-dom";
-import { useModal } from "../../context/Modal";
+import { NavLink, useParams } from "react-router-dom";
 import { thunkLoadAllProjects } from "../../store/project";
 import { thunkDeleteProject } from "../../store/project";
 import UpdateProjectModal from "../UpdateProjectModal";
@@ -18,7 +17,6 @@ const ProjectDetail = () => {
   useEffect(() => {
     dispatch(thunkLoadAllProjects())
   }, [dispatch, projectId])
-
   const deleteProject = (e) => {
     return dispatch(thunkDeleteProject(e))
   }
@@ -49,7 +47,7 @@ const ProjectDetail = () => {
                 Back this project
               </NavLink>
             </div>
-            {currentUser && currentUser.id == currentProject.user_id ?
+            {currentUser && currentUser.id == currentProject.owner_id ? 
             <>
               <OpenModalButton 
                 buttonText="Update Project"
@@ -57,8 +55,8 @@ const ProjectDetail = () => {
               />
               <button onClick={() => deleteProject(currentProject.id)}>Delete</button>
             </>
-            : ''
-            }
+            : '' 
+            } 
           </div>
         </div>
       </div>

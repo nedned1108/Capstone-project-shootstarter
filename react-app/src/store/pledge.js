@@ -2,6 +2,7 @@ const LOAD_ALLPLEDGES = 'pledge/LOAD_ALLPLEDGES';
 const ADD_PLEDGE = 'pledge/ADD_PLEDGE';
 const UPDATE_PLEDGE = 'pledge/UPDATE_PLEDGE';
 const DELETE_PLEDGE = 'pledge/DELETE_PLEDGE';
+const CHOOSE_PLEDGE = 'pledge/CHOOSE_PLEDGE';
 
 // Action
 export const loadAllPledges = (pledges) => {
@@ -29,6 +30,13 @@ export const deletePledge = (id) => {
   return {
     type: DELETE_PLEDGE,
     payload: id
+  }
+};
+
+export const choosePledge = (data) => {
+  return {
+    type: CHOOSE_PLEDGE,
+    payload: data
   }
 };
 
@@ -98,6 +106,26 @@ export const thunkDeletePledge = (id) => async (dispatch) => {
   }
 };
 
+export const thunkChoosePledge = (data) => async (dispatch) => {
+  const response = await fetch(`/api/pledge/${data.pledge_id}/choice`, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  if (response.ok) {
+    const pledge = await response.json();
+    dispatch(choosePledge(pledge))
+    return pledge;
+  } else {
+    const data = await response.json();
+    if (data.errors) {
+      return data
+    }
+  }
+};
+
 // InitialState
 const initialState = {
   pledges: {}
@@ -119,6 +147,9 @@ const pledgeReducer = (state = initialState, action) => {
     case DELETE_PLEDGE:
       newState.pledges = {...state.pledges}
       delete newState.pledges[action.payload]
+      return newState;
+    case CHOOSE_PLEDGE:
+      newState.pledges = {...state.pledges, [action.payload.id]: action.payload}
       return newState;
     default:
       return state;

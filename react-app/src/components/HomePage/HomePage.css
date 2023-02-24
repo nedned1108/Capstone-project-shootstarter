@@ -1,0 +1,60 @@
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mainDiv h1 {
+  font-weight: 300;
+}
+.mainDiv h5 {
+  font-weight: 300;
+}
+
+.onShootstarter {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  border: 1px black solid;
+  padding: 10px;
+  
+}
+.onShootstarter div {
+  /* border: 1px black solid; */
+}
+
+.projectsDiv {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  column-rule-color: black;
+}
+
+.mainProject {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-left: 10vw;
+  padding-right: 40px;
+  border-right: 1px rgb(206, 206, 206) solid;
+}
+.mainProject img {
+  width: 100%;
+}
+
+.recommendedProjectsDiv {
+  width: 50%;
+  padding-left: 40px;
+  padding-right: 10vw;
+}
+.recommendedProjectsDiv img {
+  width: 200px;
+}
+.singleProject a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: 20px;
+}
+.singleProject h5 {
+  margin: 0;
+}
