@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { thunkLoadAllProjects } from "../../store/project";
+import { thunkLoadAllPledges } from "../../store/pledge";
 import { NavLink } from "react-router-dom";
 import "./HomePage.css";
 
@@ -9,13 +10,33 @@ import "./HomePage.css";
 const HomePage = () => {
   const dispatch = useDispatch();
   const allProjectsData = useSelector(state => state.project.projects)
+  const allPledgesData = useSelector(state => state.pledge.pledges)
   let projects;
+  let pledges
   if (allProjectsData) projects = Object.values(allProjectsData);
+  if (allPledgesData) pledges = Object.values(allPledgesData);
+  
+  const totalFund = (array) => {
+    let perPledge = array.map(pledge => pledge.price * pledge.users.length)
+    let sum = perPledge.reduce((a, b) => {
+      return a + b
+    }, perPledge[0])
+    return sum
+  }
+  const totalPledges = (array) => {
+    let userPerPledge = array.map(pledge => pledge.users.length)
+    let sum = userPerPledge.reduce((a, b) => {
+      return a + b
+    }, userPerPledge[0])
+    return sum
+  }
+
   useEffect(() => {
     dispatch(thunkLoadAllProjects())
+    dispatch(thunkLoadAllPledges())
   }, [dispatch])
 
-  if (projects.length == 0) {
+  if (projects.length == 0 && pledges.length == 0) {
     return null
   }
   
@@ -24,9 +45,18 @@ const HomePage = () => {
       <h1>Bring a creative project to life.</h1>
       <h5>ON SHOOTSTARTER:</h5>
       <div className="onShootstarter">
-        <div>projects funded</div>
-        <div>towards creative work</div>
-        <div>pledges</div>
+        <div>
+          <h2>{projects.length}</h2>
+          <p>projects funded</p>
+        </div>
+        <div>
+          <h2>${totalFund(pledges)}</h2>
+          <p>towards creative work</p>
+        </div>
+        <div>
+          <h2>{totalPledges(pledges)}</h2>
+          <p>pledges</p>
+        </div>
       </div>
       <div className="projectsDiv">
         <div className="mainProject">
