@@ -65,9 +65,18 @@ const ProjectDetail = () => {
         </div>
       </div>
       <div>
-        <div>{currentProject.story}</div>
         <div>
-          {currentProject.project_images.map(image => <img src={image.url}/>)}
+          <button>Story</button>
+          <button>Risks</button>
+        </div>
+        <div>
+          <div>{currentProject.story}</div>
+          <div>
+            {currentProject.project_images.map(image => <img src={image.url}/>)}
+          </div>
+        </div>
+        <div>
+          <h3>Project owner info</h3>
         </div>
       </div>
     </div>
