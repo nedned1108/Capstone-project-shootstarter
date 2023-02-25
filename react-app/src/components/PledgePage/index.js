@@ -16,7 +16,7 @@ const PledgePage = () => {
   const currentUser = useSelector(state => state.session.user)
   const projects = useSelector(state => state.project.projects)
   const currentProject = Object.values(projects).find(project => project.id == projectId)
-  console.log(currentProject)
+
   let pledges;
   if (allPledgesData) {
     pledges = Object.values(allPledgesData).filter(pledge => pledge.project_id == projectId);
@@ -39,7 +39,7 @@ const PledgePage = () => {
       </div>
       <div className="pledgesDiv">
         <h2>Select your reward</h2>
-        <div>
+        <div className="addPledge">
           {currentUser && currentProject && currentUser.id == currentProject.owner_id &&
             <OpenModalButton 
               buttonText='Add Pledge'

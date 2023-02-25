@@ -21,3 +21,14 @@
   width: 70vw;
   row-gap: 30px;
 }
+.pledgesDiv h2 {
+  margin-bottom: 0;
+}
+
+.addPledge button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
