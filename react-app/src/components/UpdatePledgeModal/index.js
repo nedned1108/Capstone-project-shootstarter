@@ -39,65 +39,63 @@ const UpdatePledgeModal = ({ pledge }) => {
   }
 
   return (
-    <div className='mainDiv'>
-      <div className='updatePledge'>
-        <h1>
-          Update Pledge
-        </h1>
-        <form onSubmit={handleSubmit}>
-          <ul>
-            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-          </ul>
-          <div className="input-form">
-            <label>Pledge Name:</label>
-            <input
-              type='text'
-              value={pledge_name}
-              onChange={(e) => setPledgeName(e.target.value)}
-              required
-            />
-          </div>
-          <div className="input-form">
-            <label>Price:</label>
-            <input
-              type='number'
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label>Ship To:</label>
-            <textarea
-              type='text'
-              value={ships_to}
-              onChange={(e) => setShipTo(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label>Rewards:</label>
-            <textarea
-              type='text'
-              value={rewards}
-              onChange={(e) => setRewards(e.target.value)}
-              required
-            />
-          </div>
-          <div className="input-form">
-            <label>Estimated Delivery:</label>
-            <input
-              type='text'
-              value={estimated_delivery}
-              onChange={(e) => setEstimatedDelivery(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <button className='submit-button' type="submit">Update Pledge</button>
-          </div>
-        </form>
-      </div>
+    <div className='updatePledgeModal'>
+      <h1>
+        Update Pledge
+      </h1>
+      <form onSubmit={handleSubmit}>
+        <ul>
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+        <div className="input-form">
+          <label>Pledge Name:</label>
+          <input
+            type='text'
+            value={pledge_name}
+            onChange={(e) => setPledgeName(e.target.value)}
+            required
+          />
+        </div>
+        <div className="input-form">
+          <label>Price:</label>
+          <input
+            type='number'
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            required
+          />
+        </div>
+        <div className="input-form">
+          <label>Ship To:</label>
+          <input
+            type='text'
+            value={ships_to}
+            onChange={(e) => setShipTo(e.target.value)}
+            required
+          />
+        </div>
+        <div className="input-form">
+          <label>Rewards:</label>
+          <textarea
+            type='text'
+            value={rewards}
+            onChange={(e) => setRewards(e.target.value)}
+            required
+          />
+        </div>
+        <div className="input-form">
+          <label>Estimated Delivery:</label>
+          <input
+            type='text'
+            value={estimated_delivery}
+            onChange={(e) => setEstimatedDelivery(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <button className='submitButton' type="submit">Update Pledge</button>
+        </div>
+      </form>
     </div>
   )
 }

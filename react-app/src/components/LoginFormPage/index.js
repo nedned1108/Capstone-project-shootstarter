@@ -13,8 +13,8 @@ function LoginFormPage() {
   const [errors, setErrors] = useState([]);
   const history = useHistory();
 
-  // if (sessionUser) return <Redirect to="/" />;
-  if (sessionUser) history.goBack();
+  if (sessionUser) return <Redirect to="/" />;
+  // if (sessionUser) history.goBack();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,7 +35,7 @@ function LoginFormPage() {
   }
 
   return (
-    <>
+    <div className="loginForm">
       <h1>Log In</h1>
       <form onSubmit={handleSubmit}>
         <ul>
@@ -43,29 +43,37 @@ function LoginFormPage() {
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <label>
-          Email
+        <div className="input-form">
+          {/* <label>Email</label> */}
           <input
+            placeholder="Email"
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </label>
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Log In</button>
-        <button onClick={demo}>Demo User</button>
-        <button onClick={signUp}>Sign Up</button>
+        </div>
+        <div className="input-form">
+          {/* <label>Password</label> */}
+            <input
+              placeholder="Password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+        </div>
+        <div>
+          <button className="loginFormButton" type="submit">Log In</button>
+        </div>
+        <div>
+          <button className="loginFormButton" onClick={demo}>Demo User</button>
+        </div>
+        <div>
+          <button className="loginFormButton" onClick={signUp}>Sign Up</button>
+        </div>
       </form>
-    </>
+    </div>
   );
 }
 

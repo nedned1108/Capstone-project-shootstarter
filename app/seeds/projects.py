@@ -45,9 +45,54 @@ def seed_projects():
     project_type="art",
     owner_id=2
   )
+  revopoint = Project(
+    project_name='Revopoint RANGE: Big Scans, Big Detail',
+    description="An Affordable and Accurate Big Object Infrared Structured Light 3D Scanner.",
+    story="""
+      We're back and ready to introduce our brand new Revopoint RANGE, the world's first affordable 
+      large objects scanner with a single capture range of 360mm x 650 mm@600mm. As many of you already know, 
+      Revopoint is no stranger to Kickstarters. With over 17,000 backers and more than $8.2 million raised 
+      from three successful Kickstarter campaigns for the POP, POP 2, and MINI 3D Scanners.
+    """,
+    risks="""
+    We are more than confident that we can deliver the Revopoint RANGE as the design and 
+    engineering work are finished, and we have already extensively tested it. Furthermore, 
+    we have successfully run three previous Kickstarter projects, and our manufacturing and 
+    supply capacity has expanded and matured over these projects. In other words, aside from any logistical challenges that might arise and 
+    which we commit to solving promptly, we do not see any risk on the project’s horizon.
+    """,
+    goal=10000,
+    current_fund=0,
+    backers=0,
+    end_day="May 15 2023",
+    project_type="design",
+    owner_id=2
+  )
+  faerie = Project(
+    project_name='Faerie Hearts: A Romantic Fantasy Collection',
+    description="Tales of love and adventure set in worlds ranging from Ancient Celtic moors to an enchanted forest, where romance and magic reign.",
+    story="""
+      Magical happily-ever-afters are yours in this brand new collection of sweetly romantic stories from USA Today bestselling author Anthea Sharp.
+      From a heroine of Celtic legend to an intrepid elf warrior, fall in love with these couples bound by fate, who must fight for everything they 
+      hold dear in order to gain their true loves.
+    """,
+    risks="""
+    After running several Kickstarter campaigns, I've learned to build in extra time for the printing process. Things always go slower than I'd like! 
+    Delays can crop up with misprinted books, too, or shipping issues, which always affect a couple people per campaign, unfortunately.Other than that, 
+    I'm an experienced indie author with over 40 books under my belt, and have no worries about holding up my end of the deal!
+    """,
+    goal=1000,
+    current_fund=0,
+    backers=0,
+    end_day="April 26 2023",
+    project_type="publishing",
+    owner_id=5
+  )
 
   db.session.add(ascension_tactics)
   db.session.add(make_100)
+  db.session.add(revopoint)
+  db.session.add(faerie)
   db.session.commit()
 
 

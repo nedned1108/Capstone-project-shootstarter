@@ -36,26 +36,35 @@ const PledgeCard = ({ pledge }) => {
   }
 
   return (
-    <div>
-      <div>
-        Pledge ${pledge.price}
-        {pledge.pledge_name}
-        {pledge.rewards}
+    <div className="pledgeCardMainDiv">
+      <div className="price_reward">
+        <h4>
+          Pledge ${pledge.price}
+        </h4>
+        <h4>
+          {pledge.pledge_name}
+        </h4>
+        <p>
+          {pledge.rewards}
+        </p>
       </div>
-      <div>
-        <p>ESTIMATED DELIVERY {pledge.estimated_delivery}</p>
-        <p>Ships to {pledge.ships_to}</p>
+      <div className="delivery">
+        <p>ESTIMATED DELIVERY</p>
+        <h6>{pledge.estimated_delivery}</h6>
+        <p>Ships to</p>
+        <h6>{pledge.ships_to}</h6>
         {currentUser && pledge.owner_id == currentUser.id && 
-          <div>
+          <div className="update_delete">
             <OpenModalButton 
               buttonText='Update Pledge'
               modalComponent={<UpdatePledgeModal pledge={pledge}/>}
             />
             <button onClick={() => deletePledge(pledge.id)}>Delete Pledge</button>
           </div> 
-          // : "" 
         }
-        <button onClick={choosePledge} >Choose this reward</button>
+        {currentUser && pledge.owner_id != currentUser.id && 
+          <button onClick={choosePledge} >Choose this reward</button>
+        }
       </div>
     </div>
   )

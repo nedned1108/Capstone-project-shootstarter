@@ -110,6 +110,96 @@ def seed_pledges():
     project_id=2,
     owner_id=2
   )
+  revopoint_1 = Pledge(
+    pledge_name="[KS Limited Special] RANGE Standard",
+    price=474,
+    ships_to="Anywhere in the world",
+    rewards='Get the Revopoint RANGE Standard Package at the KS Limited Special Price US$474 - 35% OFF US$729. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
+    estimated_delivery="July 2023",
+    project_id=3,
+    owner_id=2
+  )
+  revopoint_2 = Pledge(
+    pledge_name="[KS Special] RANGE Standard",
+    price=547,
+    ships_to="Anywhere in the world",
+    rewards='Get the Revopoint RANGE Standard Package at the KS Special Price US$547 - 25% OFF US$729. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
+    estimated_delivery="July 2023",
+    project_id=3,
+    owner_id=2
+  )
+  revopoint_3 = Pledge(
+    pledge_name="[KS Limited Special] RANGE Premium",
+    price=779,
+    ships_to="Anywhere in the world",
+    rewards='Get the Revopoint RANGE Premium Package at the KS Limited Special Price US$779 - 35% OFF US$1199. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
+    estimated_delivery="July 2023",
+    project_id=3,
+    owner_id=2
+  )
+  revopoint_4 = Pledge(
+    pledge_name="[KS Special] RANGE Premium",
+    price=899,
+    ships_to="Anywhere in the world",
+    rewards='Get the Revopoint RANGE Premium Package at the KS Special Price US$899 - 25% OFF US$1199. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
+    estimated_delivery="July 2023",
+    project_id=3,
+    owner_id=2
+  )
+  revopoint_5 = Pledge(
+    pledge_name="[Super Early Bird] RANGE Standard",
+    price=328,
+    ships_to="Anywhere in the world",
+    rewards='Get the Revopoint RANGE Standard Package at the Super Early Bird Price US$328 - 55% OFF US$729. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
+    estimated_delivery="July 2023",
+    project_id=3,
+    owner_id=2
+  )
+  faerie_1 = Pledge(
+    pledge_name="Digital Short Story",
+    price=1,
+    ships_to="Anywhere in the world",
+    rewards='Get a taste of romantic fantasy with a digital version of the short story MISTRESS BOOTSI, plus my thanks!',
+    estimated_delivery="May 2023",
+    project_id=4,
+    owner_id=5
+  )
+  faerie_2 = Pledge(
+    pledge_name="Faerie Hearts - eBook",
+    price=5,
+    ships_to="Anywhere in the world",
+    rewards='Get your copy months in advance of retail release, plus all digital stretch rewards we unlock!',
+    estimated_delivery="May 2023",
+    project_id=4,
+    owner_id=5
+  )
+  faerie_3 = Pledge(
+    pledge_name="Faerie Hearts & Mermaid Song - eBooks",
+    price=10,
+    ships_to="Anywhere in the world",
+    rewards='An early copy of Faerie Hearts, plus Mermaid Song - a collection of five fairytale retellings.',
+    estimated_delivery="May 2023",
+    project_id=4,
+    owner_id=5
+  )
+  faerie_4 = Pledge(
+    pledge_name="Faerie Hearts - Paperback",
+    price=25,
+    ships_to="Anywhere in the world",
+    rewards='Paperback edition (eBook included) of Faerie Hearts, delivered months before retail release, plus any unlocked stretch rewards. **US SHIPPING INCLUDED**',
+    estimated_delivery="May 2023",
+    project_id=4,
+    owner_id=5
+  )
+  faerie_5 = Pledge(
+    pledge_name="Romantic Fantasy Collection - eBook",
+    price=35,
+    ships_to="Anywhere in the world",
+    rewards='A complete digital collection overflowing with fantasy romance! Includes all six Darkwood novels (Into the Darkwood contains the books Elfhame, Hawthorne, and Raine), plus Faerie Hearts and Mermaid Song.',
+    estimated_delivery="May 2023",
+    project_id=4,
+    owner_id=5
+  )
 
   db.session.add(ascention_tactics_pledges1)
   db.session.add(ascention_tactics_pledges2)
@@ -117,11 +207,22 @@ def seed_pledges():
   db.session.add(ascention_tactics_pledges4)
   db.session.add(ascention_tactics_pledges5)
   db.session.add(ascention_tactics_pledges6)
+  db.session.add(ascention_tactics_pledges7)
   db.session.add(make_100_1)
   db.session.add(make_100_2)
   db.session.add(make_100_3)
   db.session.add(make_100_4)
   db.session.add(make_100_5)
+  db.session.add(revopoint_1)
+  db.session.add(revopoint_2)
+  db.session.add(revopoint_3)
+  db.session.add(revopoint_4)
+  db.session.add(revopoint_5)
+  db.session.add(faerie_1)
+  db.session.add(faerie_2)
+  db.session.add(faerie_3)
+  db.session.add(faerie_4)
+  db.session.add(faerie_5)
   db.session.commit()
 
 def undo_pledges():
