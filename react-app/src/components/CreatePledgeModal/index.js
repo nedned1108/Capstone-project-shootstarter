@@ -67,7 +67,7 @@ const CreatePledgeModal = ({ projectId }) => {
         </div>
         <div className="input-form">
           <label>Ship To:</label>
-          <textarea
+          <input
             type='text'
             value={ships_to}
             onChange={(e) => setShipTo(e.target.value)}
