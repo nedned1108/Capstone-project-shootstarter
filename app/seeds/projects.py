@@ -68,10 +68,31 @@ def seed_projects():
     project_type="design",
     owner_id=2
   )
+  faerie = Project(
+    project_name='Faerie Hearts: A Romantic Fantasy Collection',
+    description="Tales of love and adventure set in worlds ranging from Ancient Celtic moors to an enchanted forest, where romance and magic reign.",
+    story="""
+      Magical happily-ever-afters are yours in this brand new collection of sweetly romantic stories from USA Today bestselling author Anthea Sharp.
+      From a heroine of Celtic legend to an intrepid elf warrior, fall in love with these couples bound by fate, who must fight for everything they 
+      hold dear in order to gain their true loves.
+    """,
+    risks="""
+    After running several Kickstarter campaigns, I've learned to build in extra time for the printing process. Things always go slower than I'd like! 
+    Delays can crop up with misprinted books, too, or shipping issues, which always affect a couple people per campaign, unfortunately.Other than that, 
+    I'm an experienced indie author with over 40 books under my belt, and have no worries about holding up my end of the deal!
+    """,
+    goal=1000,
+    current_fund=0,
+    backers=0,
+    end_day="April 26 2023",
+    project_type="publishing",
+    owner_id=5
+  )
 
   db.session.add(ascension_tactics)
   db.session.add(make_100)
   db.session.add(revopoint)
+  db.session.add(faerie)
   db.session.commit()
 
 
