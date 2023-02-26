@@ -2,6 +2,7 @@ const LOAD_ALLPROJECTS = 'project/LOAD_ALLPROJECTS';
 const ADD_PROJECT = 'project/ADD_PROJECT';
 const UPDATE_PROJECT = 'project/UPDATE_PROJECT';
 const DELETE_PROJECT = 'project/DELETE_PROJECT';
+const ADD_IMAGES = 'project/ADD_IMAGES';
 
 // Action
 export const loadAllProjects = (projects) => {
@@ -29,6 +30,13 @@ export const deleteProject = (id) => {
   return {
     type: DELETE_PROJECT,
     payload: id
+  }
+};
+
+export const addImages = (data) => {
+  return {
+    type: ADD_IMAGES,
+    payload: data
   }
 };
 
@@ -73,7 +81,7 @@ export const thunkUpdateProject = (data) => async (dispatch) => {
     },
     body: JSON.stringify(data)
   });
-
+  console.log(response)
   if (response.ok) {
     const project = await response.json();
     dispatch(updateProject(project))
@@ -99,6 +107,27 @@ export const thunkDeleteProject = (id) => async (dispatch) => {
   }
 };
 
+
+export const thunkAddImages = (image) => async (dispatch) => {
+  const response = await fetch(`/api/project/${image.project_id}/images`, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(image)
+  })
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(addImages(data))
+    return data;
+  } else {
+    const data = await response.json();
+    if (data.errors) {
+      return data
+    }
+  }
+}
 // InitialState
 const initialState = {
   projects: {}
@@ -120,6 +149,9 @@ const projectReducer = (state = initialState, action) => {
     case DELETE_PROJECT:
       newState.projects = {...state.projects}
       delete newState.projects[action.payload]
+      return newState;
+    case ADD_IMAGES:
+      newState.projects = {...state.projects, [action.payload.id]: action.payload}
       return newState;
     default:
       return state;
