@@ -44,8 +44,9 @@ function LoginFormPage() {
           ))}
         </ul>
         <div className="input-form">
-          <label>Email</label>
+          {/* <label>Email</label> */}
           <input
+            placeholder="Email"
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -53,8 +54,9 @@ function LoginFormPage() {
           />
         </div>
         <div className="input-form">
-          <label>Password</label>
+          {/* <label>Password</label> */}
             <input
+              placeholder="Password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -62,13 +64,13 @@ function LoginFormPage() {
             />
         </div>
         <div>
-          <button type="submit">Log In</button>
+          <button className="loginFormButton" type="submit">Log In</button>
         </div>
         <div>
-          <button onClick={demo}>Demo User</button>
+          <button className="loginFormButton" onClick={demo}>Demo User</button>
         </div>
         <div>
-          <button onClick={signUp}>Sign Up</button>
+          <button className="loginFormButton" onClick={signUp}>Sign Up</button>
         </div>
       </form>
     </div>
