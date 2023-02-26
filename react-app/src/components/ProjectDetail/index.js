@@ -5,6 +5,7 @@ import { thunkLoadAllProjects } from "../../store/project";
 import { thunkDeleteProject } from "../../store/project";
 import UpdateProjectModal from "../UpdateProjectModal";
 import OpenModalButton from "../OpenModalButton";
+import AddImageModal from "./AddImageModal";
 import './ProjectDetail.css'
 
 
@@ -62,6 +63,10 @@ const ProjectDetail = () => {
                 modalComponent={<UpdateProjectModal project={currentProject}/>}
               />
               <button onClick={() => deleteProject(currentProject.id)}>Delete Project</button>
+              <OpenModalButton 
+                buttonText="Add Images"
+                modalComponent={<AddImageModal project_id={currentProject.id}/>}
+              />
             </div>
             : '' 
             } 

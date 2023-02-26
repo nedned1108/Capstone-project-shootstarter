@@ -3,7 +3,7 @@ from app.models import db, ProjectImages, environment, SCHEMA
 
 def seed_project_images():
   ascension_images1 = ProjectImages(
-    url="https://ksr-ugc.imgix.net/assets/040/017/318/b1499e87616d1a7f4dc0c9ff573caad4_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1677000209&auto=format&frame=1&q=92&s=24da4fc981e20491ba3ed33e2f6a8904",
+    url="https://ksr-ugc.imgix.net/assets/040/032/180/f0af89a023186dad2106b58bbb37f9e5_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1677108419&auto=format&frame=1&q=92&s=2f091a8f001b9265249f1f88ca1a40aa",
     project_id=1
   )
   ascension_images2 = ProjectImages(
@@ -134,6 +134,34 @@ def seed_project_images():
     url="https://ksr-ugc.imgix.net/assets/039/616/509/48bf7d10ca1eceba59c090e34613217a_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1673164170&gif-q=50&lossless=true&s=810e91d91af9815eee68ac453a4caf21",
     project_id=4
   )
+  mika_images1 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/040/055/776/ef963df0887a5574faa5578eea5fe5ad_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1677315479&gif-q=50&lossless=true&s=aec6351a41b910dd34764ed1c485d510",
+    project_id=5
+  )
+  mika_images2 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/577/163/a853a2128f646b4fc2404ad851e8c0a7_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1672737177&gif-q=50&q=92&s=6ea673132a9fa405f475f446bd8525d7",
+    project_id=5
+  )
+  mika_images3 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/040/055/777/137d49627035935a1c51dd3777337e09_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1677315494&gif-q=50&lossless=true&s=e4abafe4a80d9400b5005a61a2ea2d86",
+    project_id=5
+  )
+  mika_images4 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/915/001/cfc035858eea6c5c97a8784b292bf0b7_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1676045132&gif-q=50&lossless=true&s=133080d823c59826e16f0935f3d758e1",
+    project_id=5
+  )
+  mika_images5 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/040/062/906/8860ab7f63386c7b293364482abfa4cf_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1677402339&gif-q=50&lossless=true&s=62d05b3838d1ec4630647a663d45b503",
+    project_id=5
+  )
+  mika_images6 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/577/123/b25b682b6d0d8d0b11ba9972d609a8fb_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1672736769&gif-q=50&q=92&s=136be9038b15ffe240d1d71cc23d762d",
+    project_id=5
+  )
+  mika_images7 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/455/434/0b80aa78fb445aebf96e3306676c95a8_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1670949040&gif-q=50&lossless=true&s=b72c44d35c7adbc57ceabe3ede678351",
+    project_id=5
+  )
   
   db.session.add(ascension_images1)
   db.session.add(ascension_images2)
@@ -168,6 +196,13 @@ def seed_project_images():
   db.session.add(faerie_images6)
   db.session.add(faerie_images7)
   db.session.add(faerie_images8)
+  db.session.add(mika_images1)
+  db.session.add(mika_images2)
+  db.session.add(mika_images3)
+  db.session.add(mika_images4)
+  db.session.add(mika_images5)
+  db.session.add(mika_images6)
+  db.session.add(mika_images7)
   db.session.commit()
 
 def undo_project_images():
