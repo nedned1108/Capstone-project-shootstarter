@@ -60,7 +60,7 @@
   padding-right: 10vw;
 }
 .recommendedProjectsDiv img {
-  width: 200px;
+  width: 120px;
 }
 .singleProject a {
   display: flex;
@@ -68,6 +68,13 @@
   align-items: flex-start;
   column-gap: 20px;
 }
-.singleProject h5 {
+
+.singleProjectInfo h5{
   margin: 0;
+  font-size: 14px;
+  padding-bottom: 4px;
+}
+.singleProjectInfo p{
+  margin: 0;
+  font-size: 12px;
 }

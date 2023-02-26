@@ -64,6 +64,7 @@ const HomePage = () => {
           <NavLink to={`/project/${projects[0].id}`}>
             <img src={projects[0].project_images[0].url}/>
             <h3>{projects[0].project_name}</h3>
+            <p>{projects[0].description}</p>
           </NavLink>
         </div>
         <div className="recommendedProjectsDiv">
@@ -71,7 +72,10 @@ const HomePage = () => {
           <div className="singleProject">
             <NavLink to={`/project/${projects[1].id}`}>
               <img src={projects[1].project_images[0].url}/>
-              <h5>{projects[1].project_name}</h5>
+              <div className="singleProjectInfo">
+                <h5>{projects[1].project_name}</h5>
+                <p>By {projects[1].owner.first_name} {projects[1].owner.last_name}</p>
+              </div>
             </NavLink>
           </div>
         </div>
