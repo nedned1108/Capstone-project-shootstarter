@@ -44,92 +44,81 @@ const UpdateProjectModal = ({ project }) => {
   }
 
   return (
-    <div className='mainDiv'>
-      <div className='createProject'>
-        <h1>
-          Create Project
-        </h1>
-        <form onSubmit={handleSubmit}>
-          <ul>
-            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-          </ul>
-          <div className="input-form">
-            <label>Project Name:</label>
-            <input
-              type='text'
-              value={project_name}
-              onChange={(e) => setProjectName(e.target.value)}
-              required
-            />
-          </div>
-          <div className="input-form">
-            <label>Description:</label>
-            <input
-              type='text'
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label>Story:</label>
-            <textarea
-              type='text'
-              value={story}
-              onChange={(e) => setStory(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label>Risks:</label>
-            <textarea
-              type='text'
-              value={risks}
-              onChange={(e) => setRisks(e.target.value)}
-              required
-            />
-          </div>
-          <div className="input-form">
-            <label>Goal:</label>
-            <input
-              type='number'
-              value={goal}
-              onChange={(e) => setGoal(e.target.value)}
-              required
-            />
-          </div>
-          <div className="input-form">
-            <label>End Day:</label>
-            <input
-              type='text'
-              value={end_day}
-              onChange={(e) => setEndDay(e.target.value)}
-              required
-            />
-          </div>
-          <div className="input-form">
-            <label>Project Type:</label>
-            <input
-              type='text'
-              value={project_type}
-              onChange={(e) => setProjectType(e.target.value)}
-              required
-            />
-          </div>
-          {/* <div className="input-form">
-            <label>Project Image:</label>
-            <input
-              type='text'
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              required
-            />
-          </div> */}
-          <div>
-            <button className='submit-button' type="submit">Update Project</button>
-          </div>
-        </form>
-      </div>
+    <div className='updateProjectModal'>
+      <h1>
+        Update Project
+      </h1>
+      <form onSubmit={handleSubmit}>
+        <ul>
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+        <div className="input-form">
+          <label>Project Name:</label>
+          <input
+            type='text'
+            value={project_name}
+            onChange={(e) => setProjectName(e.target.value)}
+            required
+          />
+        </div>
+        <div className="input-form">
+          <label>Description:</label>
+          <input
+            type='text'
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          />
+        </div>
+        <div className="input-form">
+          <label>Story:</label>
+          <textarea
+            type='text'
+            value={story}
+            onChange={(e) => setStory(e.target.value)}
+            required
+          />
+        </div>
+        <div className="input-form">
+          <label>Risks:</label>
+          <textarea
+            type='text'
+            value={risks}
+            onChange={(e) => setRisks(e.target.value)}
+            required
+          />
+        </div>
+        <div className="input-form">
+          <label>Goal:</label>
+          <input
+            type='number'
+            value={goal}
+            onChange={(e) => setGoal(e.target.value)}
+            required
+          />
+        </div>
+        <div className="input-form">
+          <label>End Day:</label>
+          <input
+            type='text'
+            value={end_day}
+            onChange={(e) => setEndDay(e.target.value)}
+            required
+          />
+        </div>
+        <div className="input-form">
+          <label>Project Type:</label>
+          <input
+            type='text'
+            value={project_type}
+            onChange={(e) => setProjectType(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <button className='submitButton' type="submit">Update Project</button>
+        </div>
+      </form>
     </div>
   )
 }
