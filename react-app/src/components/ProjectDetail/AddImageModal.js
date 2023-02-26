@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useModal } from '../../context/Modal';
 import { thunkAddImages } from '../../store/project';
 import { thunkLoadAllProjects } from '../../store/project';
+import './ProjectDetail.css'
 
 
 const AddImageModal = ({ project_id }) => {
@@ -36,7 +37,7 @@ const AddImageModal = ({ project_id }) => {
     }
   }
   return (
-    <div>
+    <div className='addImageModal'>
       <h1>Add Images</h1>
       <form onSubmit={handleSubmit}>
         <ul>
