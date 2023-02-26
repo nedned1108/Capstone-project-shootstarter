@@ -88,11 +88,35 @@ def seed_projects():
     project_type="publishing",
     owner_id=5
   )
+  mika = Project(
+    project_name="Mika and the Witch's Mountain - delivery service adventure",
+    description="Soar the sky on this adventure of Mika, an aspiring witch. Deliver packages to the inhabitants from the Island of Winds.",
+    story="""
+      Mika and the Witch’s Mountain is a fantasy adventure about an aspiring witch who delivers packages to the townspeople of a small island. 
+      Explore every nook and cranny and soar through the sky with your magic broom.
+    """,
+    risks="""
+    We're a small group of people who have worked hard for a year to advance significantly the development of Mika and the Witch’s Mountain; 
+    consequently, the game will be a reality soon and incompletion rendered an impossibility.
+
+    Despite this, we’re professionals from different teams and areas, and even though things are going smoothly, it’s the first time we work 
+    together on the same project. This can lead to very different points of view and approaches to some aspects of the game that can make the 
+    development changes and may even lengthen a little more in time, which means more budget and iteration to achieve the game that we all dream about. 
+    We want Mika and the Witch’s Mountain to be a good and memorable game, and for that reason, we are counting on your help in this final phase of development.
+    """,
+    goal=42000,
+    current_fund=0,
+    backers=0,
+    end_day="March 13 2023",
+    project_type="game",
+    owner_id=4
+  )
 
   db.session.add(ascension_tactics)
   db.session.add(make_100)
   db.session.add(revopoint)
   db.session.add(faerie)
+  db.session.add(mika)
   db.session.commit()
 
 

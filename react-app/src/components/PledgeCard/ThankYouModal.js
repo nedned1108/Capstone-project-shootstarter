@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useModal } from '../../context/Modal';
-
+import './PledgeCard.css'
 
 const ThankYouModal = () => {
   return (
-    <h1>Thank you for choosing your reward</h1>
+    <div className='thankyouDiv'>
+        <h1>Thank you for choosing your reward</h1>
+    </div>
   )
 }
 

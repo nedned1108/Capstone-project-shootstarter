@@ -200,6 +200,60 @@ def seed_pledges():
     project_id=4,
     owner_id=5
   )
+  mika_1 = Pledge(
+    pledge_name="ASPIRANT WITCH",
+    price=20,
+    ships_to="Anywhere in the world",
+    rewards="🐸 Mika and the Witch's Mountain - Digital Game in your platform📬 Digital Wallpaper Set",
+    estimated_delivery="July 2023",
+    project_id=5,
+    owner_id=4
+  )
+  mika_2 = Pledge(
+    pledge_name="LITTLE WITCH",
+    price=25,
+    ships_to="Anywhere in the world",
+    rewards="🐸 Mika and the Witch's Mountain - Digital Game in your platform 👒 Kickstarter Exclusive Outfit 📙 Mika Digital Artbook✨ Digital goodies pack 📬 Digital Wallpaper Set",
+    estimated_delivery="July 2023",
+    project_id=5,
+    owner_id=4
+  )
+  mika_3 = Pledge(
+    pledge_name="NINTENDO SWITCH PHYSICAL EDITION",
+    price=40,
+    ships_to="Anywhere in the world",
+    rewards='⭐You can also add the physical Nintendo Switch game to other rewards as an add-on',
+    estimated_delivery="July 2023",
+    project_id=5,
+    owner_id=4
+  )
+  mika_4 = Pledge(
+    pledge_name="MIKA COLOR FIGURE EDITION",
+    price=60,
+    ships_to="Anywhere in the world",
+    rewards="🐈‍⬛ Mika color figure 4”/ 10cm PVC/Vynil🐸 Mika and the Witch's Mountain - Digital Game in your platform 👒 Kickstarter Exclusive Outfit 💌 Thank You Postcard (physical) 📙 Mika Digital Artbook ✨ Digital goodies pack 📬 Digital Wallpaper Set 😀 Your name in the credits",
+    estimated_delivery="July 2023",
+    project_id=5,
+    owner_id=4
+  )
+  mika_5 = Pledge(
+    pledge_name="MASTER WITCH",
+    price=65,
+    ships_to="Anywhere in the world",
+    rewards="🐸 Mika and the Witch's Mountain - Digital Game in your platform ⚡️ Beta Access - Steam key extra 📢 Discord channel exclusive for backers 👒 Kickstarter Exclusive Outfit ⭐️ Exclusive broom trail VFX 📙 Mika Digital Artbook 💌 Thank You Postcard (physical) 🖌️ A4 Printed numbered (physical) 🎒 Witchy Sticker Pack (physical) ✨ Digital goodies pack 📬 Digital Wallpaper Set 😀 Your name in the credits",
+    estimated_delivery="July 2023",
+    project_id=5,
+    owner_id=4
+  )
+  mika_6 = Pledge(
+    pledge_name="FIGURE + NINTENDO SWITCH PHYSICAL GAME",
+    price=80,
+    ships_to="Anywhere in the world",
+    rewards="🐈‍⬛ Mika color figure 4”/ 10cm PVC/Vynil 🎮 Mika and the Witch's Mountain - Physical Game Nintendo Switch 👒 Kickstarter Exclusive Outfit 💌 Thank You Postcard (physical) 📙 Mika Digital Artbook ✨ Digital goodies pack 📬 Digital Wallpaper Set 😀 Your name in the credits",
+    estimated_delivery="July 2023",
+    project_id=5,
+    owner_id=4
+  )
 
   db.session.add(ascention_tactics_pledges1)
   db.session.add(ascention_tactics_pledges2)
@@ -223,6 +277,12 @@ def seed_pledges():
   db.session.add(faerie_3)
   db.session.add(faerie_4)
   db.session.add(faerie_5)
+  db.session.add(mika_1)
+  db.session.add(mika_2)
+  db.session.add(mika_3)
+  db.session.add(mika_4)
+  db.session.add(mika_5)
+  db.session.add(mika_6)
   db.session.commit()
 
 def undo_pledges():
