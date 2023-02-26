@@ -3,7 +3,7 @@ from app.models import db, ProjectImages, environment, SCHEMA
 
 def seed_project_images():
   ascension_images1 = ProjectImages(
-    url="https://ksr-ugc.imgix.net/assets/040/017/318/b1499e87616d1a7f4dc0c9ff573caad4_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1677000209&auto=format&frame=1&q=92&s=24da4fc981e20491ba3ed33e2f6a8904",
+    url="https://ksr-ugc.imgix.net/assets/040/032/180/f0af89a023186dad2106b58bbb37f9e5_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1677108419&auto=format&frame=1&q=92&s=2f091a8f001b9265249f1f88ca1a40aa",
     project_id=1
   )
   ascension_images2 = ProjectImages(
