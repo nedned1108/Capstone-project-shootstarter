@@ -40,6 +40,9 @@
   width: 100%;
   justify-content: space-around;
   column-rule-color: black;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgb(206, 206, 206);
+  margin-bottom: 50px;
 }
 
 .mainProject {
@@ -77,4 +80,34 @@
 .singleProjectInfo p{
   margin: 0;
   font-size: 12px;
+}
+
+
+/* ----------all projects------------ */
+.allProjects {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  row-gap: 50px;
+}
+
+.allProjectsSingle {
+  display: flex;
+  width: 100%;
+  max-height: 300px;
+}
+.allProjectsImg {
+  width: 50%;
+  padding-right: 30px;
+  border-right: 4px green solid;
+  max-height: 300px;
+}
+.allProjectsImg img {
+  width: 100%;
+  max-height: 300px;
+}
+
+.allProjectsInfo {
+  width: 50%;
+  padding-left: 30px;
 }
