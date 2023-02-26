@@ -110,6 +110,51 @@ def seed_pledges():
     project_id=2,
     owner_id=2
   )
+  revopoint_1 = Pledge(
+    pledge_name="[KS Limited Special] RANGE Standard",
+    price=474,
+    ships_to="Anywhere in the world",
+    rewards='Get the Revopoint RANGE Standard Package at the KS Limited Special Price US$474 - 35% OFF US$729. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
+    estimated_delivery="July 2023",
+    project_id=3,
+    owner_id=2
+  )
+  revopoint_2 = Pledge(
+    pledge_name="[KS Special] RANGE Standard",
+    price=547,
+    ships_to="Anywhere in the world",
+    rewards='Get the Revopoint RANGE Standard Package at the KS Special Price US$547 - 25% OFF US$729. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
+    estimated_delivery="July 2023",
+    project_id=3,
+    owner_id=2
+  )
+  revopoint_3 = Pledge(
+    pledge_name="[KS Limited Special] RANGE Premium",
+    price=779,
+    ships_to="Anywhere in the world",
+    rewards='Get the Revopoint RANGE Premium Package at the KS Limited Special Price US$779 - 35% OFF US$1199. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
+    estimated_delivery="July 2023",
+    project_id=3,
+    owner_id=2
+  )
+  revopoint_4 = Pledge(
+    pledge_name="[KS Special] RANGE Premium",
+    price=899,
+    ships_to="Anywhere in the world",
+    rewards='Get the Revopoint RANGE Premium Package at the KS Special Price US$899 - 25% OFF US$1199. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
+    estimated_delivery="July 2023",
+    project_id=3,
+    owner_id=2
+  )
+  revopoint_5 = Pledge(
+    pledge_name="[Super Early Bird] RANGE Standard",
+    price=328,
+    ships_to="Anywhere in the world",
+    rewards='Get the Revopoint RANGE Standard Package at the Super Early Bird Price US$328 - 55% OFF US$729. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
+    estimated_delivery="July 2023",
+    project_id=3,
+    owner_id=2
+  )
 
   db.session.add(ascention_tactics_pledges1)
   db.session.add(ascention_tactics_pledges2)
@@ -117,11 +162,17 @@ def seed_pledges():
   db.session.add(ascention_tactics_pledges4)
   db.session.add(ascention_tactics_pledges5)
   db.session.add(ascention_tactics_pledges6)
+  db.session.add(ascention_tactics_pledges7)
   db.session.add(make_100_1)
   db.session.add(make_100_2)
   db.session.add(make_100_3)
   db.session.add(make_100_4)
   db.session.add(make_100_5)
+  db.session.add(revopoint_1)
+  db.session.add(revopoint_2)
+  db.session.add(revopoint_3)
+  db.session.add(revopoint_4)
+  db.session.add(revopoint_5)
   db.session.commit()
 
 def undo_pledges():

@@ -38,10 +38,6 @@ def seed_project_images():
     url="https://ksr-ugc.imgix.net/assets/040/003/875/4410b05d123e9b0195cfd2b4540dd21d_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1676905910&gif-q=50&q=92&s=466c7ba0c196c323cc39bad7e7868ade",
     project_id=1
   )
-  ascension_images10 = ProjectImages(
-    url="https://ksr-ugc.imgix.net/assets/040/017/743/94b17b66c770d59382ae9778072e689c_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1677002423&gif-q=50&q=92&s=983a40a3aef1b2f4191f831d65dcaaf0",
-    project_id=1
-  )
   make_100_images1 = ProjectImages(
     url="https://ksr-ugc.imgix.net/assets/039/790/285/da7097c2e9ae59de360bcc4afcd4fbdf_original.jpg?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1674955749&auto=format&frame=1&q=92&s=d85759bcf058c98f6f0c90224fee62fe",
     project_id=2
@@ -66,6 +62,46 @@ def seed_project_images():
     url="https://ksr-ugc.imgix.net/assets/039/764/512/fcb74ed4ad26ecd926dfc868d04fc7de_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1674687674&gif-q=50&q=92&s=d6da6eae17faf11d86ae7aedbb19c16d",
     project_id=2
   )
+  revopoint_images1 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/819/481/d2b72c52d01df3d39b169e7c7aff3560_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1675217053&gif-q=50&q=92&s=9c7287d3721d924709e8887335ba94eb",
+    project_id=3
+  )
+  revopoint_images2 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/879/120/b94be72eb3462178b5181cd790c823e7_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1675753901&gif-q=50&q=92&s=88d10cb85ef24acdf06ed1e233635f75",
+    project_id=3
+  )
+  revopoint_images3 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/878/962/fddd21664e9dc6f7a542bf2bf86c2a72_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1675752514&gif-q=50&q=92&s=013aad11c97b28536d9231b705515b43",
+    project_id=3
+  )
+  revopoint_images4 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/040/032/902/80d7ffa2cca20d7a5084755c1d3a5a7c_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1677116011&gif-q=50&q=92&s=b9f87764d87e04e3c127930b6eb165c5",
+    project_id=3
+  )
+  revopoint_images5 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/040/032/902/80d7ffa2cca20d7a5084755c1d3a5a7c_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1677116011&gif-q=50&q=92&s=b9f87764d87e04e3c127930b6eb165c5",
+    project_id=3
+  )
+  revopoint_images6 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/879/241/f3dc7f706ad48437def639e5ec342061_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1675754823&gif-q=50&q=92&s=42d6f1872fd4d48d5a3e49f48ea94bf6",
+    project_id=3
+  )
+  revopoint_images7 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/978/177/ee039393ce8563a75505654ae79b374c_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1676619072&gif-q=50&q=92&s=767814d2e15261846e8837abe24dc8d7",
+    project_id=3
+  )
+  revopoint_images8 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/879/245/96e9dea5a6405ce15b7fce3421c94f98_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1675754848&gif-q=50&q=92&s=27d1dcc760b2fb4ad28fe6ea8d6f7ed8",
+    project_id=3
+  )
+  revopoint_images9 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/842/256/764a5eb0e054b8f97a9aafb87cbe07c7_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1675407367&gif-q=50&q=92&s=033cf20a15f0872571478e37c8b14ba9",
+    project_id=3
+  )
+  revopoint_images10 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/842/261/3afeee0568962e0ec365be15055a9da2_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1675407417&gif-q=50&q=92&s=0479fe026a0aad54041404a7e559dead",
+    project_id=3
+  )
   
   db.session.add(ascension_images1)
   db.session.add(ascension_images2)
@@ -76,13 +112,22 @@ def seed_project_images():
   db.session.add(ascension_images7)
   db.session.add(ascension_images8)
   db.session.add(ascension_images9)
-  db.session.add(ascension_images10)
   db.session.add(make_100_images1)
   db.session.add(make_100_images2)
   db.session.add(make_100_images3)
   db.session.add(make_100_images4)
   db.session.add(make_100_images5)
   db.session.add(make_100_images6)
+  db.session.add(revopoint_images1)
+  db.session.add(revopoint_images2)
+  db.session.add(revopoint_images3)
+  db.session.add(revopoint_images4)
+  db.session.add(revopoint_images5)
+  db.session.add(revopoint_images6)
+  db.session.add(revopoint_images7)
+  db.session.add(revopoint_images8)
+  db.session.add(revopoint_images9)
+  db.session.add(revopoint_images10)
   db.session.commit()
 
 def undo_project_images():
