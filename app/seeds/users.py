@@ -30,10 +30,30 @@ def seed_users():
         bio='The company was formed in 2012 to take advantage of our experience in gaming, bringing both classic titles - many of which defined entire genres - and new exciting games to PC, Mac and various mobile devices.',
         profile_image='https://img.freepik.com/premium-vector/board-game-logo-design_705304-22.jpg?w=2000'
     )
+    ned = User(
+        username='nedned', 
+        email='ned@aa.io', 
+        password='password',
+        first_name='Ned',
+        last_name='Ned',
+        bio="We're publishing a weekly series of video interviews with Black creators who have run successful Kickstarter campaigns across various creative fields. Plus: new TCI interviews, live projects, and more.",
+        profile_image='https://steamuserimages-a.akamaihd.net/ugc/1644340994747007967/853B20CD7694F5CF40E83AAC670572A3FE1E3D35/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true'
+    )
+    emily = User(
+        username='emily', 
+        email='emily@aa.io', 
+        password='password',
+        first_name='Emily',
+        last_name='Vu',
+        bio='I launched RollvsEvil a not-for-profit charitable fundraising effort for the tabletop community to combat real-world evils starting with frontline humanitarian aid support for the people of Ukraine.',
+        profile_image='https://wallpaperaccess.com/full/82955.jpg'
+    )
 
     db.session.add(demo)
     db.session.add(marnie)
     db.session.add(bobbie)
+    db.session.add(ned)
+    db.session.add(emily)
     db.session.commit()
 
 

@@ -20,6 +20,7 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(255), nullable=False)
 
     pledges = db.relationship("Pledge", secondary=users_pledges, back_populates="users")
+    projects = db.relationship("Project", back_populates="owner")
 
     @property
     def password(self):

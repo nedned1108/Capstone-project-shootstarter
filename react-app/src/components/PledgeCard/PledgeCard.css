@@ -1,0 +1,48 @@
+.pledgeCardMainDiv {
+  border: 1px black solid;
+  padding: 20px;
+  display: flex;
+  column-gap: 30px;
+}
+
+.price_reward {
+  width: 50%;
+}
+.price_reward h4 {
+  font-weight: 600;
+}
+
+.delivery {
+  width: 50%;
+}
+.delivery p {
+  font-size: 12px;
+  margin: 0;
+}
+.delivery h6 {
+  font-size: 14px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.delivery button {
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 5px;
+}
+
+.update_delete {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  row-gap: 10px;
+}
+.update_delete a,
+.update_delete button {
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 5px;
+}

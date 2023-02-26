@@ -20,6 +20,7 @@ class Pledge(db.Model):
   owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
   project_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("projects.id")))
   users = db.relationship("User", secondary=users_pledges, back_populates="pledges")
+  project = db.relationship("Project", back_populates="pledges")
 
   def to_dict(self):
 
