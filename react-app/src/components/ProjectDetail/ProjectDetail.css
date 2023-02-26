@@ -113,6 +113,7 @@
 }
 .middleDivImg {
   width: 100%;
+  padding-top: 20px;
 }
 .middleDivImg img {
   width: 100%;
@@ -121,7 +122,6 @@
 .rightDiv {
   position: sticky;
   top: 65px;
-  /* top: 20px; */
   width: 200px;
   display: flex;
   flex-direction: column;
