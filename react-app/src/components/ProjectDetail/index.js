@@ -8,7 +8,7 @@ import OpenModalButton from "../OpenModalButton";
 import AddImageModal from "./AddImageModal";
 import './ProjectDetail.css'
 import no_image from '../../images/empty-image.png' 
-
+import user_image from '../../images/default-user.png'
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
@@ -34,6 +34,9 @@ const ProjectDetail = () => {
   const onImageError = (e) => {
     e.target.src = no_image
   }
+  const onProfileImageError = (e) => {
+    e.target.src = user_image
+  }
 
   if (!currentProject) {
     return null
@@ -47,7 +50,7 @@ const ProjectDetail = () => {
       </div>
       <div className="projectImgInfo">
         <div className="projectImg">
-          <img src={currentProject.project_images[0].url}/>
+          <img src={currentProject.project_images[0].url} onError={onImageError}/>
         </div>
         <div className="projectInfo">
           <div className="projectInfoNum">
@@ -109,7 +112,7 @@ const ProjectDetail = () => {
         </div>
         <div>
           <div className="rightDiv">
-            <img src={currentProject.owner.profile_image}/>
+            <img src={currentProject.owner.profile_image} onError={onProfileImageError}/>
             <h4>{currentProject.owner.first_name} {currentProject.owner.last_name}</h4>
             <p>{currentProject.owner.bio}</p>
           </div>
