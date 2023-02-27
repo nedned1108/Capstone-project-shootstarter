@@ -1,6 +1,33 @@
-# Flask React Project
+# Shoostarter Project
 
-This is the starter for the Flask React project.
+Welcome to the capstone-project-shootstarter wiki! This is a small project which is a clone of Kickstarter website, I worked on this as a proof for all my knowledge and experiences that I gained at AppAcademy.
+
+Deployed Live Link: https://shootstarter.onrender.com
+
+##Major Feature
+- There are 2 major features right now which have full CRUD (Create, Read, Update, Delete) in this project:
+  - Projects
+  - Backing projects and reward (Pledges)
+
+##Future Feature
+- These are list of future feature that are coming:
+  - Comments
+  - Likes
+  - Search
+  - User Profile
+
+##Techonology
+All technologies I used in this project are:
+  - Backend: Python, Flask Server
+  - Frontend: JavaScript, React, Redux, HTML, CSS 
+
+##Landing Page
+![image](https://user-images.githubusercontent.com/112263162/221633477-ab8fad57-ff44-48b5-ab97-aa0894b0f12c.png)
+
+##Project Detail Page
+![image](https://user-images.githubusercontent.com/112263162/221633619-5fe16443-9aa3-47a2-9c83-ed6673f14abf.png)
+![image](https://user-images.githubusercontent.com/112263162/221633766-c6543f23-0d61-432a-9641-23952cfb368b.png)
+
 
 ## Getting started
 1. Clone this repository (only this branch)
