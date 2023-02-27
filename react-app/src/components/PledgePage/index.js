@@ -27,7 +27,7 @@ const PledgePage = () => {
     dispatch(thunkLoadAllProjects())
   }, [dispatch])
 
-  if (pledges.length == 0 || currentProject == undefined) {
+  if (currentProject == undefined) {
     return null
   }
 
@@ -47,7 +47,7 @@ const PledgePage = () => {
             />
           }
         </div>
-        {pledges.map(pledge => <PledgeCard pledge={pledge} key={pledge.id} />)}
+        {pledges && pledges.map(pledge => <PledgeCard pledge={pledge} key={pledge.id} />)}
       </div>
     </div>
   )
