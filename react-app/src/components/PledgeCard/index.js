@@ -6,6 +6,7 @@ import UpdatePledgeModal from "../UpdatePledgeModal";
 import { thunkDeletePledge, thunkChoosePledge } from "../../store/pledge";
 import { useModal } from "../../context/Modal";
 import ThankYouModal from "./ThankYouModal";
+import ConfirmDeletePledge from "./ConfirmDeletePledge";
 import './PledgeCard.css'
 
 
@@ -57,9 +58,12 @@ const PledgeCard = ({ pledge }) => {
           <div className="update_delete">
             <OpenModalButton 
               buttonText='Update Pledge'
-              modalComponent={<UpdatePledgeModal pledge={pledge}/>}
+              modalComponent={<UpdatePledgeModal pledge={pledge} />}
             />
-            <button onClick={() => deletePledge(pledge.id)}>Delete Pledge</button>
+            <OpenModalButton 
+              buttonText="Delete Pledge"
+              modalComponent={<ConfirmDeletePledge pledge={pledge} />}
+            />
           </div> 
         }
         {currentUser && pledge.owner_id != currentUser.id && 
