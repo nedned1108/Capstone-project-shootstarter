@@ -6,15 +6,14 @@
   padding-right: 10vw;
   border-top: 1px solid rgb(206, 206, 206);
   margin-top: 20px;
-  height: 150px;
+  height: 200px;
   bottom: 0;
 }
-.footerMainDiv img {
+.footerImg {
   position: absolute;
   object-fit: cover;
   z-index: -1;
-  max-height: 400px;
-  height: 30vh;
+  height: 20vh;
   width: 80%;
   right: 0;
 }
