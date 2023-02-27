@@ -1,0 +1,32 @@
+.footerMainDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  border-top: 1px solid rgb(206, 206, 206);
+  margin-top: 20px;
+  height: 150px;
+}
+.footerMainDiv img {
+  position: absolute;
+  object-fit: cover;
+  z-index: -1;
+  max-height: 400px;
+  height: 30vh;
+  width: 80%;
+  right: 0;
+}
+.footerInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footerLink {
+  display: flex;
+  column-gap: 20px;
+}
+.footerTech {
+  display: flex;
+  justify-content: space-between;
+}
