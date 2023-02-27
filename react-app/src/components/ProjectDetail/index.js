@@ -7,6 +7,7 @@ import UpdateProjectModal from "../UpdateProjectModal";
 import OpenModalButton from "../OpenModalButton";
 import AddImageModal from "./AddImageModal";
 import './ProjectDetail.css'
+import no_image from '../../images/empty-image.png' 
 
 
 const ProjectDetail = () => {
@@ -28,6 +29,10 @@ const ProjectDetail = () => {
   const func = (e) => {
     const el = document.getElementsByClassName(e)
     el[0].scrollIntoView()
+  }
+
+  const onImageError = (e) => {
+    e.target.src = no_image
   }
 
   if (!currentProject) {
@@ -86,7 +91,7 @@ const ProjectDetail = () => {
             {currentProject.story}
           </div>
           <div className="middleDivImg">
-            {currentProject.project_images.map(image => <img src={image.url}/>)}
+            {currentProject.project_images.map(image => <img src={image.url} onError={onImageError}/>)}
           </div>
           <div>
             <h2>Terms and Condition</h2>

@@ -59,7 +59,7 @@ function SignupFormPage() {
         <div className="input-form">
           <label>Email</label>
             <input
-              type="text"
+              type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
