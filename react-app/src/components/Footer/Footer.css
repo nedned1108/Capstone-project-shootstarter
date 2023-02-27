@@ -7,6 +7,7 @@
   border-top: 1px solid rgb(206, 206, 206);
   margin-top: 20px;
   height: 150px;
+  bottom: 0;
 }
 .footerMainDiv img {
   position: absolute;
@@ -24,7 +25,8 @@
 }
 .footerLink {
   display: flex;
-  column-gap: 20px;
+  column-gap: 5vw;
+  font-size: 25px;
 }
 .footerTech {
   display: flex;
