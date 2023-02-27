@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useModal } from '../../context/Modal';
 import { useDispatch } from 'react-redux';
 import { thunkDeletePledge } from '../../store/pledge';
@@ -17,7 +17,7 @@ const ConfirmDeletePledge = ({ pledge }) => {
   }
   return (
     <div>
-      <h1>Confirm Delete</h1>
+      <h1>Confirm Delete Pledge</h1>
       <button onClick={() => deletePledge(pledge.id)} >Delete</button>
       <button onClick={cancelDelete} >Cancel</button>
     </div>

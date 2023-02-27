@@ -6,6 +6,7 @@ import { thunkDeleteProject } from "../../store/project";
 import UpdateProjectModal from "../UpdateProjectModal";
 import OpenModalButton from "../OpenModalButton";
 import AddImageModal from "./AddImageModal";
+import ConfirmDeleteProject from "./ConfirmDeleteProject";
 import './ProjectDetail.css'
 import no_image from '../../images/empty-image.png' 
 import user_image from '../../images/default-user.png'
@@ -70,7 +71,10 @@ const ProjectDetail = () => {
                 buttonText="Update Project"
                 modalComponent={<UpdateProjectModal project={currentProject}/>}
               />
-              <button onClick={() => deleteProject(currentProject.id)}>Delete Project</button>
+              <OpenModalButton 
+                buttonText="Delete Project"
+                modalComponent={<ConfirmDeleteProject project={currentProject}/>}
+              />
               <OpenModalButton 
                 buttonText="Add Images"
                 modalComponent={<AddImageModal project_id={currentProject.id}/>}
