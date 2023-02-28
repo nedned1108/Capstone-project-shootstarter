@@ -5,5 +5,5 @@ from wtforms.validators import DataRequired, URL
 
 
 class ProjectImageForm(FlaskForm):
-  url = StringField('url', validators=[DataRequired(), URL()])
+  url = StringField('url', validators=[DataRequired(message="Image is required"), URL(message="Image is not url")])
   project_id = IntegerField('project_id', validators=[DataRequired()])

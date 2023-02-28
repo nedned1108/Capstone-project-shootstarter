@@ -7,7 +7,7 @@ def seed_pledges():
     price=2,
     ships_to="Anywhere in the world",
     rewards="No rewards, but receive project updates, help bring Tactics to life, and gain access to the pledge manager which includes these awesome products and many other great Stone Blade games & accessories!",
-    estimated_delivery="Apr 2024",
+    estimated_delivery="2024-04-30",
     project_id=1,
     owner_id=1
   )
@@ -16,7 +16,7 @@ def seed_pledges():
     price=60,
     ships_to="Anywhere in the world",
     rewards="Get a copy of Ascension Tactics: Inferno with standees, including all non-mini stretch goals. This pledge level does not include minis.",
-    estimated_delivery="Apr 2024",
+    estimated_delivery="2024-04-30",
     project_id=1,
     owner_id=1
   )
@@ -25,7 +25,7 @@ def seed_pledges():
     price=135,
     ships_to="Anywhere in the world",
     rewards="Get Ascension Tactics: Inferno, the minis, all stretch goals, plus 3 packs of sleeves (enough for the whole game) and a playmat!",
-    estimated_delivery="Apr 2024",
+    estimated_delivery="2024-04-30",
     project_id=1,
     owner_id=1
   )
@@ -34,7 +34,7 @@ def seed_pledges():
     price=175,
     ships_to="Anywhere in the world",
     rewards="Get a copy of Ascension Tactics: Inferno plus the minis and all stretch goals!",
-    estimated_delivery="Apr 2024",
+    estimated_delivery="2024-04-30",
     project_id=1,
     owner_id=1
   )
@@ -43,7 +43,7 @@ def seed_pledges():
     price=350,
     ships_to="Anywhere in the world",
     rewards="Get Ascension Tactics: Inferno and its minis, Ascension Tactics retail edition and its minis, 7 packs of sleeves (enough for both games), 2 playmats, and all stretch goals!",
-    estimated_delivery="Apr 2024",
+    estimated_delivery="2024-04-30",
     project_id=1,
     owner_id=1
   )
@@ -52,7 +52,7 @@ def seed_pledges():
     price=2000,
     ships_to="Anywhere in the world",
     rewards="Get everything from the Full Blase pledge level PLUS your own hero or construct! We'll create art based on your concept and include it in all Ascension Tactics: Inferno games.",
-    estimated_delivery="Apr 2024",
+    estimated_delivery="2024-04-30",
     project_id=1,
     owner_id=1
   )
@@ -61,7 +61,7 @@ def seed_pledges():
     price=7500,
     ships_to="Anywhere in the world",
     rewards="Get everything from the Full Blase pledge level PLUS your own custom center deck champion! We'll create art and a mini sculpt based on your character design and include it in this or a future Tactics game!",
-    estimated_delivery="Apr 2024",
+    estimated_delivery="2024-04-30",
     project_id=1,
     owner_id=1
   )
@@ -70,7 +70,7 @@ def seed_pledges():
     price=1,
     ships_to="Only certain countries",
     rewards="As a secret keeper of the Unforgotten you have my sincerest gratitude",
-    estimated_delivery="May 2023",
+    estimated_delivery="2023-05-31",
     project_id=2,
     owner_id=2
   )
@@ -79,7 +79,7 @@ def seed_pledges():
     price=25,
     ships_to="Only certain countries",
     rewards='You will be a "Keeper" of: One Handmade, One-of a-Kind Faerie Pendant!',
-    estimated_delivery="May 2023",
+    estimated_delivery="2023-05-31",
     project_id=2,
     owner_id=2
   )
@@ -88,7 +88,7 @@ def seed_pledges():
     price=25,
     ships_to="Only certain countries",
     rewards='You will be a "Keeper" of:One Handmade, One-of a-Kind Fantasy Creature Pendant!',
-    estimated_delivery="May 2023",
+    estimated_delivery="2023-05-31",
     project_id=2,
     owner_id=2
   )
@@ -97,7 +97,7 @@ def seed_pledges():
     price=75,
     ships_to="Only certain countries",
     rewards='You will be a "Keeper" of: Three Handmade One-of-a-Kind Pendants They can be worn or hung on your wall as a mini gallery! (Or a doll house.)',
-    estimated_delivery="May 2023",
+    estimated_delivery="2023-05-31",
     project_id=2,
     owner_id=2
   )
@@ -106,7 +106,7 @@ def seed_pledges():
     price=125,
     ships_to="Only certain countries",
     rewards='You will be a "Keeper" of: Five Handmade One-of-a-Kind Pendants',
-    estimated_delivery="May 2023",
+    estimated_delivery="2023-05-31",
     project_id=2,
     owner_id=2
   )
@@ -115,7 +115,7 @@ def seed_pledges():
     price=474,
     ships_to="Anywhere in the world",
     rewards='Get the Revopoint RANGE Standard Package at the KS Limited Special Price US$474 - 35% OFF US$729. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
-    estimated_delivery="July 2023",
+    estimated_delivery="2023-05-31",
     project_id=3,
     owner_id=2
   )
@@ -124,7 +124,7 @@ def seed_pledges():
     price=547,
     ships_to="Anywhere in the world",
     rewards='Get the Revopoint RANGE Standard Package at the KS Special Price US$547 - 25% OFF US$729. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
-    estimated_delivery="July 2023",
+    estimated_delivery="2023-05-31",
     project_id=3,
     owner_id=2
   )
@@ -133,7 +133,7 @@ def seed_pledges():
     price=779,
     ships_to="Anywhere in the world",
     rewards='Get the Revopoint RANGE Premium Package at the KS Limited Special Price US$779 - 35% OFF US$1199. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
-    estimated_delivery="July 2023",
+    estimated_delivery="2024-02-01",
     project_id=3,
     owner_id=2
   )
@@ -142,7 +142,7 @@ def seed_pledges():
     price=899,
     ships_to="Anywhere in the world",
     rewards='Get the Revopoint RANGE Premium Package at the KS Special Price US$899 - 25% OFF US$1199. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
-    estimated_delivery="July 2023",
+    estimated_delivery="2024-02-01",
     project_id=3,
     owner_id=2
   )
@@ -151,7 +151,7 @@ def seed_pledges():
     price=328,
     ships_to="Anywhere in the world",
     rewards='Get the Revopoint RANGE Standard Package at the Super Early Bird Price US$328 - 55% OFF US$729. The shipping information will be collected after the campaign ends. Shipping starts in April, fast express within 7 days! A one-year warranty is included.',
-    estimated_delivery="July 2023",
+    estimated_delivery="2024-02-01",
     project_id=3,
     owner_id=2
   )
@@ -160,7 +160,7 @@ def seed_pledges():
     price=1,
     ships_to="Anywhere in the world",
     rewards='Get a taste of romantic fantasy with a digital version of the short story MISTRESS BOOTSI, plus my thanks!',
-    estimated_delivery="May 2023",
+    estimated_delivery="2023-06-15",
     project_id=4,
     owner_id=5
   )
@@ -169,7 +169,7 @@ def seed_pledges():
     price=5,
     ships_to="Anywhere in the world",
     rewards='Get your copy months in advance of retail release, plus all digital stretch rewards we unlock!',
-    estimated_delivery="May 2023",
+    estimated_delivery="2023-06-15",
     project_id=4,
     owner_id=5
   )
@@ -178,7 +178,7 @@ def seed_pledges():
     price=10,
     ships_to="Anywhere in the world",
     rewards='An early copy of Faerie Hearts, plus Mermaid Song - a collection of five fairytale retellings.',
-    estimated_delivery="May 2023",
+    estimated_delivery="2023-06-15",
     project_id=4,
     owner_id=5
   )
@@ -187,7 +187,7 @@ def seed_pledges():
     price=25,
     ships_to="Anywhere in the world",
     rewards='Paperback edition (eBook included) of Faerie Hearts, delivered months before retail release, plus any unlocked stretch rewards. **US SHIPPING INCLUDED**',
-    estimated_delivery="May 2023",
+    estimated_delivery="2023-06-15",
     project_id=4,
     owner_id=5
   )
@@ -196,7 +196,7 @@ def seed_pledges():
     price=35,
     ships_to="Anywhere in the world",
     rewards='A complete digital collection overflowing with fantasy romance! Includes all six Darkwood novels (Into the Darkwood contains the books Elfhame, Hawthorne, and Raine), plus Faerie Hearts and Mermaid Song.',
-    estimated_delivery="May 2023",
+    estimated_delivery="2023-06-15",
     project_id=4,
     owner_id=5
   )
@@ -205,7 +205,7 @@ def seed_pledges():
     price=20,
     ships_to="Anywhere in the world",
     rewards="🐸 Mika and the Witch's Mountain - Digital Game in your platform📬 Digital Wallpaper Set",
-    estimated_delivery="July 2023",
+    estimated_delivery="2023-11-10",
     project_id=5,
     owner_id=4
   )
@@ -214,7 +214,7 @@ def seed_pledges():
     price=25,
     ships_to="Anywhere in the world",
     rewards="🐸 Mika and the Witch's Mountain - Digital Game in your platform 👒 Kickstarter Exclusive Outfit 📙 Mika Digital Artbook✨ Digital goodies pack 📬 Digital Wallpaper Set",
-    estimated_delivery="July 2023",
+    estimated_delivery="2023-11-10",
     project_id=5,
     owner_id=4
   )
@@ -223,7 +223,7 @@ def seed_pledges():
     price=40,
     ships_to="Anywhere in the world",
     rewards='⭐You can also add the physical Nintendo Switch game to other rewards as an add-on',
-    estimated_delivery="July 2023",
+    estimated_delivery="2023-11-10",
     project_id=5,
     owner_id=4
   )
@@ -232,7 +232,7 @@ def seed_pledges():
     price=60,
     ships_to="Anywhere in the world",
     rewards="🐈‍⬛ Mika color figure 4”/ 10cm PVC/Vynil🐸 Mika and the Witch's Mountain - Digital Game in your platform 👒 Kickstarter Exclusive Outfit 💌 Thank You Postcard (physical) 📙 Mika Digital Artbook ✨ Digital goodies pack 📬 Digital Wallpaper Set 😀 Your name in the credits",
-    estimated_delivery="July 2023",
+    estimated_delivery="2023-11-10",
     project_id=5,
     owner_id=4
   )
@@ -241,7 +241,7 @@ def seed_pledges():
     price=65,
     ships_to="Anywhere in the world",
     rewards="🐸 Mika and the Witch's Mountain - Digital Game in your platform ⚡️ Beta Access - Steam key extra 📢 Discord channel exclusive for backers 👒 Kickstarter Exclusive Outfit ⭐️ Exclusive broom trail VFX 📙 Mika Digital Artbook 💌 Thank You Postcard (physical) 🖌️ A4 Printed numbered (physical) 🎒 Witchy Sticker Pack (physical) ✨ Digital goodies pack 📬 Digital Wallpaper Set 😀 Your name in the credits",
-    estimated_delivery="July 2023",
+    estimated_delivery="2023-11-10",
     project_id=5,
     owner_id=4
   )
@@ -250,7 +250,7 @@ def seed_pledges():
     price=80,
     ships_to="Anywhere in the world",
     rewards="🐈‍⬛ Mika color figure 4”/ 10cm PVC/Vynil 🎮 Mika and the Witch's Mountain - Physical Game Nintendo Switch 👒 Kickstarter Exclusive Outfit 💌 Thank You Postcard (physical) 📙 Mika Digital Artbook ✨ Digital goodies pack 📬 Digital Wallpaper Set 😀 Your name in the credits",
-    estimated_delivery="July 2023",
+    estimated_delivery="2023-11-10",
     project_id=5,
     owner_id=4
   )

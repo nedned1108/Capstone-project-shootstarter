@@ -6,8 +6,10 @@ import { thunkDeleteProject } from "../../store/project";
 import UpdateProjectModal from "../UpdateProjectModal";
 import OpenModalButton from "../OpenModalButton";
 import AddImageModal from "./AddImageModal";
+import ConfirmDeleteProject from "./ConfirmDeleteProject";
 import './ProjectDetail.css'
-
+import no_image from '../../images/empty-image.png' 
+import user_image from '../../images/default-user.png'
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
@@ -20,14 +22,17 @@ const ProjectDetail = () => {
   useEffect(() => {
     dispatch(thunkLoadAllProjects())
   }, [dispatch, projectId])
-  const deleteProject = (e) => {
-    dispatch(thunkDeleteProject(e))
-    history.push('/')
-    return 
-  }
+
   const func = (e) => {
     const el = document.getElementsByClassName(e)
     el[0].scrollIntoView()
+  }
+
+  const onImageError = (e) => {
+    e.target.src = no_image
+  }
+  const onProfileImageError = (e) => {
+    e.target.src = user_image
   }
 
   if (!currentProject) {
@@ -42,7 +47,7 @@ const ProjectDetail = () => {
       </div>
       <div className="projectImgInfo">
         <div className="projectImg">
-          <img src={currentProject.project_images[0].url}/>
+          <img src={currentProject.project_images[0].url} onError={onImageError}/>
         </div>
         <div className="projectInfo">
           <div className="projectInfoNum">
@@ -62,7 +67,10 @@ const ProjectDetail = () => {
                 buttonText="Update Project"
                 modalComponent={<UpdateProjectModal project={currentProject}/>}
               />
-              <button onClick={() => deleteProject(currentProject.id)}>Delete Project</button>
+              <OpenModalButton 
+                buttonText="Delete Project"
+                modalComponent={<ConfirmDeleteProject project={currentProject}/>}
+              />
               <OpenModalButton 
                 buttonText="Add Images"
                 modalComponent={<AddImageModal project_id={currentProject.id}/>}
@@ -86,7 +94,7 @@ const ProjectDetail = () => {
             {currentProject.story}
           </div>
           <div className="middleDivImg">
-            {currentProject.project_images.map(image => <img src={image.url}/>)}
+            {currentProject.project_images.map(image => <img src={image.url} onError={onImageError}/>)}
           </div>
           <div>
             <h2>Terms and Condition</h2>
@@ -104,7 +112,7 @@ const ProjectDetail = () => {
         </div>
         <div>
           <div className="rightDiv">
-            <img src={currentProject.owner.profile_image}/>
+            <img src={currentProject.owner.profile_image} onError={onProfileImageError}/>
             <h4>{currentProject.owner.first_name} {currentProject.owner.last_name}</h4>
             <p>{currentProject.owner.bio}</p>
           </div>

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import { thunkLoadAllPledges } from "../../store/pledge";
 import { thunkLoadAllProjects } from "../../store/project";
 import CreatePledgeModal from "../CreatePledgeModal";
@@ -34,7 +34,9 @@ const PledgePage = () => {
   return (
     <div className="pledgeMainDiv">
       <div className="projectTitle">
-        <h2>{currentProject.project_name}</h2>
+        <NavLink to={`/project/${projectId}`}>
+          <h2>{currentProject.project_name}</h2>
+        </NavLink>
         <p>By {currentProject.owner.first_name} {currentProject.owner.last_name}</p>
       </div>
       <div className="pledgesDiv">

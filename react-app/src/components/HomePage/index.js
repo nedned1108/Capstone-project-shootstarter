@@ -5,7 +5,7 @@ import { thunkLoadAllProjects } from "../../store/project";
 import { thunkLoadAllPledges } from "../../store/pledge";
 import { NavLink } from "react-router-dom";
 import "./HomePage.css";
-
+import no_image from '../../images/empty-image.png' 
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -43,6 +43,10 @@ const HomePage = () => {
     return sum
   }
 
+  const onImageError = (e) => {
+    e.target.src = no_image
+  }
+
   useEffect(() => {
     dispatch(thunkLoadAllProjects())
     dispatch(thunkLoadAllPledges())
@@ -74,25 +78,16 @@ const HomePage = () => {
         <div className="mainProject">
           <h5>FEATURED PROJECT</h5>
           <NavLink to={`/project/${mostPledges.id}`}>
-            <img src={mostPledges.project_images[0].url}/>
+            <img src={mostPledges.project_images[0].url} onError={onImageError}/>
             <h3>{mostPledges.project_name}</h3>
             <p>{mostPledges.description}</p>
           </NavLink>
         </div>
         <div className="recommendedProjectsDiv">
           <h5>RECOMMEND FOR YOU</h5>
-          {/* <div className="singleProject">
-            <NavLink to={`/project/${projects[1].id}`}>
-              <img src={projects[1].project_images[0].url}/>
-              <div className="singleProjectInfo">
-                <h5>{projects[1].project_name}</h5>
-                <p>By {projects[1].owner.first_name} {projects[1].owner.last_name}</p>
-              </div>
-            </NavLink>
-          </div> */}
           <div className="singleProject">
             <NavLink to={`/project/${random3[0].id}`}>
-              <img src={random3[0].project_images[0].url}/>
+              <img src={random3[0].project_images[0].url} onError={onImageError}/>
               <div className="singleProjectInfo">
                 <h5>{random3[0].project_name}</h5>
                 <p>By {random3[0].owner.first_name} {random3[0].owner.last_name}</p>
@@ -101,7 +96,7 @@ const HomePage = () => {
           </div>
           <div className="singleProject">
             <NavLink to={`/project/${random3[1].id}`}>
-              <img src={random3[1].project_images[0].url}/>
+              <img src={random3[1].project_images[0].url} onError={onImageError}/>
               <div className="singleProjectInfo">
                 <h5>{random3[1].project_name}</h5>
                 <p>By {random3[1].owner.first_name} {random3[1].owner.last_name}</p>
@@ -110,7 +105,7 @@ const HomePage = () => {
           </div>
           <div className="singleProject">
             <NavLink to={`/project/${random3[2].id}`}>
-              <img src={random3[2].project_images[0].url}/>
+              <img src={random3[2].project_images[0].url} onError={onImageError}/>
               <div className="singleProjectInfo">
                 <h5>{random3[2].project_name}</h5>
                 <p>By {random3[2].owner.first_name} {random3[2].owner.last_name}</p>
@@ -124,7 +119,7 @@ const HomePage = () => {
         {projects.map(project => 
           <NavLink className="allProjectsSingle" to={`/project/${project.id}`}>
             <div className="allProjectsImg">
-              <img src={project.project_images[0].url}/>
+              <img src={project.project_images[0].url} onError={onImageError}/>
             </div>
             <div className="allProjectsInfo">
               <h2>{project.project_name}</h2>
