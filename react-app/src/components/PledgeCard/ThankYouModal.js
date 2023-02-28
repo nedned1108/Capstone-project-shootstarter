@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useModal } from '../../context/Modal';
+import React from 'react';
 import './PledgeCard.css'
 
 const ThankYouModal = () => {
