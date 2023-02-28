@@ -22,11 +22,7 @@ const ProjectDetail = () => {
   useEffect(() => {
     dispatch(thunkLoadAllProjects())
   }, [dispatch, projectId])
-  const deleteProject = (e) => {
-    dispatch(thunkDeleteProject(e))
-    history.push('/')
-    return 
-  }
+
   const func = (e) => {
     const el = document.getElementsByClassName(e)
     el[0].scrollIntoView()

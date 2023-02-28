@@ -7,9 +7,11 @@
 
 .price_reward {
   width: 50%;
+  overflow: hidden;
 }
 .price_reward h4 {
   font-weight: 600;
+
 }
 
 .delivery {
@@ -23,6 +25,7 @@
   font-size: 14px;
   margin: 0;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 .delivery button {
   cursor: pointer;
