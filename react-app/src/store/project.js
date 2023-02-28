@@ -81,7 +81,6 @@ export const thunkUpdateProject = (data) => async (dispatch) => {
     },
     body: JSON.stringify(data)
   });
-  console.log(response)
   if (response.ok) {
     const project = await response.json();
     dispatch(updateProject(project))
