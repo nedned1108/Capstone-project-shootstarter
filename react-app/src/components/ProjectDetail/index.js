@@ -2,11 +2,13 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink, useParams, useHistory } from "react-router-dom";
 import { thunkLoadAllProjects } from "../../store/project";
-import { thunkDeleteProject } from "../../store/project";
+import { thunkLoadAllComments } from "../../store/comment";
 import UpdateProjectModal from "../UpdateProjectModal";
 import OpenModalButton from "../OpenModalButton";
 import AddImageModal from "./AddImageModal";
 import ConfirmDeleteProject from "./ConfirmDeleteProject";
+import CommentCard from "../CommentCard";
+
 import './ProjectDetail.css'
 import no_image from '../../images/empty-image.png' 
 import user_image from '../../images/default-user.png'
@@ -16,11 +18,17 @@ const ProjectDetail = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const projects = useSelector(state => state.project.projects)
+  const comments = useSelector(state => state.project.comments)
   const currentProject = Object.values(projects).find(project => project.id == projectId)
   const currentUser = useSelector(state => state.session.user)
+  let projectComments;
+  if (comments) {
+    projectComments = Object.values(comments).filter(comments.project_id == currentProject.id)
+  }
 
   useEffect(() => {
     dispatch(thunkLoadAllProjects())
+    dispatch(thunkLoadAllComments())
   }, [dispatch, projectId])
 
   const func = (e) => {
@@ -86,6 +94,7 @@ const ProjectDetail = () => {
           <div className="leftDiv">
             <button className="storyButton" onClick={() => func("story")}>STORY</button>
             <button className="riskButton" onClick={() => func("risks")}>RISKS</button>
+            <button className="commentButton" onClick={() => func("comments")}>COMMENTS</button>
           </div>
         </div>
         <div className="middleDiv">
@@ -108,6 +117,12 @@ const ProjectDetail = () => {
           <div>
             <h2 className="risks">Risks</h2>
             {currentProject.risks}
+          </div>
+          <div className="comments">
+            <h2>Comments</h2>
+            <div className="commentMainDiv">
+              {comments ? comments.map(comment => <CommentCard comment={comment}/>) : "No Comment"}
+            </div>
           </div>
         </div>
         <div>
