@@ -17,29 +17,35 @@ const UpdateProjectModal = ({ project }) => {
   const [url, setUrl] = useState(project.project_images[0].url);
   const [errors, setErrors] = useState([]);
   const { closeModal } = useModal();
+  const today = new Date();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
+    const checkEndDay = new Date(end_day)
 
-    const projectData = {
-      ...project,
-      project_name,
-      description,
-      story,
-      risks,
-      goal,
-      end_day,
-      project_type,
-      url
-    };
-
-    const data = await dispatch(thunkUpdateProject(projectData))
-    if (data.errors) {
-      setErrors(data.errors)
+    if (checkEndDay <= today) {
+      setErrors(['end day can not be today or in the past'])
     } else {
-      setErrors([]);
-      closeModal();
+      const projectData = {
+        ...project,
+        project_name,
+        description,
+        story,
+        risks,
+        goal,
+        end_day,
+        project_type,
+        url
+      };
+
+      const data = await dispatch(thunkUpdateProject(projectData))
+      if (data.errors) {
+        setErrors(data.errors)
+      } else {
+        setErrors([]);
+        closeModal();
+      }
     }
   }
 
@@ -100,7 +106,7 @@ const UpdateProjectModal = ({ project }) => {
         <div className="input-form">
           <label>End Day:</label>
           <input
-            type='text'
+            type='date'
             value={end_day}
             onChange={(e) => setEndDay(e.target.value)}
             required

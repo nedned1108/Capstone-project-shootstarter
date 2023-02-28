@@ -17,6 +17,7 @@ const ConfirmDeleteProject = ({ project }) => {
   const deleteProject = (e) => {
     dispatch(thunkDeleteProject(e))
     history.push('/')
+    closeModal()
   }
 
   return (

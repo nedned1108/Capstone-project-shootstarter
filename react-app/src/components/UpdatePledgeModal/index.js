@@ -16,25 +16,30 @@ const UpdatePledgeModal = ({ pledge }) => {
   const [rewards, setRewards] = useState(pledge.rewards);
   const [estimated_delivery, setEstimatedDelivery] = useState(pledge.estimated_delivery);
   const [errors, setErrors] = useState([]);
+  const today = new Date();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-
-    const pledgeData = {
-      ...pledge,
-      pledge_name,
-      price,
-      ships_to,
-      rewards,
-      estimated_delivery
-    }
-    const data = await dispatch(thunkUpdatePledge(pledgeData))
-    if (data.errors) {
-      setErrors(data.errors)
+    const checkDelivery = new Date(estimated_delivery)
+    if (checkDelivery <= today) {
+      setErrors(['estimated delivery can not be today or in the past'])
     } else {
-      setErrors([]);
-      closeModal()
+      const pledgeData = {
+        ...pledge,
+        pledge_name,
+        price,
+        ships_to,
+        rewards,
+        estimated_delivery
+      }
+      const data = await dispatch(thunkUpdatePledge(pledgeData))
+      if (data.errors) {
+        setErrors(data.errors)
+      } else {
+        setErrors([]);
+        closeModal()
+      }
     }
   }
 
@@ -86,7 +91,7 @@ const UpdatePledgeModal = ({ pledge }) => {
         <div className="input-form">
           <label>Estimated Delivery:</label>
           <input
-            type='text'
+            type='date'
             value={estimated_delivery}
             onChange={(e) => setEstimatedDelivery(e.target.value)}
             required
