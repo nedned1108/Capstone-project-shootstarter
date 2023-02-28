@@ -42,5 +42,5 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'bio': self.bio,
             'profile_image': self.profile_image,
-            # 'pledges': [pledge.to_dict() for pledge in self.pledges]
+            'pledges': [pledge.id for pledge in self.pledges]
         }

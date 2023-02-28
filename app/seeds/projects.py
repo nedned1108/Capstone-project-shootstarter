@@ -20,7 +20,7 @@ def seed_projects():
     goal=20000,
     current_fund=0,
     backers=0,
-    end_day="March 1st 2023",
+    end_day="2023-03-23",
     project_type="game",
     owner_id=1
   )
@@ -41,7 +41,7 @@ def seed_projects():
     goal=900,
     current_fund=0,
     backers=0,
-    end_day="March 25 2023",
+    end_day="2023-04-20",
     project_type="art",
     owner_id=2
   )
@@ -64,7 +64,7 @@ def seed_projects():
     goal=10000,
     current_fund=0,
     backers=0,
-    end_day="May 15 2023",
+    end_day="2023-05-13",
     project_type="design",
     owner_id=2
   )
@@ -84,7 +84,7 @@ def seed_projects():
     goal=1000,
     current_fund=0,
     backers=0,
-    end_day="April 26 2023",
+    end_day="2023-04-16",
     project_type="publishing",
     owner_id=5
   )
@@ -107,7 +107,7 @@ def seed_projects():
     goal=42000,
     current_fund=0,
     backers=0,
-    end_day="March 13 2023",
+    end_day="2023-07-22",
     project_type="game",
     owner_id=4
   )

@@ -4,8 +4,11 @@ import { Link, useHistory } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
 import UpdatePledgeModal from "../UpdatePledgeModal";
 import { thunkDeletePledge, thunkChoosePledge } from "../../store/pledge";
+import { authenticate } from "../../store/session";
 import { useModal } from "../../context/Modal";
 import ThankYouModal from "./ThankYouModal";
+import ChooseOtherModal from "./ChooseOtherModal";
+import ConfirmDeletePledge from "./ConfirmDeletePledge";
 import './PledgeCard.css'
 
 
@@ -26,9 +29,13 @@ const PledgeCard = ({ pledge }) => {
       pledge_id: pledge.id,
       project_id: pledge.project_id
     };
-
-    const data = await dispatch(thunkChoosePledge(choice))
-    setModalContent(<ThankYouModal />)
+    if (currentUser.pledges.includes(pledge.id)) {
+      setModalContent(<ChooseOtherModal />)
+    } else {
+      const data = await dispatch(thunkChoosePledge(choice))
+      setModalContent(<ThankYouModal />)
+      dispatch(authenticate())
+    }
   }
 
   if (!pledge) {
@@ -57,9 +64,12 @@ const PledgeCard = ({ pledge }) => {
           <div className="update_delete">
             <OpenModalButton 
               buttonText='Update Pledge'
-              modalComponent={<UpdatePledgeModal pledge={pledge}/>}
+              modalComponent={<UpdatePledgeModal pledge={pledge} />}
             />
-            <button onClick={() => deletePledge(pledge.id)}>Delete Pledge</button>
+            <OpenModalButton 
+              buttonText="Delete Pledge"
+              modalComponent={<ConfirmDeletePledge pledge={pledge} />}
+            />
           </div> 
         }
         {currentUser && pledge.owner_id != currentUser.id && 

@@ -7,7 +7,7 @@ def seed_project_images():
     project_id=1
   )
   ascension_images2 = ProjectImages(
-    url="https://ksr-ugc.imgix.net/assets/040/004/718/3878d6e69b71fe5651f60536156a9049_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1676911247&gif-q=50&q=92&s=f34e0bd48f43809c07d54c697286f36f",
+    url="https://ksr-ugc.imgix.net/assets/039/881/868/5533b000ac0761b92dfe81b327c5427c_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1675776795&gif-q=50&q=92&s=9feee17dd5b539f1cb48e7aab545579f",
     project_id=1
   )
   ascension_images3 = ProjectImages(
@@ -23,7 +23,7 @@ def seed_project_images():
     project_id=1
   )
   ascension_images6 = ProjectImages(
-    url="https://ksr-ugc.imgix.net/assets/040/017/367/d2149c7ac3831032734d25ca029ff40d_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1677000426&gif-q=50&q=92&s=fbdd04c824792b3c41319e2fb1717c49",
+    url="https://ksr-ugc.imgix.net/assets/040/078/618/2628ec261096ceb56d281ee971531f2f_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1677538354&gif-q=50&q=92&s=3e071f0cb3fae4834a63dac11b15c02f",
     project_id=1
   )
   ascension_images7 = ProjectImages(
@@ -143,7 +143,7 @@ def seed_project_images():
     project_id=5
   )
   mika_images3 = ProjectImages(
-    url="https://ksr-ugc.imgix.net/assets/040/055/777/137d49627035935a1c51dd3777337e09_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1677315494&gif-q=50&lossless=true&s=e4abafe4a80d9400b5005a61a2ea2d86",
+    url="https://ksr-ugc.imgix.net/assets/040/062/906/8860ab7f63386c7b293364482abfa4cf_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1677402339&gif-q=50&lossless=true&s=62d05b3838d1ec4630647a663d45b503",
     project_id=5
   )
   mika_images4 = ProjectImages(

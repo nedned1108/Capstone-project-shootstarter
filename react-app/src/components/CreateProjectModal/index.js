@@ -20,6 +20,7 @@ export default function CreateProjectModal() {
   const [errors, setErrors] = useState([]);
   const { closeModal } = useModal();
   const currentUser = useSelector(state => state.session.user)
+  const today = new Date();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,24 +29,30 @@ export default function CreateProjectModal() {
       closeModal()
       return history.push('/login')
     }
-    const project = {
-      project_name,
-      description,
-      story,
-      risks,
-      goal,
-      end_day,
-      project_type,
-      url
-    };
+    const checkEndDay = new Date(end_day)
 
-    const data = await dispatch(thunkCreateProject(project))
-    if (data.errors) {
-      setErrors(data.errors)
+    if (checkEndDay <= today) {
+      setErrors(['end day can not be today or in the past'])
     } else {
-      setErrors([]);
-      closeModal()
-      history.push(`/project/${data.id}`);
+      const project = {
+        project_name,
+        description,
+        story,
+        risks,
+        goal,
+        end_day,
+        project_type,
+        url
+      };
+  
+      const data = await dispatch(thunkCreateProject(project))
+      if (data.errors) {
+        setErrors(data.errors)
+      } else {
+        setErrors([]);
+        closeModal()
+        history.push(`/project/${data.id}`);
+      }
     }
   }
 
@@ -106,7 +113,7 @@ export default function CreateProjectModal() {
         <div className="input-form">
           <label>End Day:</label>
           <input
-            type='text'
+            type='date'
             value={end_day}
             onChange={(e) => setEndDay(e.target.value)}
             required

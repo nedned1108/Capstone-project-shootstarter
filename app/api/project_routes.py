@@ -2,6 +2,7 @@ from flask import Blueprint, redirect,session, request
 from flask_login import login_required, current_user
 from app.models import db, Project, ProjectImages, Pledge
 from app.forms import ProjectForm, ProjectImageForm, PledgeForm, ChoosePledgeForm
+from datetime import datetime, date
 
 project_routes = Blueprint('project', __name__)
 
@@ -12,7 +13,7 @@ def validation_errors_to_error_messages(validation_errors):
   errorMessages = []
   for field in validation_errors:
     for error in validation_errors[field]:
-      errorMessages.append(f'{field} : {error}')
+      errorMessages.append(f'{error}')
   return errorMessages
 
 
@@ -33,7 +34,14 @@ def post_project():
   """
   form = ProjectForm()
   form['csrf_token'].data = request.cookies['csrf_token']
+  
+  # today = date.today()
+  # end_day = datetime.strptime(form.data['end_day'], '%Y-%m-%d').date()
+  # if end_day <= today:
+  #   return {"errors": "end day can not be today or in the past"}, 400
+  
   if form.validate_on_submit():
+
     # Add and commit new project
     newProject = Project(
       project_name = form.data['project_name'],

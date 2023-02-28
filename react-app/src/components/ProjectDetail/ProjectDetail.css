@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 .projectTitle {
@@ -195,4 +196,28 @@
   cursor: pointer;
   margin: 5px;
   font-weight: 600;
+}
+
+
+/* ---------------delete project modal----------------- */
+.deleteProject {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.deleteProject h3 {
+  color: green;
+}
+.deleteProjectButton {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.deleteProjectButton button {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
 }
