@@ -16,10 +16,12 @@ const ConfirmDeletePledge = ({ pledge }) => {
     closeModal()
   }
   return (
-    <div>
-      <h1>Confirm Delete Pledge</h1>
-      <button onClick={() => deletePledge(pledge.id)} >Delete</button>
-      <button onClick={cancelDelete} >Cancel</button>
+    <div className='deletePledge'>
+      <h3>Confirm Delete Pledge</h3>
+      <div className='deletePledgeButton'>
+        <button onClick={() => deletePledge(pledge.id)} >Delete</button>
+        <button onClick={cancelDelete} >Cancel</button>
+      </div>
     </div>
   )
 }

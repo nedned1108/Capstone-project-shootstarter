@@ -20,10 +20,12 @@ const ConfirmDeleteProject = ({ project }) => {
   }
 
   return (
-    <div>
-      <h1>Confirm Delete Project</h1>
-      <button onClick={() => deleteProject(project.id)} >Delete</button>
-      <button onClick={cancelDelete} >Cancel</button>
+    <div className='deleteProject'>
+      <h3>Confirm Delete Project</h3>
+      <div className='deleteProjectButton'>
+        <button onClick={() => deleteProject(project.id)} >Delete</button>
+        <button onClick={cancelDelete} >Cancel</button>
+      </div>
     </div>
   )
 }
