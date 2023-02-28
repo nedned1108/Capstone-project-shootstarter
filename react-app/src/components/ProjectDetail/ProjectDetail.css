@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
 }
 
 .projectTitle {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 .projectMainDiv h3 {
   font-weight: 300;
@@ -108,6 +108,7 @@
 .middleDiv {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .story {
   margin-top: 0;
@@ -144,6 +145,7 @@
 }
 .rightDiv p {
   margin: 0;
+  overflow: hidden;
 }
 
 
