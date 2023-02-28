@@ -1,0 +1,14 @@
+.yourPledgeDiv {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: scroll;
+}
+.yourPledgeDiv h1 {
+  color: green;
+}
+.yourPledgeDiv div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}

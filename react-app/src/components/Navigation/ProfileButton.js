@@ -5,6 +5,7 @@ import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import user_image from '../../images/default-user.png'
+import AllPledgesModal from "../AllPledgesModal";
 import './Navigation.css'
 
 function ProfileButton({ user }) {
@@ -54,6 +55,12 @@ function ProfileButton({ user }) {
           <>
             <li>{user.username}</li>
             <li>{user.email}</li>
+            <li>
+              <OpenModalButton 
+                buttonText="Your Pledges"
+                modalComponent={<AllPledgesModal />}
+              />
+            </li>
             <li>
               <button className="logout" onClick={handleLogout}>Log Out</button>
             </li>
