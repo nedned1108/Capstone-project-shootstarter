@@ -139,7 +139,7 @@ def seed_project_images():
     project_id=5
   )
   mika_images2 = ProjectImages(
-    url="https://ksr-ugc.imgix.net/assets/039/577/163/a853a2128f646b4fc2404ad851e8c0a7_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1672737177&gif-q=50&q=92&s=6ea673132a9fa405f475f446bd8525d7",
+    url="https://ksr-ugc.imgix.net/assets/040/098/867/b56d4fe4341cdcdb34b7582fcbbc5e30_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1677686032&gif-q=50&lossless=true&s=38d68432d4acf4f29834975f0d7416d8",
     project_id=5
   )
   mika_images3 = ProjectImages(
@@ -151,7 +151,7 @@ def seed_project_images():
     project_id=5
   )
   mika_images5 = ProjectImages(
-    url="https://ksr-ugc.imgix.net/assets/040/062/906/8860ab7f63386c7b293364482abfa4cf_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1677402339&gif-q=50&lossless=true&s=62d05b3838d1ec4630647a663d45b503",
+    url="https://ksr-ugc.imgix.net/assets/040/098/887/e5b7645cf3207af0a58dd2b0a595e4ad_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1677686173&gif-q=50&lossless=true&s=33802e238270e5b19e35a62bd07568ec",
     project_id=5
   )
   mika_images6 = ProjectImages(
@@ -207,7 +207,7 @@ def seed_project_images():
 
 def undo_project_images():
   if environment == "production":
-    db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
+    db.session.execute(f"TRUNCATE table {SCHEMA}.projectImages RESTART IDENTITY CASCADE;")
   else:
     db.session.execute("DELETE FROM projectImages")
 

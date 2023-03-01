@@ -8,6 +8,7 @@ import OpenModalButton from "../OpenModalButton";
 import AddImageModal from "./AddImageModal";
 import ConfirmDeleteProject from "./ConfirmDeleteProject";
 import CommentCard from "../CommentCard";
+import CreateCommentModal from "../CreateCommentModal";
 
 import './ProjectDetail.css'
 import no_image from '../../images/empty-image.png' 
@@ -16,16 +17,21 @@ import user_image from '../../images/default-user.png'
 const ProjectDetail = () => {
   const { projectId } = useParams();
   const dispatch = useDispatch();
-  const history = useHistory();
   const projects = useSelector(state => state.project.projects)
-  const comments = useSelector(state => state.project.comments)
+  const comments = useSelector(state => state.comment.comments)
   const currentProject = Object.values(projects).find(project => project.id == projectId)
   const currentUser = useSelector(state => state.session.user)
   let projectComments;
   if (comments) {
-    projectComments = Object.values(comments).filter(comments.project_id == currentProject.id)
+    projectComments = Object.values(comments).filter(comment => comment.project_id == projectId)
   }
-
+  let daysToGo
+  let today = new Date()
+  if (currentProject) {
+    const oneDay = 1000*60*60*24;
+    const endDay = new Date(currentProject.end_day.split('-').join('/'))
+    daysToGo = Math.ceil((endDay.getTime() - today.getTime())/oneDay)
+  }
   useEffect(() => {
     dispatch(thunkLoadAllProjects())
     dispatch(thunkLoadAllComments())
@@ -63,7 +69,8 @@ const ProjectDetail = () => {
             <p>pledged of ${currentProject.goal}</p>
             <h4>{currentProject.backers}</h4>
             <p>backers</p>
-            <h4>{currentProject.end_day}</h4>
+            <h4>{daysToGo}</h4>
+            <p>days to go</p>
             <div className="pledgeButton">
               <NavLink to={`/project/${currentProject.id}/pledge`}>
                 Back this project
@@ -120,8 +127,14 @@ const ProjectDetail = () => {
           </div>
           <div className="comments">
             <h2>Comments</h2>
+            {currentUser.id != currentProject.owner_id &&
+              <OpenModalButton 
+                buttonText="Add your comment"
+                modalComponent={<CreateCommentModal project_id={currentProject.id} />}
+              />
+            }
             <div className="commentMainDiv">
-              {comments ? comments.map(comment => <CommentCard comment={comment}/>) : "No Comment"}
+              {projectComments && projectComments.map(comment => <CommentCard comment={comment}/>)}
             </div>
           </div>
         </div>

@@ -21,11 +21,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid gray;
 }
 .footerLink {
   display: flex;
   column-gap: 5vw;
   font-size: 25px;
+}
+.footerLink p {
+  cursor: pointer;
 }
 .footerTech {
   display: flex;
