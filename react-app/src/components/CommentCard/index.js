@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import UpdateCommentModal from "../UpdateCommentModal";
 import OpenModalButton from "../OpenModalButton";
+import ConfirmDeleteComment from "./ConfirmDeleteComment";
 import './CommentCard.css'
 
 const CommentCard = ({ comment }) => {
@@ -21,7 +22,10 @@ const CommentCard = ({ comment }) => {
                 buttonText={<i class="fa-solid fa-pen-to-square"></i>}
                 modalComponent={<UpdateCommentModal commentDetail={comment}/>}
               />
-              <button>{<i class="fa-solid fa-trash"></i>}</button>
+              <OpenModalButton 
+                buttonText={<i class="fa-solid fa-trash"></i>}
+                modalComponent={<ConfirmDeleteComment commentDetail={comment}/>}
+              />
             </div>
           : ''
         }

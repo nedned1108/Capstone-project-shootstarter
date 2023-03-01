@@ -116,7 +116,7 @@ const commentReducer = (state = initialState, action) => {
       return newState;
     case DELETE_COMMENT:
       newState.comments = {...state.comments}
-      delete newState.projects[action.payload]
+      delete newState.comments[action.payload]
       return newState;
     default:
       return state;
