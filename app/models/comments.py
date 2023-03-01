@@ -22,5 +22,6 @@ class Comment(db.Model):
       "comment": self.comment,
       "user_id": self.user_id,
       "project_id": self.project_id,
-      "user": {"username": self.user.username, "profile_image": self.user.profile_image}
+      "user": {"username": self.user.username, "profile_image": self.user.profile_image},
+      "created_at": self.created_at
     }

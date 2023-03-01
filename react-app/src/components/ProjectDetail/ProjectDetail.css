@@ -126,6 +126,14 @@
 }
 
 /* --------------------comment Div---------------------- */
+.comments button {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
 .commentMainDiv {
   display: flex;
   flex-direction: column;
