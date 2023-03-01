@@ -111,12 +111,73 @@ def seed_projects():
     project_type="game",
     owner_id=4
   )
+  good_day = Project(
+    project_name="'Good Day': a darkly comic new play about AI & immortality",
+    description="Help us bring 'Good Day' to Vault Festival in London this March.",
+    story="""
+      Double Telling (Instagram | Twitter) is a theatre company dedicated to developing bold new plays for the stage. 
+      Led by director & dramaturg Marlie Haco, we make experimental shows that seek to engage audiences in provocative ways. 
+      Our last show Proud played for an extended run at the King’s Head Theatre in 2022 and received 5-star reviews.  
+    """,
+    risks="""
+      Making live theatre involves team-related risks, including actors getting unwell or injured, but 'the show will go on' unless 
+      there is a major incident affecting the team such as a serious illness where a replacement cannot be found in time, or the Vault 
+      Festival itself is cancelled due to external unforeseeable events.
+    """,
+    goal=6000,
+    current_fund=0,
+    backers=0,
+    end_day="2023-08-02",
+    project_type="art",
+    owner_id=6
+  )
+  watch = Project(
+    project_name="An Innovative Wandering Hour Watch | Vendetta II Automatic",
+    description="Our upgrades to the original Vendetta make the unattainable attainable, bringing a sub-$1000 wandering hour watch to everyone.",
+    story="""
+      Xeric was started from a passion to push the boundaries of design and create unique, yet affordable time machines. 
+      Watches like you've never seen before. We’ve launched and fulfilled over 17 fully-funded projects since the beginning, 
+      including the most successful wristwatch campaign in the history of Kickstarter at $5.4 million. We deliver on our promises.
+    """,
+    risks="""
+      COVID-19 could impact production if there's a surge in cases at our factories or in Hong Kong which could cause the border to be 
+      closed and reduction in freight flights coming in and out of Hong Kong. Our backers will be in the loop as we communicate updates at every stage of the process.
+    """,
+    goal=10000,
+    current_fund=0,
+    backers=0,
+    end_day="2024-02-02",
+    project_type="design",
+    owner_id=4
+  )
+  dogs = Project(
+    project_name="MAD DOGS: VOLUME 1",
+    description='Cyberpunk LGBT+ crime story by the author of "Paper Roses" webcomic.',
+    story="""
+      A cyberpunk crime story with a sprinkle of rock (the music, not stone) and fully LGBT+ main cast. Ranked +18 for explicit language, violence and adult content in future volumes
+    """,
+    risks="""
+      Every aspect of physical rewards have been tested and perfected before the launch to be sure everything is absolutely 100%/ ready to order once the campain ends. 
+      The biggest challenge then will be the shipping alone. I have an experience with shipping big amounts of orders thanks to my online store, but my friends warned me 
+      Kickstarter orders may get overwhelming in numbers compared to a regular store opening. I will pack it all with my friend so there will be only two of us vs. (probably) 
+      a LOT of books so please be patient with us!
+    """,
+    goal=10000,
+    current_fund=0,
+    backers=0,
+    end_day="2023-05-10",
+    project_type="publishing",
+    owner_id=7
+  )
 
   db.session.add(ascension_tactics)
   db.session.add(make_100)
   db.session.add(revopoint)
   db.session.add(faerie)
   db.session.add(mika)
+  db.session.add(good_day)
+  db.session.add(watch)
+  db.session.add(dogs)
   db.session.commit()
 
 

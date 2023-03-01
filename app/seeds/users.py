@@ -48,12 +48,42 @@ def seed_users():
         bio='I launched RollvsEvil a not-for-profit charitable fundraising effort for the tabletop community to combat real-world evils starting with frontline humanitarian aid support for the people of Ukraine.',
         profile_image='https://wallpaperaccess.com/full/82955.jpg'
     )
+    toby = User(
+        username='toby', 
+        email='toby@aa.io', 
+        password='password',
+        first_name='Toby',
+        last_name='Mather',
+        bio='Startup founder by day, theatre photographer and producer by night',
+        profile_image='https://ksr-ugc.imgix.net/assets/010/621/542/1b75a69e642dcffb8fe4557b5b25d2c8_original.jpg?ixlib=rb-4.0.2&w=160&h=160&fit=crop&v=1674424003&auto=format&frame=1&q=92&s=1d92eb81a2b7e060e7bce1ca0dcc838c'
+    )
+    mathew = User(
+        username='mathew', 
+        email='mathew@aa.io', 
+        password='password',
+        first_name='Mathew',
+        last_name='Brand',
+        bio='Game lover',
+        profile_image='https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg'
+    )
+    david = User(
+        username='david', 
+        email='david@aa.io', 
+        password='password',
+        first_name='David',
+        last_name='Dhr',
+        bio='Best cohort lead ever',
+        profile_image='https://static.wikia.nocookie.net/kirby/images/c/c6/Kirby_RtDDX.png/revision/latest?cb=20230127153557&path-prefix=en'
+    )
 
     db.session.add(demo)
     db.session.add(marnie)
     db.session.add(bobbie)
     db.session.add(ned)
     db.session.add(emily)
+    db.session.add(toby)
+    db.session.add(mathew)
+    db.session.add(david)
     db.session.commit()
 
 

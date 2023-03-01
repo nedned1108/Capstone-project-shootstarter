@@ -254,6 +254,105 @@ def seed_pledges():
     project_id=5,
     owner_id=4
   )
+  good_day_1 = Pledge(
+    pledge_name="A 'Good Day' postcard, sent to you!",
+    price=10,
+    ships_to="Only United Kingdom",
+    rewards="For backing us with £10 we'll send you a hand-signed play postcard to say thanks, and for you to remember the first run of 'Good Day' by",
+    estimated_delivery="2023-09-10",
+    project_id=6,
+    owner_id=6
+  )
+  good_day_2 = Pledge(
+    pledge_name="AI-created portrait",
+    price=20,
+    ships_to="Only United Kingdom",
+    rewards="What would you (or a family member, loved one, or pet) look like if an algorithm created a virtual version of you? For £25 backers, an AI expert from one of Double Telling's startup partners will write a series of algorithmic prompts to generate a choice of images to your specification, and deliver one in high resolution",
+    estimated_delivery="2023-09-10",
+    project_id=6,
+    owner_id=6
+  )
+  good_day_3 = Pledge(
+    pledge_name="Supporter's ticket to see 'Good Day'",
+    price=30,
+    ships_to="Only United Kingdom",
+    rewards="This is our default reward! Contribute £30 and we'll send you a supporter's ticket (with a unique-to-you AI-generated copy as a souvenir!) to the show on the day of your choosing for £30, with a reserved front-row seat. This is double the base ticket price of £15, but much less than West End tickets! So, if you can afford to support us this way and want to back the arts, we'll use it to get the production on the stage and see you there!",
+    estimated_delivery="2023-09-10",
+    project_id=6,
+    owner_id=6
+  )
+  good_day_4 = Pledge(
+    pledge_name="Audition preparation / monologue session",
+    price=50,
+    ships_to="Only United Kingdom",
+    rewards="Receive a one-hour, in-depth audition preparation or monologue session with director Marlie Haco, who has supported numerous actors to prepare for auditions for shows and drama schools, or to present to agents.",
+    estimated_delivery="2023-09-10",
+    project_id=6,
+    owner_id=6
+  )
+  watch_1 = Pledge(
+    pledge_name="Original Vendetta Owner",
+    price=10,
+    ships_to="Anywhere in the world",
+    rewards="Original Vendetta Owner. Support the Vendetta II Automatic project",
+    estimated_delivery="2024-02-10",
+    project_id=7,
+    owner_id=4
+  )
+  watch_2 = Pledge(
+    pledge_name="Vendetta II Automatic | Super Early Bird",
+    price=699,
+    ships_to="Anywhere in the world",
+    rewards="You save 46%/ off of the $1295 retail price. Get One Vendetta II Wandering Hour Automatic Watch Of Your Choice",
+    estimated_delivery="2024-02-10",
+    project_id=7,
+    owner_id=4
+  )
+  watch_3 = Pledge(
+    pledge_name="Vendetta II Automatic | KS Backer",
+    price=799,
+    ships_to="Anywhere in the world",
+    rewards="You save 38%/ off of the $1295 retail price Get One Vendetta II Wandering Hour Automatic Watch Of Your Choice",
+    estimated_delivery="2024-02-10",
+    project_id=7,
+    owner_id=4
+  )
+  dogs_1 = Pledge(
+    pledge_name="ONLINE CONCERT",
+    price=15,
+    ships_to="Anywhere in the world",
+    rewards="A PDF copy of Mad Dogs: Volume 1",
+    estimated_delivery="2023-06-17",
+    project_id=8,
+    owner_id=7
+  )
+  dogs_2 = Pledge(
+    pledge_name="STANDARD SEAT",
+    price=30,
+    ships_to="Anywhere in the world",
+    rewards="A physical copy of Mad Dogs: Volume 1 + PDF",
+    estimated_delivery="2023-06-17",
+    project_id=8,
+    owner_id=7
+  )
+  dogs_3 = Pledge(
+    pledge_name="FRONT SEAT",
+    price=45,
+    ships_to="Anywhere in the world",
+    rewards="A special Mad Dogs set that, besides the PDF and physical copy, contains a Kickstarter exclusive A3 poster and two stickers.",
+    estimated_delivery="2023-06-17",
+    project_id=8,
+    owner_id=7
+  )
+  dogs_4 = Pledge(
+    pledge_name="VIP",
+    price=70,
+    ships_to="Anywhere in the world",
+    rewards="Limited set of all the previous rewards with your physical copy signed and additional Mad Dogs t-shirt!",
+    estimated_delivery="2023-06-17",
+    project_id=8,
+    owner_id=7
+  )
 
   db.session.add(ascention_tactics_pledges1)
   db.session.add(ascention_tactics_pledges2)
@@ -283,6 +382,17 @@ def seed_pledges():
   db.session.add(mika_4)
   db.session.add(mika_5)
   db.session.add(mika_6)
+  db.session.add(good_day_1)
+  db.session.add(good_day_2)
+  db.session.add(good_day_3)
+  db.session.add(good_day_4)
+  db.session.add(watch_1)
+  db.session.add(watch_2)
+  db.session.add(watch_3)
+  db.session.add(dogs_1)
+  db.session.add(dogs_2)
+  db.session.add(dogs_3)
+  db.session.add(dogs_4)
   db.session.commit()
 
 def undo_pledges():
