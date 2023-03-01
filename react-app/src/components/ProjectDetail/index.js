@@ -127,7 +127,7 @@ const ProjectDetail = () => {
           </div>
           <div className="comments">
             <h2>Comments</h2>
-            {currentUser.id != currentProject.owner_id &&
+            {currentUser && currentUser.id != currentProject.owner_id &&
               <OpenModalButton 
                 buttonText="Add your comment"
                 modalComponent={<CreateCommentModal project_id={currentProject.id} />}
