@@ -21,6 +21,7 @@ class User(db.Model, UserMixin):
 
     pledges = db.relationship("Pledge", secondary=users_pledges, back_populates="users")
     projects = db.relationship("Project", back_populates="owner")
+    comments = db.relationship("Comment", back_populates="user")
 
     @property
     def password(self):

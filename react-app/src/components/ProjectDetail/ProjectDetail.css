@@ -89,6 +89,8 @@
   border-top: 1px rgb(206, 206, 206) solid;
 }
 
+
+/* --------------------left Div---------------------- */
 .leftDiv {
   display: flex;
   flex-direction: column;
@@ -105,6 +107,8 @@
   font-weight: 500;
 }
 
+
+/* --------------------middle Div---------------------- */
 .middleDiv {
   display: flex;
   flex-direction: column;
@@ -121,6 +125,14 @@
   width: 100%;
 }
 
+/* --------------------comment Div---------------------- */
+.commentMainDiv {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+/* --------------------right Div---------------------- */
 .rightDiv {
   position: sticky;
   top: 65px;
@@ -148,7 +160,7 @@
   overflow: hidden;
 }
 
-
+/* --------------------add image modal---------------------- */
 .addImageModal {
   display: flex;
   flex-direction: column;
@@ -166,9 +178,6 @@
 }
 .addImageModal h1 {
   color: green;
-}
-.addImageModal::-webkit-scrollbar {
-  display: none;
 }
 
 .input-form {

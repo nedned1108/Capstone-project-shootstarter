@@ -1,0 +1,28 @@
+.singleCommentDiv {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 20px;
+  row-gap: 10px;
+  overflow: hidden;
+}
+.singleCommentDiv p {
+  margin: 0;
+}
+
+.userInfoImgDiv {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.userImage {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+}
+
+.userInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 0289ee9e8674
+Revision ID: 5a7b4b071a26
 Revises: 
-Create Date: 2023-02-24 16:55:43.189736
+Create Date: 2023-02-28 18:27:10.117437
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '0289ee9e8674'
+revision = '5a7b4b071a26'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -46,6 +46,17 @@ def upgrade():
     sa.Column('updated_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=False),
     sa.Column('owner_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['owner_id'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('comments',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('comment', sa.String(), nullable=False),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=False),
+    sa.Column('updated_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=False),
+    sa.Column('user_id', sa.Integer(), nullable=True),
+    sa.Column('project_id', sa.Integer(), nullable=True),
+    sa.ForeignKeyConstraint(['project_id'], ['projects.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('pledges',
@@ -87,6 +98,7 @@ def downgrade():
     op.drop_table('users_pledges')
     op.drop_table('projectImages')
     op.drop_table('pledges')
+    op.drop_table('comments')
     op.drop_table('projects')
     op.drop_table('users')
     # ### end Alembic commands ###

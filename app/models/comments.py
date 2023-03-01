@@ -13,12 +13,14 @@ class Comment(db.Model):
   updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 
   user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
-  project_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("project.id")))
+  project_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("projects.id")))
+  user = db.relationship("User", back_populates="comments")
 
   def to_dict(self):
     return {
       "id": self.id,
       "comment": self.comment,
       "user_id": self.user_id,
-      "project_id": self.project_id
+      "project_id": self.project_id,
+      "user": {"username": self.user.username, "profile_image": self.user.profile_image}
     }

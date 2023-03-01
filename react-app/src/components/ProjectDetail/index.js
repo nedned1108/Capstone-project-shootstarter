@@ -8,6 +8,7 @@ import OpenModalButton from "../OpenModalButton";
 import AddImageModal from "./AddImageModal";
 import ConfirmDeleteProject from "./ConfirmDeleteProject";
 import CommentCard from "../CommentCard";
+import CreateCommentModal from "../CreateCommentModal";
 
 import './ProjectDetail.css'
 import no_image from '../../images/empty-image.png' 
@@ -16,14 +17,14 @@ import user_image from '../../images/default-user.png'
 const ProjectDetail = () => {
   const { projectId } = useParams();
   const dispatch = useDispatch();
-  const history = useHistory();
   const projects = useSelector(state => state.project.projects)
-  const comments = useSelector(state => state.project.comments)
+  const comments = useSelector(state => state.comment.comments)
   const currentProject = Object.values(projects).find(project => project.id == projectId)
   const currentUser = useSelector(state => state.session.user)
   let projectComments;
+
   if (comments) {
-    projectComments = Object.values(comments).filter(comments.project_id == currentProject.id)
+    projectComments = Object.values(comments).filter(comment => comment.project_id == projectId)
   }
 
   useEffect(() => {
@@ -120,8 +121,12 @@ const ProjectDetail = () => {
           </div>
           <div className="comments">
             <h2>Comments</h2>
+            <OpenModalButton 
+              buttonText="Add your comment"
+              modalComponent={<CreateCommentModal project_id={currentProject.id} />}
+            />
             <div className="commentMainDiv">
-              {comments ? comments.map(comment => <CommentCard comment={comment}/>) : "No Comment"}
+              {projectComments && projectComments.map(comment => <CommentCard comment={comment}/>)}
             </div>
           </div>
         </div>
