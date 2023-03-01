@@ -162,6 +162,86 @@ def seed_project_images():
     url="https://ksr-ugc.imgix.net/assets/039/455/434/0b80aa78fb445aebf96e3306676c95a8_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1670949040&gif-q=50&lossless=true&s=b72c44d35c7adbc57ceabe3ede678351",
     project_id=5
   )
+  good_day_images1 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/727/766/4989cc7b5477266355ddcbcecd3d760a_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1674321118&gif-q=50&lossless=true&s=e3ba3974d7e696494b28b8a8ce52eff7",
+    project_id=6
+  )
+  good_day_images2 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/727/755/712dc509975988e1072dd2dc7794b6e2_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1674321034&gif-q=50&lossless=true&s=9d2d96e99491b254bfd4a5c38790ba7f",
+    project_id=6
+  )
+  good_day_images3 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/732/321/b981cb1f2b60c5b34c13c1b80a566ed5_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1674391907&gif-q=50&q=92&s=cec27130d122bdde92137320f6348c99",
+    project_id=6
+  )
+  good_day_images4 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/732/322/7b92b9d2f18202ecb9b968260ba2d637_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1674391969&gif-q=50&q=92&s=11ac30ad39564417676d84bae018074e",
+    project_id=6
+  )
+  watch_images1 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/962/946/c2d7164a1dfd6cda8bf98b5c096c726c_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1676495072&gif-q=50&q=92&s=67779e7595c1266cbc5d0ac1e5f99208",
+    project_id=7
+  )
+  watch_images2 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/962/863/cb03aa12cdfe91bfb701830cf57539af_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1676494664&gif-q=50&q=92&s=3a385a82a640d9adddb6d3d45958b928",
+    project_id=7
+  )
+  watch_images3 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/908/550/9b0f876cd24fa1d83b15566c23a1bd53_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1675987108&gif-q=50&q=92&s=788671ad61d525abf3e3f364ad5b99b8",
+    project_id=7
+  )
+  watch_images4 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/040/053/120/5c4318e4edd940f4c28c0243b9224f95_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1677280090&gif-q=50&q=92&s=65cb6d545a04465f94514ae01939c8f0",
+    project_id=7
+  )
+  dogs_images1 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/040/007/816/22d89c5554211acc9777ba054d4aaad3_original.jpg?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1676930580&auto=format&frame=1&q=92&s=994ab30bb29de52300cbaf7da16112f2",
+    project_id=8
+  )
+  dogs_images2 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/040/005/623/fcaa24d8a52882fbfe4d8d945bc046e7_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1676916448&gif-q=50&q=92&s=aef45789b800f856f21cee300506924d",
+    project_id=8
+  )
+  dogs_images3 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/040/005/895/1fa07607921dd3b0739ced23799f0361_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1676918027&gif-q=50&lossless=true&s=5787884c416fc6babc2e7070a89d666b",
+    project_id=8
+  )
+  dogs_images4 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/040/006/078/1de9f643be5385ab473168043ea5c75e_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1676919101&gif-q=50&lossless=true&s=cd9d435c7989612df790e47439e5f823",
+    project_id=8
+  )
+  dogs_images5 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/040/007/151/ff5139d9c27b2dbdaae1b4cab43078ac_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1676926523&gif-q=50&q=92&s=53d7670d8306e17fa0df77e34eb0b11e",
+    project_id=8
+  )
+  dogs_images6 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/040/008/647/a7c92478a124259e25407e51237471a9_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1676936373&gif-q=50&q=92&s=7e308f9f3d68daee290d4dee4d2dbae3",
+    project_id=8
+  )
+  soul_images1 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/759/347/bd24bcaaea3cccfa99e7056e87150634_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1674649590&gif-q=50&q=92&s=1dd05d1f73ad51115f2dcc13c4c05d40",
+    project_id=9
+  )
+  soul_images2 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/040/094/407/4267af6e50faad522877718885298f9c_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1677651922&gif-q=50&lossless=true&s=3f62bd9fdee5ca137d4cee3df97dd72d",
+    project_id=9
+  )
+  soul_images3 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/885/629/0c38e591298c7464b5843e1ae637f18f_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1675797489&gif-q=50&q=92&s=41833e00b0f449a66f36a8b7b96a88a5",
+    project_id=9
+  )
+  soul_images4 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/742/594/dca31d1df8b8194c896f602ec81e6dd6_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1674499456&gif-q=50&q=92&s=9bc98d7eb6b68fbed0df5ddd0e620590",
+    project_id=9
+  )
+  soul_images5 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/673/566/b4a10e7690fc866be68a555ad184a3e3_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1673790443&gif-q=50&q=92&s=3c6795a5c393c29ab5e9fc68ec72b193",
+    project_id=9
+  )
+  soul_images6 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/644/833/ecf45339cad09e8a58ee64011636a7bd_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1673459202&gif-q=50&q=92&s=4656cffdb9374f0e244c002916dc7103",
+    project_id=9
+  )
   
   db.session.add(ascension_images1)
   db.session.add(ascension_images2)
@@ -203,6 +283,26 @@ def seed_project_images():
   db.session.add(mika_images5)
   db.session.add(mika_images6)
   db.session.add(mika_images7)
+  db.session.add(good_day_images1)
+  db.session.add(good_day_images2)
+  db.session.add(good_day_images3)
+  db.session.add(good_day_images4)
+  db.session.add(watch_images1)
+  db.session.add(watch_images2)
+  db.session.add(watch_images3)
+  db.session.add(watch_images4)
+  db.session.add(dogs_images1)
+  db.session.add(dogs_images2)
+  db.session.add(dogs_images3)
+  db.session.add(dogs_images4)
+  db.session.add(dogs_images5)
+  db.session.add(dogs_images6)
+  db.session.add(soul_images1)
+  db.session.add(soul_images2)
+  db.session.add(soul_images3)
+  db.session.add(soul_images4)
+  db.session.add(soul_images5)
+  db.session.add(soul_images6)
   db.session.commit()
 
 def undo_project_images():

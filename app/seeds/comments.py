@@ -97,6 +97,51 @@ def seed_comments():
     project_id=5,
     user_id=3
   )
+  good_day_comment1 = Comment(
+    comment="Yes Marlie & Toby! 💪✨",
+    project_id=6,
+    user_id=7
+  )
+  good_day_comment2 = Comment(
+    comment="Greatttttt!",
+    project_id=6,
+    user_id=1
+  )
+  watch_comment1 = Comment(
+    comment="$39 ship to Malaysia seem very high compared to previous campaigns. First I pledged xeric halograph iii with add on another 2 watches only $19 shipping fee. Second I pledged for,xeric nasa voyager, even only one watch shipping fee $29.",
+    project_id=7,
+    user_id=5
+  )
+  watch_comment2 = Comment(
+    comment='Ok, so lets assume that more than 500 backers choose "Navy Red". This means some will NOT gonna get their color of their choice. If this happens can we request a refund?',
+    project_id=7,
+    user_id=8
+  )
+  dogs_comment1 = Comment(
+    comment='Any chance of new stretch goals(stickers, bookmarks, keychain...)? :)',
+    project_id=8,
+    user_id=8
+  )
+  dogs_comment2 = Comment(
+    comment='Hopefuly! I was thinking about a charm or a small standee maybe~~',
+    project_id=8,
+    user_id=5
+  )
+  soul_comment1 = Comment(
+    comment='Let‘s get this funded!',
+    project_id=9,
+    user_id=1
+  )
+  soul_comment2 = Comment(
+    comment="I have no problem pledging for a physical copy, but I'm hoping it will be for Switch. Any chance of that happening?",
+    project_id=9,
+    user_id=4
+  )
+  soul_comment3 = Comment(
+    comment='Just backed Unbound Soul - Says physical copy with (pc) next to it … this is for a physical copy for any (switch, Xbox, PS) right?',
+    project_id=9,
+    user_id=7
+  )
 
   db.session.add(ascension_comment1)
   db.session.add(ascension_comment2)
@@ -117,6 +162,15 @@ def seed_comments():
   db.session.add(mika_comment3)
   db.session.add(mika_comment4)
   db.session.add(mika_comment5)
+  db.session.add(good_day_comment1)
+  db.session.add(good_day_comment2)
+  db.session.add(watch_comment1)
+  db.session.add(watch_comment2)
+  db.session.add(dogs_comment1)
+  db.session.add(dogs_comment2)
+  db.session.add(soul_comment1)
+  db.session.add(soul_comment2)
+  db.session.add(soul_comment3)
   db.session.commit()
 
 def undo_comments():
