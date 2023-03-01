@@ -218,6 +218,30 @@ def seed_project_images():
     url="https://ksr-ugc.imgix.net/assets/040/008/647/a7c92478a124259e25407e51237471a9_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1676936373&gif-q=50&q=92&s=7e308f9f3d68daee290d4dee4d2dbae3",
     project_id=8
   )
+  soul_images1 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/759/347/bd24bcaaea3cccfa99e7056e87150634_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1674649590&gif-q=50&q=92&s=1dd05d1f73ad51115f2dcc13c4c05d40",
+    project_id=9
+  )
+  soul_images2 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/040/094/407/4267af6e50faad522877718885298f9c_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1677651922&gif-q=50&lossless=true&s=3f62bd9fdee5ca137d4cee3df97dd72d",
+    project_id=9
+  )
+  soul_images3 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/885/629/0c38e591298c7464b5843e1ae637f18f_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1675797489&gif-q=50&q=92&s=41833e00b0f449a66f36a8b7b96a88a5",
+    project_id=9
+  )
+  soul_images4 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/742/594/dca31d1df8b8194c896f602ec81e6dd6_original.jpg?ixlib=rb-4.0.2&w=680&fit=max&v=1674499456&gif-q=50&q=92&s=9bc98d7eb6b68fbed0df5ddd0e620590",
+    project_id=9
+  )
+  soul_images5 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/673/566/b4a10e7690fc866be68a555ad184a3e3_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1673790443&gif-q=50&q=92&s=3c6795a5c393c29ab5e9fc68ec72b193",
+    project_id=9
+  )
+  soul_images6 = ProjectImages(
+    url="https://ksr-ugc.imgix.net/assets/039/644/833/ecf45339cad09e8a58ee64011636a7bd_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1673459202&gif-q=50&q=92&s=4656cffdb9374f0e244c002916dc7103",
+    project_id=9
+  )
   
   db.session.add(ascension_images1)
   db.session.add(ascension_images2)
@@ -273,6 +297,12 @@ def seed_project_images():
   db.session.add(dogs_images4)
   db.session.add(dogs_images5)
   db.session.add(dogs_images6)
+  db.session.add(soul_images1)
+  db.session.add(soul_images2)
+  db.session.add(soul_images3)
+  db.session.add(soul_images4)
+  db.session.add(soul_images5)
+  db.session.add(soul_images6)
   db.session.commit()
 
 def undo_project_images():

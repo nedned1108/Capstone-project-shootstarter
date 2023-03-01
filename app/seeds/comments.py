@@ -127,6 +127,21 @@ def seed_comments():
     project_id=8,
     user_id=5
   )
+  soul_comment1 = Comment(
+    comment='Let‘s get this funded!',
+    project_id=9,
+    user_id=1
+  )
+  soul_comment2 = Comment(
+    comment="I have no problem pledging for a physical copy, but I'm hoping it will be for Switch. Any chance of that happening?",
+    project_id=9,
+    user_id=4
+  )
+  soul_comment3 = Comment(
+    comment='Just backed Unbound Soul - Says physical copy with (pc) next to it … this is for a physical copy for any (switch, Xbox, PS) right?',
+    project_id=9,
+    user_id=7
+  )
 
   db.session.add(ascension_comment1)
   db.session.add(ascension_comment2)
@@ -153,6 +168,9 @@ def seed_comments():
   db.session.add(watch_comment2)
   db.session.add(dogs_comment1)
   db.session.add(dogs_comment2)
+  db.session.add(soul_comment1)
+  db.session.add(soul_comment2)
+  db.session.add(soul_comment3)
   db.session.commit()
 
 def undo_comments():

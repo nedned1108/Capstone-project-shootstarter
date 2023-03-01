@@ -169,6 +169,27 @@ def seed_projects():
     project_type="publishing",
     owner_id=7
   )
+  soul = Project(
+    project_name="Soul Passage - Hand drawn 2D action Metroidvania",
+    description='Travel through different worlds to save your family! Fight, solve, craft, travel, explore, and progress! DO IT AGAIN,',
+    story="""
+      Soul Passage is an action-packed 2D hand-drawn Metroidvania game that offers a unique experience for players. With features such as Fast-paced combat, 
+      solving puzzles, crafting, travelling, exploring, and progression, this game breaks the mould of traditional Metroidvania titles. 
+      Players are given control of the skill tree and the fate of the main character, Obligor, as they embark on an extraordinary journey through the Soul Passage, 
+      a soul realm filled with diverse planets, creatures, and an abundance of magical items and weapons to discover.
+    """,
+    risks="""
+      Soul Passage is a game brought to you by a passionate developer with a background in the game industry. 
+      Emrah Özbay, who handles art direction and implementation, has been working tirelessly to create the best game possible given the limitations. 
+      My goal is to bring together my passions and experiences to create a game that will not disappoint.
+    """,
+    goal=33884,
+    current_fund=0,
+    backers=0,
+    end_day="2023-09-01",
+    project_type="game",
+    owner_id=8
+  )
 
   db.session.add(ascension_tactics)
   db.session.add(make_100)
@@ -178,6 +199,7 @@ def seed_projects():
   db.session.add(good_day)
   db.session.add(watch)
   db.session.add(dogs)
+  db.session.add(soul)
   db.session.commit()
 
 

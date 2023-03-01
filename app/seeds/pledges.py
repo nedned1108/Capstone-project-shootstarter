@@ -353,6 +353,42 @@ def seed_pledges():
     project_id=8,
     owner_id=7
   )
+  soul_1 = Pledge(
+    pledge_name="Toss a coin to your Developer =)",
+    price=1,
+    ships_to="Anywhere in the world",
+    rewards="Every little bit helps. Thank you so much for your support! Feel Free to stick around for the updates and add on something later if you believe my work, Soul Passage.",
+    estimated_delivery="2023-05-10",
+    project_id=9,
+    owner_id=8
+  )
+  soul_2 = Pledge(
+    pledge_name="One Soul",
+    price=5,
+    ships_to="Anywhere in the world",
+    rewards='Thank you for considering our project, Soul Passage. We understand that you may not be ready to commit to a higher pledge at this time, but with our "One Soul" tier, you can still support us and stay updated with Kickstarter-exclusive content. Thank you for your support, and we hope to earn your continued interest in the Soul Passage project.',
+    estimated_delivery="2023-05-10",
+    project_id=9,
+    owner_id=8
+  )
+  soul_3 = Pledge(
+    pledge_name="Wonderer",
+    price=20,
+    ships_to="Anywhere in the world",
+    rewards="Thank you for your interest in our upcoming game, Soul Passage. This pack offers an opportunity to join us on this thrilling adventure into the world of Soul Passage. Thank you for your support!",
+    estimated_delivery="2023-05-10",
+    project_id=9,
+    owner_id=8
+  )
+  soul_4 = Pledge(
+    pledge_name="Gate Keeper",
+    price=1,
+    ships_to="Anywhere in the world",
+    rewards="We're excited to offer our 'Gate Keeper' pack for our upcoming game, Soul Passage. Be one of the first to experience Soul Passage and immerse yourself in the game's captivating soundtrack.",
+    estimated_delivery="2023-05-10",
+    project_id=9,
+    owner_id=8
+  )
 
   db.session.add(ascention_tactics_pledges1)
   db.session.add(ascention_tactics_pledges2)
@@ -393,6 +429,10 @@ def seed_pledges():
   db.session.add(dogs_2)
   db.session.add(dogs_3)
   db.session.add(dogs_4)
+  db.session.add(soul_1)
+  db.session.add(soul_2)
+  db.session.add(soul_3)
+  db.session.add(soul_4)
   db.session.commit()
 
 def undo_pledges():
