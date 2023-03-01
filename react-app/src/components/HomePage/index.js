@@ -77,7 +77,7 @@ const HomePage = () => {
       <div className="projectsDiv">
         <div className="mainProject">
           <h5>FEATURED PROJECT</h5>
-          <NavLink to={`/project/${mostPledges.id}`}>
+          <NavLink to={`/project/${mostPledges?.id}`}>
             <img src={mostPledges.project_images[0].url} onError={onImageError}/>
             <h3>{mostPledges.project_name}</h3>
             <p>{mostPledges.description}</p>
