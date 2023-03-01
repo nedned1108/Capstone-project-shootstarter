@@ -1,5 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import UpdateCommentModal from "../UpdateCommentModal";
+import OpenModalButton from "../OpenModalButton";
 import './CommentCard.css'
 
 const CommentCard = ({ comment }) => {
@@ -15,7 +17,10 @@ const CommentCard = ({ comment }) => {
         {
           currentUser && comment.user_id == currentUser.id ?
             <div>
-              <button>{<i class="fa-solid fa-pen-to-square"></i>}</button>
+              <OpenModalButton 
+                buttonText={<i class="fa-solid fa-pen-to-square"></i>}
+                modalComponent={<UpdateCommentModal commentDetail={comment}/>}
+              />
               <button>{<i class="fa-solid fa-trash"></i>}</button>
             </div>
           : ''
