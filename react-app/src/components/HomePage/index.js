@@ -52,7 +52,7 @@ const HomePage = () => {
     dispatch(thunkLoadAllPledges())
   }, [dispatch])
 
-  if (projects.length == 0 && pledges.length == 0) {
+  if (projects.length == 0 && pledges.length == 0 && mostPledges !== undefined) {
     return null
   }
   
