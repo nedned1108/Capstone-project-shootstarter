@@ -18,6 +18,8 @@ const PledgeCard = ({ pledge }) => {
   const currentUser = useSelector(state => state.session.user)
   const { setModalContent } = useModal()
 
+  const delivery = new Date(pledge.estimated_delivery.split('-').join('/')).toDateString().split(' ').splice(1).join(' ')
+
   const deletePledge = (e) => {
     return dispatch(thunkDeletePledge(e))
   } 
@@ -56,8 +58,7 @@ const PledgeCard = ({ pledge }) => {
         </p>
       </div>
       <div className="delivery">
-        <p>ESTIMATED DELIVERY</p>
-        <h6>{pledge.estimated_delivery}</h6>
+        <h6>{delivery}</h6>
         <p>Ships to</p>
         <h6>{pledge.ships_to}</h6>
         {currentUser && pledge.owner_id == currentUser.id && 
