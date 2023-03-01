@@ -28,7 +28,6 @@ const ProjectDetail = () => {
   let daysToGo
   let today = new Date()
   if (currentProject) {
-    // endDay = new Date(currentProject.end_day.split('-').join('/')).toDateString().split(' ').splice(1).join(' ')
     const oneDay = 1000*60*60*24;
     const endDay = new Date(currentProject.end_day.split('-').join('/'))
     daysToGo = Math.ceil((endDay.getTime() - today.getTime())/oneDay)
@@ -128,10 +127,12 @@ const ProjectDetail = () => {
           </div>
           <div className="comments">
             <h2>Comments</h2>
-            <OpenModalButton 
-              buttonText="Add your comment"
-              modalComponent={<CreateCommentModal project_id={currentProject.id} />}
-            />
+            {currentUser.id != currentProject.owner_id &&
+              <OpenModalButton 
+                buttonText="Add your comment"
+                modalComponent={<CreateCommentModal project_id={currentProject.id} />}
+              />
+            }
             <div className="commentMainDiv">
               {projectComments && projectComments.map(comment => <CommentCard comment={comment}/>)}
             </div>

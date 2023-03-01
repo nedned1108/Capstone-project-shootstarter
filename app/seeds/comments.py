@@ -30,7 +30,7 @@ def seed_comments():
   make_100_comment2 = Comment(
     comment="I saw the update thanks!",
     project_id=2,
-    user_id=2
+    user_id=3
   )
   make_100_comment3 = Comment(
     comment="So bummed I missed this!",
@@ -55,7 +55,7 @@ def seed_comments():
   revopoint_comment4 = Comment(
     comment="Perhaps ask them to add them as add ons on the campaign?",
     project_id=1,
-    user_id=2
+    user_id=5
   )
   faerie_comment1 = Comment(
     comment='Congrats on a quick start and the "Project We Love" recognition. This project looks very cool and I wish you the best! - Lyn',
@@ -70,12 +70,12 @@ def seed_comments():
   faerie_comment3 = Comment(
     comment="Great story",
     project_id=4,
-    user_id=5
+    user_id=3
   )
   mika_comment1 = Comment(
     comment="Is this game being optimised for steam deck too?",
     project_id=5,
-    user_id=4
+    user_id=5
   )
   mika_comment2 = Comment(
     comment="So if I’ve ordered the NINTENDO SWITCH COLLECTORS EDITION, does that include all 12 tarot cards or just the 4?",
