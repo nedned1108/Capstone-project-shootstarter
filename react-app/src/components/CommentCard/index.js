@@ -7,7 +7,7 @@ import './CommentCard.css'
 
 const CommentCard = ({ comment }) => {
   const currentUser = useSelector(state => state.session.user)
-  const createDate = new Date(comment.created_at)
+  const createDate = new Date(comment.created_at.split('-').join('/')).toDateString().split(' ').splice(1).join(' ')
 
   return (
     <div className="singleCommentDiv">
@@ -16,7 +16,7 @@ const CommentCard = ({ comment }) => {
           <img className="userImage" src={comment.user.profile_image}/>
           <div className="username_time">
             <p style={{fontWeight: "600"}}>{comment.user.username}</p>
-            <p>{createDate.toDateString()}</p>
+            <p>{createDate}</p>
           </div>
         </div>
         {

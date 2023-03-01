@@ -22,11 +22,17 @@ const ProjectDetail = () => {
   const currentProject = Object.values(projects).find(project => project.id == projectId)
   const currentUser = useSelector(state => state.session.user)
   let projectComments;
-
   if (comments) {
     projectComments = Object.values(comments).filter(comment => comment.project_id == projectId)
   }
-
+  let daysToGo
+  let today = new Date()
+  if (currentProject) {
+    // endDay = new Date(currentProject.end_day.split('-').join('/')).toDateString().split(' ').splice(1).join(' ')
+    const oneDay = 1000*60*60*24;
+    const endDay = new Date(currentProject.end_day.split('-').join('/'))
+    daysToGo = Math.ceil((endDay.getTime() - today.getTime())/oneDay)
+  }
   useEffect(() => {
     dispatch(thunkLoadAllProjects())
     dispatch(thunkLoadAllComments())
@@ -64,7 +70,8 @@ const ProjectDetail = () => {
             <p>pledged of ${currentProject.goal}</p>
             <h4>{currentProject.backers}</h4>
             <p>backers</p>
-            <h4>{currentProject.end_day}</h4>
+            <h4>{daysToGo}</h4>
+            <p>days to go</p>
             <div className="pledgeButton">
               <NavLink to={`/project/${currentProject.id}/pledge`}>
                 Back this project
