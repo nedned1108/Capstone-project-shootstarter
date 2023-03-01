@@ -33,7 +33,7 @@ const CreateCommentModal = ({ project_id }) => {
   return (
     <div className='createCommentModal'>
       <h1>
-        Write Your Comment
+        Comment
       </h1>
       <form onSubmit={handleSubmit}>
         <ul>

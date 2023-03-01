@@ -31,7 +31,7 @@ const UpdateCommentModal = ({ commentDetail }) => {
   return (
     <div className='updateCommentModal'>
       <h1>
-        Update Your Comment
+        Edit Comment
       </h1>
       <form onSubmit={handleSubmit}>
         <ul>
@@ -46,7 +46,7 @@ const UpdateCommentModal = ({ commentDetail }) => {
             required
           />
         <div>
-          <button className='submitButton' type="submit">Update Comment</button>
+          <button className='submitButton' type="submit">Edit Comment</button>
         </div>
       </div>
       </form>
