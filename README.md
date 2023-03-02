@@ -23,10 +23,11 @@ All technologies I used in this project are:
   - Frontend: JavaScript, React, Redux, HTML, CSS 
 
 ## Landing Page
-![image](https://user-images.githubusercontent.com/112263162/221633477-ab8fad57-ff44-48b5-ab97-aa0894b0f12c.png)
+![image](https://user-images.githubusercontent.com/112263162/222582314-b688344a-864e-43de-b1d8-47b05d3117e1.png)
+
 
 ## Project Detail Page
-![image](https://user-images.githubusercontent.com/112263162/221633619-5fe16443-9aa3-47a2-9c83-ed6673f14abf.png)
+![image](https://user-images.githubusercontent.com/112263162/222581942-eca53d3b-9e6b-4316-b3de-ea7b83f5e088.png)
 ![image](https://user-images.githubusercontent.com/112263162/222575339-37fd30b0-2387-4e72-8c13-6605ade47bb3.png)
 
 
