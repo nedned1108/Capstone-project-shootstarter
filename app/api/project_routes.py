@@ -2,7 +2,8 @@ from flask import Blueprint, redirect,session, request
 from flask_login import login_required, current_user
 from app.models import db, Project, ProjectImages, Pledge
 from app.forms import ProjectForm, ProjectImageForm, PledgeForm, ChoosePledgeForm
-from datetime import datetime, date
+from app.s3_helpers import (
+    upload_file_to_s3, allowed_file, get_unique_filename)
 
 project_routes = Blueprint('project', __name__)
 
@@ -34,11 +35,6 @@ def post_project():
   """
   form = ProjectForm()
   form['csrf_token'].data = request.cookies['csrf_token']
-  
-  # today = date.today()
-  # end_day = datetime.strptime(form.data['end_day'], '%Y-%m-%d').date()
-  # if end_day <= today:
-  #   return {"errors": "end day can not be today or in the past"}, 400
   
   if form.validate_on_submit():
 
