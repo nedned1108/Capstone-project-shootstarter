@@ -55,7 +55,7 @@ const HomePage = () => {
   if (projects.length == 0 && pledges.length == 0 && mostPledges == undefined && random3.length == 0) {
     return null
   }
-
+  console.log(random3[0])
   return (
     <div className="mainDiv">
       <h1>Bring a creative project to life.</h1>
@@ -85,7 +85,7 @@ const HomePage = () => {
             </NavLink>
           }
         </div>
-        {random3 &&
+        {random3 && random3.length != 0 &&
           <div className="recommendedProjectsDiv">
             <h5>RECOMMEND FOR YOU</h5>
             <div className="singleProject">
