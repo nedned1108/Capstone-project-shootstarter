@@ -52,10 +52,10 @@ const HomePage = () => {
     dispatch(thunkLoadAllPledges())
   }, [dispatch])
 
-  if (projects.length == 0 && pledges.length == 0 && mostPledges == undefined && random3 == undefined) {
+  if (projects.length == 0 && pledges.length == 0 && mostPledges == undefined && random3.length == 0) {
     return null
   }
-  
+
   return (
     <div className="mainDiv">
       <h1>Bring a creative project to life.</h1>
@@ -85,36 +85,38 @@ const HomePage = () => {
             </NavLink>
           }
         </div>
-        <div className="recommendedProjectsDiv">
-          <h5>RECOMMEND FOR YOU</h5>
-          <div className="singleProject">
-            <NavLink to={`/project/${random3[0].id}`}>
-              <img src={random3[0].project_images[0].url} onError={onImageError}/>
-              <div className="singleProjectInfo">
-                <h5>{random3[0].project_name}</h5>
-                <p>By {random3[0].owner.first_name} {random3[0].owner.last_name}</p>
-              </div>
-            </NavLink>
+        {random3 &&
+          <div className="recommendedProjectsDiv">
+            <h5>RECOMMEND FOR YOU</h5>
+            <div className="singleProject">
+              <NavLink to={`/project/${random3[0].id}`}>
+                <img src={random3[0].project_images[0].url} onError={onImageError}/>
+                <div className="singleProjectInfo">
+                  <h5>{random3[0].project_name}</h5>
+                  <p>By {random3[0].owner.first_name} {random3[0].owner.last_name}</p>
+                </div>
+              </NavLink>
+            </div>
+            <div className="singleProject">
+              <NavLink to={`/project/${random3[1].id}`}>
+                <img src={random3[1].project_images[0].url} onError={onImageError}/>
+                <div className="singleProjectInfo">
+                  <h5>{random3[1].project_name}</h5>
+                  <p>By {random3[1].owner.first_name} {random3[1].owner.last_name}</p>
+                </div>
+              </NavLink>
+            </div>
+            <div className="singleProject">
+              <NavLink to={`/project/${random3[2].id}`}>
+                <img src={random3[2].project_images[0].url} onError={onImageError}/>
+                <div className="singleProjectInfo">
+                  <h5>{random3[2].project_name}</h5>
+                  <p>By {random3[2].owner.first_name} {random3[2].owner.last_name}</p>
+                </div>
+              </NavLink>
+            </div>
           </div>
-          <div className="singleProject">
-            <NavLink to={`/project/${random3[1].id}`}>
-              <img src={random3[1].project_images[0].url} onError={onImageError}/>
-              <div className="singleProjectInfo">
-                <h5>{random3[1].project_name}</h5>
-                <p>By {random3[1].owner.first_name} {random3[1].owner.last_name}</p>
-              </div>
-            </NavLink>
-          </div>
-          <div className="singleProject">
-            <NavLink to={`/project/${random3[2].id}`}>
-              <img src={random3[2].project_images[0].url} onError={onImageError}/>
-              <div className="singleProjectInfo">
-                <h5>{random3[2].project_name}</h5>
-                <p>By {random3[2].owner.first_name} {random3[2].owner.last_name}</p>
-              </div>
-            </NavLink>
-          </div>
-        </div>
+        }
       </div>
       <div className="allProjects">
         <h2>All Projects</h2>
