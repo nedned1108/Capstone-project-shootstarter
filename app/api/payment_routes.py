@@ -19,9 +19,9 @@ def validation_errors_to_error_messages(validation_errors):
 @payment_routes.route('/')
 def get_all_payments():
   """
-  Query for all payments and return them in a list of payment dictionaries
+  Query for all payments of current user and return them in a list of payment dictionaries
   """
-  payments = Payment.query.all()
+  payments = Payment.query.filter(Payment.user_id == current_user.id)
   return {"payments": [payment.to_dict() for payment in payments]}
 
 
@@ -70,7 +70,12 @@ def update_payment(id):
     return {"Error": "Forbidden"}, 403
 
   if form.validate_on_submit():
-    thisPayment.comment = form.data['payment']
+    thisPayment.name_on_card = form.data['name_on_card']
+    thisPayment.card_number = form.data['card_number']
+    thisPayment.expire_month = form.data['expire_month']
+    thisPayment.expire_year = form.data['expire_year']
+    thisPayment.cvv = form.data['cvv']
+    thisPayment.card_type = form.data['card_type']
 
     db.session.commit()
 
