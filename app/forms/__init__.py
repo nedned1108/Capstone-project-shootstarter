@@ -5,3 +5,4 @@ from .pledge_form import PledgeForm
 from .project_image_form import ProjectImageForm
 from .choose_pledge_form import ChoosePledgeForm
 from .comment_form import CommentForm
+from .payment_method_form import PaymentForm
