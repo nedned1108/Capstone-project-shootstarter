@@ -30,6 +30,8 @@ All technologies I used in this project are:
 ![image](https://user-images.githubusercontent.com/112263162/222581942-eca53d3b-9e6b-4316-b3de-ea7b83f5e088.png)
 ![image](https://user-images.githubusercontent.com/112263162/222575339-37fd30b0-2387-4e72-8c13-6605ade47bb3.png)
 
+## Pledge Page
+![image](https://user-images.githubusercontent.com/112263162/222863781-940e17cb-6eda-44b5-8566-24f333f41dbd.png)
 
 
 ## Getting started
