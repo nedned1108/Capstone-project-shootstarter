@@ -4,7 +4,9 @@ import { NavLink, useParams, useHistory } from "react-router-dom";
 import { thunkLoadAllProjects } from "../../store/project";
 import { thunkLoadAllPayments } from "../../store/payment_method";
 import { thunkLoadAllPledges } from "../../store/pledge";
-import PaymentMethodCard from "../WalletModal/PaymentMethodCard";
+import OpenModalButton from "../OpenModalButton";
+import AddPaymentMethod from "../AddPaymentMethod";
+import PaymentMethodCard from "../AddPaymentMethod/PaymentMethodCard";
 import './UserProfilePage.css'
 
 
@@ -41,25 +43,17 @@ const UserProfilePage = () => {
     setYourPledges(false)
     setWallet(true)
   }
-  if (!currentUser) {
-    return (history.push('/'))
-  }
-  if (!allPledgesData) {
-    return null
-  }
-  console.log(allPledgesData)
-  console.log(pledges)
+
   return (
-    <div className="profileMainDiv">
+    <div className="pageMainDiv">
       <h1>User Profile</h1>
-      <div>
+      <div className="profileMainDiv">
         {currentUser && 
-          <div>
+          <div className="userProfileDiv">
             <div>
-              <img className="userProfile" src={currentUser.profile_image}/>
+              <img className="profileImage" src={currentUser.profile_image}/>
             </div>
             <div>
-              <p>{currentUser.username}</p>
               <p>{currentUser.first_name} {currentUser.last_name}</p>
               <p>{currentUser.bio}</p>
             </div>
@@ -68,19 +62,23 @@ const UserProfilePage = () => {
           </div>
         }
         {yourPledges == true ?
-          <div>
+          <div className="yourPledgesDiv">
             <h3>Your Pledges</h3>
             <div>
-              {/* {pledges.length != 0 ? 
-                pledges.map(pledge => <div>{pledge.pledge_name}</div>)
-                : "You have no pledge"
-              } */}
+              {(pledges.length == 0 || pledges[0] == undefined) ? 
+                "You have no pledge"
+                : pledges.map(pledge => <div>{pledge.pledge_name}</div>)
+              }
             </div>
           </div>
           :
-          <div>
+          <div className="walletDiv">
             <h3>Wallet</h3>
             <div>
+            <OpenModalButton 
+              buttonText='Add your card'
+              modalComponent={<AddPaymentMethod />}
+            />
             {payment_methods && payment_methods.map(payment_method => <PaymentMethodCard payment_method={payment_method}/>)}
             </div>
           </div>

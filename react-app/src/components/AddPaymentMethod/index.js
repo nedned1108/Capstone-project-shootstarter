@@ -2,8 +2,7 @@ import React, {useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { thunkCreatePayment } from "../../store/payment_method";
-import WalletModal from ".";
-import './WalletModal.css'
+import './AddPaymentMethod.css'
 
 
 const AddPaymentMethod = () => {
@@ -16,7 +15,7 @@ const AddPaymentMethod = () => {
   const [card_type, setCardType] = useState('Mastercard')
   const [add_payment, setAddPayment] = useState(true)
   const [errors, setErrors] = useState([]);
-  const { setModalContent } = useModal()
+  const { closeModal } = useModal()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,7 +34,7 @@ const AddPaymentMethod = () => {
       setErrors(data.errors)
     } else {
       setErrors([]);
-      setModalContent(<WalletModal />)
+      closeModal()
     }
   }
 

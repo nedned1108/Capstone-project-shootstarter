@@ -2,22 +2,21 @@ import React from 'react';
 import { useModal } from '../../context/Modal';
 import { useDispatch } from 'react-redux';
 import { thunkDeletePayment } from '../../store/payment_method';
-// import { Modal } from '../../context/Modal';
-import WalletModal from '.';
-import './WalletModal.css'
+import { thunkLoadAllPayments } from '../../store/payment_method';
+import './AddPaymentMethod.css'
 
 
 const RemoveCardModal = ({ card }) => {
   const dispatch = useDispatch()
-  const {setModalContent} = useModal()
+  const {closeModal} = useModal()
 
   const cancelDelete = () => {
-    setModalContent(<WalletModal/>)
+    closeModal()
   }
 
   const removeCard = (e) => {
     dispatch(thunkDeletePayment(e))
-    setModalContent(<WalletModal />)
+    closeModal()
   }
 
   return (

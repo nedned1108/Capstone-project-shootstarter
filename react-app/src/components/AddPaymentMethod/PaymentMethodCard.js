@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import RemoveCardModal from "./RemoveCardModal";
 import OpenModalButton from '../OpenModalButton'
-import './WalletModal.css'
+import './AddPaymentMethod.css'
 
 
 const PaymentMethodCard = ({ payment_method }) => {
