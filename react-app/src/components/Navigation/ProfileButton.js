@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { logout } from "../../store/session";
 import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
@@ -7,17 +8,23 @@ import SignupFormModal from "../SignupFormModal";
 import user_image from '../../images/default-user.png'
 import AllPledgesModal from "../AllPledgesModal";
 import WalletModal from "../WalletModal";
+import UserProfilePage from "../UserProfilePage"
 import './Navigation.css'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  const history = useHistory();
   const ulRef = useRef();
 
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
   };
+
+  const userProfile = () => {
+    history.push('/profile')
+  }
 
   useEffect(() => {
     if (!showMenu) return;
@@ -67,6 +74,9 @@ function ProfileButton({ user }) {
                 buttonText="Wallet"
                 modalComponent={<WalletModal />}
               />
+            </li>
+            <li>
+              <button onClick={userProfile} >Profile</button>
             </li>
             <li>
               <button className="logout" onClick={handleLogout}>Log Out</button>

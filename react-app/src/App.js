@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
 import ProjectDetail from "./components/ProjectDetail";
 import PledgePage from "./components/PledgePage";
+import UserProfilePage from "./components/UserProfilePage";
 import Footer from "./components/Footer";
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route exact path="/project/:projectId/pledge">
             <PledgePage />
+          </Route>
+          <Route exact path="/profile">
+            <UserProfilePage />
           </Route>
         </Switch>
       )}

@@ -1,0 +1,9 @@
+.profileMainDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.userProfile {
+  width: 40px;
+}
