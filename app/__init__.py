@@ -10,6 +10,7 @@ from .api.auth_routes import auth_routes
 from .api.project_routes import project_routes
 from .api.pledge_routes import pledge_routes
 from .api.comment_routes import comment_routes
+from .api.payment_routes import payment_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -34,6 +35,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(project_routes, url_prefix='/api/project')
 app.register_blueprint(pledge_routes, url_prefix='/api/pledge')
 app.register_blueprint(comment_routes, url_prefix='/api/comment')
+app.register_blueprint(payment_routes, url_prefix='/api/payment')
 db.init_app(app)
 Migrate(app, db)
 

@@ -47,10 +47,10 @@ const CreateCommentModal = ({ project_id }) => {
             onChange={(e) => setComment(e.target.value)}
             required
           />
-        <div>
-          <button className='submitButton' type="submit">Submit Comment</button>
+          <div>
+            <button className='submitButton' type="submit">Submit Comment</button>
+          </div>
         </div>
-      </div>
       </form>
     </div>
   )

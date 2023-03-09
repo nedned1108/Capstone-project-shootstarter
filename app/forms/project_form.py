@@ -15,4 +15,4 @@ class ProjectForm(FlaskForm):
   end_day = StringField('end_day', validators=[DataRequired(message="End day is required")])
   project_type = StringField('project_type', validators=[DataRequired(message="Project type is required")])
   url = StringField('url', validators=[DataRequired(message="Image is required"), URL(message="Image is not url")])
-  # owner_id = IntegerField('owner_id', validators=[DataRequired()])
+

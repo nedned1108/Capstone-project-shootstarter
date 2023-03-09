@@ -1,22 +1,28 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { logout } from "../../store/session";
 import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import user_image from '../../images/default-user.png'
-import AllPledgesModal from "../AllPledgesModal";
 import './Navigation.css'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  const history = useHistory();
   const ulRef = useRef();
 
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
   };
+
+  const userProfile = () => {
+    history.push('/profile')
+    setShowMenu(false);
+  }
 
   useEffect(() => {
     if (!showMenu) return;
@@ -56,10 +62,7 @@ function ProfileButton({ user }) {
             <li>{user.username}</li>
             <li>{user.email}</li>
             <li>
-              <OpenModalButton 
-                buttonText="Your Pledges"
-                modalComponent={<AllPledgesModal />}
-              />
+              <button onClick={userProfile}>Profile</button>
             </li>
             <li>
               <button className="logout" onClick={handleLogout}>Log Out</button>

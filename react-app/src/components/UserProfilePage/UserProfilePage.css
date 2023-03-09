@@ -1,0 +1,34 @@
+.pageMainDiv {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  align-items: center;
+}
+
+.profileMainDiv {
+  display: flex;
+  column-gap: 40px;
+}
+
+.userProfileDiv {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  max-width: 400px;
+}
+.profileImage {
+  width: 40px;
+  align-self: center;
+}
+
+.yourPledgesDiv {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+.walletDiv {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
