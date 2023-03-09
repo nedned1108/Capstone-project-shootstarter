@@ -108,13 +108,13 @@ const paymentReducer = (state = initialState, action) => {
       newState.payments = normalize(action.payload)
       return newState;
     case ADD_PAYMENT:
-      newState.payments = {...state.comments, [action.payload.id]: action.payload}
+      newState.payments = {...state.payments, [action.payload.id]: action.payload}
       return newState;
     case UPDATE_PAYMENT:
-      newState.payments = {...state.comments, [action.payload.id]: action.payload}
+      newState.payments = {...state.payments, [action.payload.id]: action.payload}
       return newState;
     case DELETE_PAYMENT:
-      newState.payments = {...state.comments}
+      newState.payments = {...state.payments}
       delete newState.payments[action.payload]
       return newState;
     default:
