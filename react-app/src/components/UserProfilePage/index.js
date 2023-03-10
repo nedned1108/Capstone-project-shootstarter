@@ -75,7 +75,7 @@ const UserProfilePage = () => {
         }
         {yourPledges == true ?
           <div className="yourPledgesDiv">
-            <h3>Your Pledges</h3>
+            <h2>Your Pledges</h2>
             <div>
               {(pledges.length == 0 || pledges[0] == undefined) ? 
                 "You have no pledge"
@@ -85,7 +85,7 @@ const UserProfilePage = () => {
           </div>
           :
           <div className="walletDiv">
-            <h3>Wallet</h3>
+            <h2>Wallet</h2>
             <div>
             <OpenModalButton 
               buttonText='Add your card'

@@ -16,6 +16,7 @@
   flex-direction: column;
   width: 25vw;
   max-width: 300px;
+  margin-top: 50px;
 }
 .userProfileContainer {
   border: 1px solid black;
@@ -61,10 +62,17 @@
   flex-direction: column;
   width: 50vw;
 }
-
+.yourPledgesDiv h2 {
+  display: flex;
+  justify-content: center;
+}
 /* ------------------------wallet div------------------------ */
 .walletDiv {
   display: flex;
   flex-direction: column;
   width: 50vw;
+}
+.walletDiv h2 {
+  display: flex;
+  justify-content: center;
 }
