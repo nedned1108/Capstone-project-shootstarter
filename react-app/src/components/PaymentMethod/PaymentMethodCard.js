@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import RemoveCardModal from "./RemoveCardModal";
 import OpenModalButton from '../OpenModalButton'
+import EditPaymentMethodModal from "../PaymentMethod/EditPaymentMethodModal";
 import './AddPaymentMethod.css'
 
 
@@ -14,7 +15,10 @@ const PaymentMethodCard = ({ payment_method }) => {
       <p>{payment_method.expire_month}/{payment_method.expire_year}</p>
       <p>{payment_method.cvv}</p>
       <p>{payment_method.card_type}</p>
-      <button>Edit card</button>
+      <OpenModalButton 
+        buttonText="Update Card"
+        modalComponent={<EditPaymentMethodModal card={payment_method}/>}
+      />
       <OpenModalButton 
         buttonText="Remove Card"
         modalComponent={<RemoveCardModal card={payment_method}/>}

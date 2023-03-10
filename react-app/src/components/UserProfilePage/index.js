@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink, useParams, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { thunkLoadAllProjects } from "../../store/project";
 import { thunkLoadAllPayments } from "../../store/payment_method";
 import { thunkLoadAllPledges } from "../../store/pledge";
 import OpenModalButton from "../OpenModalButton";
-import AddPaymentMethod from "../AddPaymentMethod";
-import PaymentMethodCard from "../AddPaymentMethod/PaymentMethodCard";
+import AddPaymentMethod from "../PaymentMethod/AddPaymentMethod";
+import PaymentMethodCard from "../PaymentMethod/PaymentMethodCard";
 import './UserProfilePage.css'
 
 
@@ -23,7 +23,7 @@ const UserProfilePage = () => {
     payment_methods = Object.values(payment_methodsData)
   }
   let pledges = [];
-  if (allPledgesData) {
+  if (allPledgesData && currentUser) {
     for (let num of currentUser.pledges) {
       pledges.push(Object.values(allPledgesData).find(pledge => pledge.id == num))
     }
@@ -42,6 +42,10 @@ const UserProfilePage = () => {
   const walletButton = () => {
     setYourPledges(false)
     setWallet(true)
+  }
+
+  if (!currentUser) {
+    history.push('/login')
   }
 
   return (
