@@ -8,6 +8,7 @@ import OpenModalButton from "../OpenModalButton";
 import AddPaymentMethod from "../PaymentMethod/AddPaymentMethod";
 import PaymentMethodCard from "../PaymentMethod/PaymentMethodCard";
 import './UserProfilePage.css'
+import user_image from '../../images/default-user.png'
 
 
 const UserProfilePage = () => {
@@ -43,6 +44,9 @@ const UserProfilePage = () => {
     setYourPledges(false)
     setWallet(true)
   }
+  const onProfileImageError = (e) => {
+    e.target.src = user_image
+  }
 
   if (!currentUser) {
     history.push('/login')
@@ -55,7 +59,7 @@ const UserProfilePage = () => {
         {currentUser && 
           <div className="userProfileDiv">
             <div>
-              <img className="profileImage" src={currentUser.profile_image}/>
+              <img alt="profile-image" className="profileImage" src={currentUser.profile_image} onError={onProfileImageError}/>
             </div>
             <div>
               <p>{currentUser.first_name} {currentUser.last_name}</p>
