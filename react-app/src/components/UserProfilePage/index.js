@@ -57,16 +57,20 @@ const UserProfilePage = () => {
       <h1>User Profile</h1>
       <div className="profileMainDiv">
         {currentUser && 
-          <div className="userProfileDiv">
-            <div>
-              <img alt="profile-image" className="profileImage" src={currentUser.profile_image} onError={onProfileImageError}/>
+          <div className="userProfileMainDiv">
+            <div className="userProfileContainer">
+              <div className="profileImageDiv">
+                <img alt="profile-image" className="profileImage" src={currentUser.profile_image} onError={onProfileImageError}/>
+              </div>
+              <div>
+                <h3>{currentUser.first_name} {currentUser.last_name}</h3>
+                <p>{currentUser.bio}</p>
+              </div>
+              <div className="buttonDiv">
+                <button className={`userProfileButton ${yourPledges == true ? "greenDash" : ""}`} onClick={pledgesButton}>Pledges</button>  
+                <button className={`userProfileButton ${yourPledges == false ? "greenDash" : ""}`} onClick={walletButton}>Wallet</button>  
+              </div>
             </div>
-            <div>
-              <p>{currentUser.first_name} {currentUser.last_name}</p>
-              <p>{currentUser.bio}</p>
-            </div>
-            <button onClick={pledgesButton}>Pledges</button>  
-            <button onClick={walletButton}>Wallet</button>  
           </div>
         }
         {yourPledges == true ?

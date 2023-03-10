@@ -6,28 +6,63 @@
   align-items: center;
   min-height: 80vh;
 }
-
 .profileMainDiv {
   display: flex;
   column-gap: 40px;
 }
-
-.userProfileDiv {
+/* -----------user profile div---------- */
+.userProfileMainDiv {
   display: flex;
   flex-direction: column;
   width: 25vw;
-  max-width: 400px;
+  max-width: 300px;
+}
+.userProfileContainer {
+  border: 1px solid black;
+  position: sticky;
+  top: 60px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.userProfileContainer h3 {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.profileImageDiv {
+  display: flex;
+  justify-content: center;
 }
 .profileImage {
-  width: 40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  position: absolute;
+  top: -50px;
   align-self: center;
 }
-
+.buttonDiv {
+  display: flex;
+  justify-content: space-around;
+}
+.userProfileButton {
+  font-size: 18px;
+  border: none;
+  background-color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.greenDash {
+  border-bottom: 5px solid green;
+}
+/* ----------------your pledges div---------------- */
 .yourPledgesDiv {
   display: flex;
   flex-direction: column;
   width: 50vw;
 }
+
+/* ------------------------wallet div------------------------ */
 .walletDiv {
   display: flex;
   flex-direction: column;
