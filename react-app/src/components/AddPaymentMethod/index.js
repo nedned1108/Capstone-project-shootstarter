@@ -13,7 +13,6 @@ const AddPaymentMethod = () => {
   const [expire_year, setExpireYear] = useState()
   const [cvv, setCvv] = useState()
   const [card_type, setCardType] = useState('Mastercard')
-  const [add_payment, setAddPayment] = useState(true)
   const [errors, setErrors] = useState([]);
   const { closeModal } = useModal()
 
