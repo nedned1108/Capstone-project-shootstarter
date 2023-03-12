@@ -34,8 +34,8 @@ const PledgeCard = ({ pledge, payment_methods }) => {
     if (currentUser.pledges.includes(pledge.id)) {
       setModalContent(<ChooseOtherModal />)
     } else {
-      const data = await dispatch(thunkChoosePledge(choice))
-      setModalContent(<PaymentModal payment_methods={payment_methods}/>)
+      // const data = await dispatch(thunkChoosePledge(choice))
+      setModalContent(<PaymentModal payment_methods={payment_methods} choice={choice}/>)
       dispatch(authenticate())
     }
   }

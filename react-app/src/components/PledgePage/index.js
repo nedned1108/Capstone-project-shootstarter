@@ -47,7 +47,10 @@ const PledgePage = () => {
         <p>By {currentProject.owner.first_name} {currentProject.owner.last_name}</p>
       </div>
       <div className="pledgesDiv">
-        <h2>Select your reward</h2>
+        <div>
+          <h2>Select your reward</h2>
+          <p>You can only choose each reward once</p>
+        </div>
         <div className="addPledge">
           {currentUser && currentProject && currentUser.id == currentProject.owner_id &&
             <OpenModalButton 
