@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
 import UpdatePledgeModal from "../UpdatePledgeModal";
 import { thunkDeletePledge, thunkChoosePledge } from "../../store/pledge";
-import { authenticate } from "../../store/session";
+
 import { useModal } from "../../context/Modal";
 import PaymentModal from "./PaymentModal";
 import ChooseOtherModal from "./ChooseOtherModal";
@@ -36,7 +36,6 @@ const PledgeCard = ({ pledge, payment_methods }) => {
     } else {
       // const data = await dispatch(thunkChoosePledge(choice))
       setModalContent(<PaymentModal payment_methods={payment_methods} choice={choice}/>)
-      dispatch(authenticate())
     }
   }
 
