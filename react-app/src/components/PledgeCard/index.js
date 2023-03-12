@@ -6,13 +6,13 @@ import UpdatePledgeModal from "../UpdatePledgeModal";
 import { thunkDeletePledge, thunkChoosePledge } from "../../store/pledge";
 import { authenticate } from "../../store/session";
 import { useModal } from "../../context/Modal";
-import ThankYouModal from "./ThankYouModal";
+import PaymentModal from "./PaymentModal";
 import ChooseOtherModal from "./ChooseOtherModal";
 import ConfirmDeletePledge from "./ConfirmDeletePledge";
 import './PledgeCard.css'
 
 
-const PledgeCard = ({ pledge }) => {
+const PledgeCard = ({ pledge, payment_methods }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const currentUser = useSelector(state => state.session.user)
@@ -35,7 +35,7 @@ const PledgeCard = ({ pledge }) => {
       setModalContent(<ChooseOtherModal />)
     } else {
       const data = await dispatch(thunkChoosePledge(choice))
-      setModalContent(<ThankYouModal />)
+      setModalContent(<PaymentModal payment_methods={payment_methods}/>)
       dispatch(authenticate())
     }
   }
