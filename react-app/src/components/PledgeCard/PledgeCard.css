@@ -92,3 +92,11 @@
   padding: 5px;
   cursor: pointer;
 }
+
+/* -------------black out-------------- */
+.black {
+  background-color: rgb(190, 190, 190);
+}
+.black button {
+  background-color: gray;
+}

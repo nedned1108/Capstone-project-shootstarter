@@ -34,7 +34,6 @@ const PledgeCard = ({ pledge, payment_methods }) => {
     if (currentUser.pledges.includes(pledge.id)) {
       setModalContent(<ChooseOtherModal />)
     } else {
-      // const data = await dispatch(thunkChoosePledge(choice))
       setModalContent(<PaymentModal payment_methods={payment_methods} choice={choice}/>)
     }
   }
@@ -44,7 +43,7 @@ const PledgeCard = ({ pledge, payment_methods }) => {
   }
 
   return (
-    <div className="pledgeCardMainDiv">
+    <div className={`pledgeCardMainDiv ${currentUser.pledges.includes(pledge.id) ? "black" : ""}`}>
       <div className="price_reward">
         <h4>
           Pledge ${pledge.price}
