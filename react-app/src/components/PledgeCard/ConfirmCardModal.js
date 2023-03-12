@@ -14,8 +14,8 @@ const ConfirmCardModal = ({ payment_method, choice }) => {
   const cancel = () => {
     closeModal()
   }
-  const confirm = () => {
-    dispatch(thunkChoosePledge(choice))
+  const confirm = async () => {
+    await dispatch(thunkChoosePledge(choice))
     dispatch(authenticate())
     closeModal()
   }

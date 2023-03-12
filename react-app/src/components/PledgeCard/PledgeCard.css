@@ -57,11 +57,14 @@
   padding: 20px;
   border-radius: 10px;
   height: 40vh;
+  width: 400px;
   max-height: 600px;
   overflow-y: scroll;
 }
 .paymentMethodModal h1 {
   color: green;
+  display: flex;
+  justify-content: center;
 }
 /* -----------------choose other-------------- */
 .chooseOtherDiv {
