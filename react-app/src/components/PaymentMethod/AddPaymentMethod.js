@@ -15,38 +15,46 @@ const AddPaymentMethod = () => {
   const [card_type, setCardType] = useState('Mastercard')
   const [errors, setErrors] = useState([]);
   const { closeModal } = useModal()
+  const today = new Date()
+  const thisYear= today.getFullYear()
+  const thisMonth= today.getMonth()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-
-    const cardData = {
-      name_on_card,
-      card_number,
-      expire_month,
-      expire_year,
-      cvv,
-      card_type
-    }
-    const data = await dispatch(thunkCreatePayment(cardData))
-    if (data.errors) {
-      setErrors(data.errors)
+    if (expire_year < thisYear) {
+      setErrors(["Invalid Expire Date"])
+    } else if (expire_year == thisYear && expire_month <= thisMonth) {
+      setErrors(["Invalid Expire Date"])
     } else {
-      setErrors([]);
-      closeModal()
+      const cardData = {
+        name_on_card,
+        card_number,
+        expire_month,
+        expire_year,
+        cvv,
+        card_type
+      }
+      const data = await dispatch(thunkCreatePayment(cardData))
+      if (data.errors) {
+        setErrors(data.errors)
+      } else {
+        setErrors([]);
+        closeModal()
+      }
     }
   }
 
   return (
-    <div>
+    <div className="addPaymentMethod">
       <h1>
         Add your card
       </h1>
-      <form onSubmit={handleSubmit}>
+      <form className="addPaymentForm" onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
-        <div className="input-form">
+        <div className="credit-form">
           <label>Name on Card:</label>
           <input
             type='text'
@@ -55,7 +63,7 @@ const AddPaymentMethod = () => {
             required
           />
         </div>
-        <div className="input-form">
+        <div className="credit-form">
           <label>Card Number:</label>
           <input
             type='number'
@@ -64,35 +72,39 @@ const AddPaymentMethod = () => {
             required
           />
         </div>
-        <div className="input-form">
-          <label>Expire:</label>
-          <select
-            type='number'
-            value={expire_month}
-            onChange={(e) => setExpireMonth(e.target.value)}
-            required
-          >
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-          </select>
-          <input
-            type='number'
-            value={expire_year}
-            onChange={(e) => setExpireYear(e.target.value)}
-            required
-          />
+        <div className="expire">
+          <label>Expiration Date:</label>
+          <div>
+            <select
+              type='number'
+              value={expire_month}
+              onChange={(e) => setExpireMonth(e.target.value)}
+              required
+              className="expire_month"
+              >
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+            </select>
+            <input
+              type='number'
+              value={expire_year}
+              onChange={(e) => setExpireYear(e.target.value)}
+              required
+              className="expire_year"
+            />
+          </div>
         </div>
-        <div className="input-form">
+        <div className="credit-form">
           <label>CVV:</label>
           <input
             type='number'
@@ -101,7 +113,7 @@ const AddPaymentMethod = () => {
             required
           />
         </div>
-        <div className="input-form">
+        <div className="credit-form">
           <label>Card Type:</label>
           <select
             type='text'

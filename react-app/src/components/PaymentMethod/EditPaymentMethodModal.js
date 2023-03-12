@@ -39,15 +39,15 @@ const EditPaymentMethodModal = ({ card }) => {
   }
 
   return (
-    <div>
+    <div className="addPaymentMethod">
       <h1>
         Update your card
       </h1>
-      <form onSubmit={handleSubmit}>
+      <form className="addPaymentForm" onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
-        <div className="input-form">
+        <div className="credit-form">
           <label>Name on Card:</label>
           <input
             type='text'
@@ -56,7 +56,7 @@ const EditPaymentMethodModal = ({ card }) => {
             required
           />
         </div>
-        <div className="input-form">
+        <div className="credit-form">
           <label>Card Number:</label>
           <input
             type='number'
@@ -65,35 +65,39 @@ const EditPaymentMethodModal = ({ card }) => {
             required
           />
         </div>
-        <div className="input-form">
+        <div className="expire">
           <label>Expire:</label>
-          <select
-            type='number'
-            value={expire_month}
-            onChange={(e) => setExpireMonth(e.target.value)}
-            required
-          >
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-          </select>
-          <input
-            type='number'
-            value={expire_year}
-            onChange={(e) => setExpireYear(e.target.value)}
-            required
-          />
+          <div>
+            <select
+              type='number'
+              value={expire_month}
+              onChange={(e) => setExpireMonth(e.target.value)}
+              required
+              className="expire_month"
+            >
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+            </select>
+            <input
+              type='number'
+              value={expire_year}
+              onChange={(e) => setExpireYear(e.target.value)}
+              required
+              className="expire_year"
+            />
+          </div>
         </div>
-        <div className="input-form">
+        <div className="credit-form">
           <label>CVV:</label>
           <input
             type='number'
@@ -102,7 +106,7 @@ const EditPaymentMethodModal = ({ card }) => {
             required
           />
         </div>
-        <div className="input-form">
+        <div className="credit-form">
           <label>Card Type:</label>
           <select
             type='text'
