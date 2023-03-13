@@ -47,6 +47,9 @@ const UserProfilePage = () => {
   const onProfileImageError = (e) => {
     e.target.src = user_image
   }
+  const toProject = (id) => {
+    history.push(`/project/${id}`)
+  }
 
   if (!currentUser) {
     history.push('/login')
@@ -79,7 +82,7 @@ const UserProfilePage = () => {
             <div>
               {(pledges.length == 0 || pledges[0] == undefined) ? 
                 "You have no pledge"
-                : pledges.map(pledge => <div>{pledge.pledge_name}</div>)
+                : pledges.map(pledge => <div onClick={() => toProject(pledge.project_id)} className="singlePledge">{<i class="fa-sharp fa-solid fa-award"></i>} {pledge.pledge_name}</div>)
               }
             </div>
           </div>

@@ -14,6 +14,11 @@
   margin-top: 20px;
   border: 1px green solid;
   border-radius: 10px;
+  background-color: white;
+  transition: 400ms ease-in;
+}
+.paymentMethodCard:hover {
+  transform: scale(1.1, 1.1);
 }
 .cardNum {
   display: flex;

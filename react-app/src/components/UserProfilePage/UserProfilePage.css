@@ -61,10 +61,23 @@
   display: flex;
   flex-direction: column;
   width: 50vw;
+  border: 1px gray solid;
+  padding: 10px;
+  border-radius: 10px;
 }
 .yourPledgesDiv h2 {
   display: flex;
   justify-content: center;
+  border-bottom: 1px gray solid;
+  padding-bottom: 10px;
+}
+.singlePledge {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.singlePledge:hover {
+  background-color: rgb(206, 206, 206);
 }
 /* ------------------------wallet div------------------------ */
 .walletDiv {
