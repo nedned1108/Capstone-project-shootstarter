@@ -4,7 +4,6 @@ import { thunkChoosePledge } from '../../store/pledge';
 import PaymentModal from './PaymentModal';
 import { useDispatch } from 'react-redux';
 import { authenticate } from "../../store/session";
-
 import './PledgeCard.css'
 
 const ConfirmCardModal = ({ payment_method, choice }) => {
