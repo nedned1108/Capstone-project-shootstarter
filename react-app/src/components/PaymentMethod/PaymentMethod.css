@@ -55,6 +55,10 @@
   margin-top: 20px;
   border: 1px green solid;
   border-radius: 10px;
+  transition: 400ms ease-in;
+}
+.paymentMethod:hover {
+  transform: scale(1.05, 1.05);
 }
 .paymentMethod button {
   background-color: green;

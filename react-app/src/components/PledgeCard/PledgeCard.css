@@ -4,6 +4,10 @@
   display: flex;
   column-gap: 30px;
   margin-top: 30px;
+  transition: 400ms ease-in;
+}
+.pledgeCardMainDiv:hover {
+  transform: scale(1.1, 1.1);
 }
 
 .price_reward {
