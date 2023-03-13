@@ -4,15 +4,15 @@ import { Link, useHistory } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
 import UpdatePledgeModal from "../UpdatePledgeModal";
 import { thunkDeletePledge, thunkChoosePledge } from "../../store/pledge";
-import { authenticate } from "../../store/session";
+
 import { useModal } from "../../context/Modal";
-import ThankYouModal from "./ThankYouModal";
+import PaymentModal from "./PaymentModal";
 import ChooseOtherModal from "./ChooseOtherModal";
 import ConfirmDeletePledge from "./ConfirmDeletePledge";
 import './PledgeCard.css'
 
 
-const PledgeCard = ({ pledge }) => {
+const PledgeCard = ({ pledge, payment_methods }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const currentUser = useSelector(state => state.session.user)
@@ -34,9 +34,7 @@ const PledgeCard = ({ pledge }) => {
     if (currentUser.pledges.includes(pledge.id)) {
       setModalContent(<ChooseOtherModal />)
     } else {
-      const data = await dispatch(thunkChoosePledge(choice))
-      setModalContent(<ThankYouModal />)
-      dispatch(authenticate())
+      setModalContent(<PaymentModal payment_methods={payment_methods} choice={choice}/>)
     }
   }
 
@@ -45,7 +43,7 @@ const PledgeCard = ({ pledge }) => {
   }
 
   return (
-    <div className="pledgeCardMainDiv">
+    <div className={`pledgeCardMainDiv ${currentUser && currentUser.pledges.includes(pledge.id) ? "black" : ""}`}>
       <div className="price_reward">
         <h4>
           Pledge ${pledge.price}

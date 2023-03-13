@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink, useParams, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { thunkLoadAllProjects } from "../../store/project";
 import { thunkLoadAllPayments } from "../../store/payment_method";
 import { thunkLoadAllPledges } from "../../store/pledge";
 import OpenModalButton from "../OpenModalButton";
-import AddPaymentMethod from "../AddPaymentMethod";
-import PaymentMethodCard from "../AddPaymentMethod/PaymentMethodCard";
+import AddPaymentMethod from "../PaymentMethod/AddPaymentMethod";
+import PaymentMethodCard from "../PaymentMethod/PaymentMethodCard";
 import './UserProfilePage.css'
+import user_image from '../../images/default-user.png'
 
 
 const UserProfilePage = () => {
@@ -23,7 +24,7 @@ const UserProfilePage = () => {
     payment_methods = Object.values(payment_methodsData)
   }
   let pledges = [];
-  if (allPledgesData) {
+  if (allPledgesData && currentUser) {
     for (let num of currentUser.pledges) {
       pledges.push(Object.values(allPledgesData).find(pledge => pledge.id == num))
     }
@@ -43,43 +44,57 @@ const UserProfilePage = () => {
     setYourPledges(false)
     setWallet(true)
   }
+  const onProfileImageError = (e) => {
+    e.target.src = user_image
+  }
+  const toProject = (id) => {
+    history.push(`/project/${id}`)
+  }
+
+  if (!currentUser) {
+    history.push('/login')
+  }
 
   return (
     <div className="pageMainDiv">
       <h1>User Profile</h1>
       <div className="profileMainDiv">
         {currentUser && 
-          <div className="userProfileDiv">
-            <div>
-              <img className="profileImage" src={currentUser.profile_image}/>
+          <div className="userProfileMainDiv">
+            <div className="userProfileContainer">
+              <div className="profileImageDiv">
+                <img alt="profile-image" className="profileImage" src={currentUser.profile_image} onError={onProfileImageError}/>
+              </div>
+              <div>
+                <h3>{currentUser.first_name} {currentUser.last_name}</h3>
+                <p>{currentUser.bio}</p>
+              </div>
+              <div className="buttonDiv">
+                <button className={`userProfileButton ${yourPledges == true ? "greenDash" : ""}`} onClick={pledgesButton}>Pledges</button>  
+                <button className={`userProfileButton ${yourPledges == false ? "greenDash" : ""}`} onClick={walletButton}>Wallet</button>  
+              </div>
             </div>
-            <div>
-              <p>{currentUser.first_name} {currentUser.last_name}</p>
-              <p>{currentUser.bio}</p>
-            </div>
-            <button onClick={pledgesButton}>Pledges</button>  
-            <button onClick={walletButton}>Wallet</button>  
           </div>
         }
         {yourPledges == true ?
           <div className="yourPledgesDiv">
-            <h3>Your Pledges</h3>
+            <h2>Your Pledges</h2>
             <div>
               {(pledges.length == 0 || pledges[0] == undefined) ? 
                 "You have no pledge"
-                : pledges.map(pledge => <div>{pledge.pledge_name}</div>)
+                : pledges.map(pledge => <div onClick={() => toProject(pledge.project_id)} className="singlePledge">{<i class="fa-sharp fa-solid fa-award"></i>} {pledge.pledge_name}</div>)
               }
             </div>
           </div>
           :
           <div className="walletDiv">
-            <h3>Wallet</h3>
-            <div>
+            <h2>Wallet</h2>
+            <div className="addCardButton">
             <OpenModalButton 
               buttonText='Add your card'
               modalComponent={<AddPaymentMethod />}
             />
-            {payment_methods && payment_methods.map(payment_method => <PaymentMethodCard payment_method={payment_method}/>)}
+            {payment_methods && (payment_methods.length != 0 ? payment_methods.map(payment_method => <PaymentMethodCard payment_method={payment_method}/>) : <h4>You have no payment method</h4>)}
             </div>
           </div>
         }

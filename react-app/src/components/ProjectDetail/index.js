@@ -140,7 +140,7 @@ const ProjectDetail = () => {
         </div>
         <div>
           <div className="rightDiv">
-            <img src={currentProject.owner.profile_image} onError={onProfileImageError}/>
+            <img alt="owner-profile-image" src={currentProject.owner.profile_image} onError={onProfileImageError}/>
             <h4>{currentProject.owner.first_name} {currentProject.owner.last_name}</h4>
             <p>{currentProject.owner.bio}</p>
           </div>

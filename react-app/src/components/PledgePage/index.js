@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams, NavLink } from "react-router-dom";
 import { thunkLoadAllPledges } from "../../store/pledge";
 import { thunkLoadAllProjects } from "../../store/project";
+import { thunkLoadAllPayments } from "../../store/payment_method"
 import CreatePledgeModal from "../CreatePledgeModal";
 import OpenModalButton from "../OpenModalButton";
 import PledgeCard from "../PledgeCard";
@@ -15,19 +16,25 @@ const PledgePage = () => {
   const allPledgesData = useSelector(state => state.pledge.pledges)
   const currentUser = useSelector(state => state.session.user)
   const projects = useSelector(state => state.project.projects)
+  const payment_methodsData = useSelector(state => state.payment.payments)
   const currentProject = Object.values(projects).find(project => project.id == projectId)
 
   let pledges;
   if (allPledgesData) {
     pledges = Object.values(allPledgesData).filter(pledge => pledge.project_id == projectId);
   }
+  let payment_methods;
+  if (payment_methodsData) {
+    payment_methods = Object.values(payment_methodsData)
+  }
 
   useEffect(() => {
     dispatch(thunkLoadAllPledges())
     dispatch(thunkLoadAllProjects())
+    dispatch(thunkLoadAllPayments())
   }, [dispatch])
 
-  if (currentProject == undefined) {
+  if (currentProject == undefined || payment_methods == undefined) {
     return null
   }
 
@@ -40,7 +47,10 @@ const PledgePage = () => {
         <p>By {currentProject.owner.first_name} {currentProject.owner.last_name}</p>
       </div>
       <div className="pledgesDiv">
-        <h2>Select your reward</h2>
+        <div>
+          <h2>Select your reward</h2>
+          <p>You can only choose each reward once</p>
+        </div>
         <div className="addPledge">
           {currentUser && currentProject && currentUser.id == currentProject.owner_id &&
             <OpenModalButton 
@@ -49,7 +59,7 @@ const PledgePage = () => {
             />
           }
         </div>
-        {pledges && pledges.map(pledge => <PledgeCard pledge={pledge} key={pledge.id} />)}
+        {pledges && pledges.map(pledge => <PledgeCard pledge={pledge} payment_methods={payment_methods} key={pledge.id} />)}
       </div>
     </div>
   )
