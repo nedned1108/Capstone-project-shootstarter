@@ -3,7 +3,7 @@ import { useModal } from '../../context/Modal';
 import { useDispatch } from 'react-redux';
 import { thunkDeletePayment } from '../../store/payment_method';
 import { thunkLoadAllPayments } from '../../store/payment_method';
-import './AddPaymentMethod.css'
+import './PaymentMethod.css'
 
 
 const RemoveCardModal = ({ card }) => {

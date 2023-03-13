@@ -8,16 +8,38 @@
   row-gap: 10px;
 }
 
+/* --------------------------user profile payment card------------------- */
 .paymentMethodCard {
-  border: 1px black solid;
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px green solid;
+  border-radius: 10px;
+}
+.cardNum {
+  display: flex;
+  justify-content: space-between;
+}
+.cardNum p {
+  margin-top: 0;
+}
+.cardButton {
+  display: flex;
+  column-gap: 20px;
+}
+.cardButton button {
+  color: white;
+  background-color: green;
+  border: none;
+  padding: 5px;
+  font-weight: 600;
 }
 
-
+/* -----------card modal---------------- */
 .paymentMethod {
   border: 1px black solid;
 }
 
-
+/* ----------------------payment method form--------------- */
 .addPaymentMethod {
   display: flex;
   flex-direction: column;

@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import OpenModalButton from '../OpenModalButton'
 import ConfirmCardModal from '../PledgeCard/ConfirmCardModal';
-import './AddPaymentMethod.css'
+import './PaymentMethod.css'
 
 
 const PaymentMethodModal = ({ payment_method, choice }) => {
