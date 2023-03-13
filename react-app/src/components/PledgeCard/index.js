@@ -43,7 +43,7 @@ const PledgeCard = ({ pledge, payment_methods }) => {
   }
 
   return (
-    <div className={`pledgeCardMainDiv ${currentUser.pledges.includes(pledge.id) ? "black" : ""}`}>
+    <div className={`pledgeCardMainDiv ${currentUser && currentUser.pledges.includes(pledge.id) ? "black" : ""}`}>
       <div className="price_reward">
         <h4>
           Pledge ${pledge.price}

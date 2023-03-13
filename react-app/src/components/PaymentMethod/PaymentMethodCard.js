@@ -22,7 +22,7 @@ const PaymentMethodCard = ({ payment_method }) => {
         {payment_method.card_type == "American Express" ? <img className="cardTypeImg" src={american_express}/> : ""}
       </div>
       <div className="cardNum">
-        <p>{payment_method.card_type}  ****{payment_method.card_number.slice(9)}</p>
+        <p>{payment_method.card_type}  ****{payment_method.card_number.slice(8)}</p>
         <p>expires: {payment_method.expire_month}/{payment_method.expire_year}</p>
       </div>
       <div className="cardButton">
