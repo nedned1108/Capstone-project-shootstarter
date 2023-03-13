@@ -26,6 +26,8 @@ const AddPaymentMethod = () => {
       setErrors(["Invalid Expire Date"])
     } else if (expire_year == thisYear && expire_month <= thisMonth) {
       setErrors(["Invalid Expire Date"])
+    } else if (cvv < 100 || cvv > 9999) {
+      setErrors(["Invalid CVV"])
     } else {
       const cardData = {
         name_on_card,
@@ -124,7 +126,7 @@ const AddPaymentMethod = () => {
             <option>Mastercard</option>
             <option>Visa</option>
             <option>American Express</option>
-            <option>Discovery</option>
+            <option>Discover</option>
           </select>
         </div>
         <div>

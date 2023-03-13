@@ -117,7 +117,7 @@ const EditPaymentMethodModal = ({ card }) => {
             <option>Mastercard</option>
             <option>Visa</option>
             <option>American Express</option>
-            <option>Discovery</option>
+            <option>Discover</option>
           </select>
         </div>
         <div>

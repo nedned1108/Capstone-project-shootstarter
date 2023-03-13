@@ -86,12 +86,12 @@ const UserProfilePage = () => {
           :
           <div className="walletDiv">
             <h2>Wallet</h2>
-            <div>
+            <div className="addCardButton">
             <OpenModalButton 
               buttonText='Add your card'
               modalComponent={<AddPaymentMethod />}
             />
-            {payment_methods && payment_methods.map(payment_method => <PaymentMethodCard payment_method={payment_method}/>)}
+            {payment_methods && (payment_methods.length != 0 ? payment_methods.map(payment_method => <PaymentMethodCard payment_method={payment_method}/>) : <h4>You have no payment method</h4>)}
             </div>
           </div>
         }
