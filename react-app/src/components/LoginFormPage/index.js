@@ -14,13 +14,13 @@ function LoginFormPage() {
   const history = useHistory();
 
   if (sessionUser) return <Redirect to="/" />;
-  // if (sessionUser) history.goBack();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
     if (data) {
-      setErrors(data);
+      console.log(data)
+      setErrors([data[0]]);
     }
   };
 
@@ -44,7 +44,6 @@ function LoginFormPage() {
           ))}
         </ul>
         <div className="input-form">
-          {/* <label>Email</label> */}
           <input
             placeholder="Email"
             type="text"
@@ -54,7 +53,6 @@ function LoginFormPage() {
           />
         </div>
         <div className="input-form">
-          {/* <label>Password</label> */}
             <input
               placeholder="Password"
               type="password"
