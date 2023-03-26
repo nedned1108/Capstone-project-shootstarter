@@ -77,8 +77,8 @@
   padding: 25px;
   border-radius: 25px;
   border: 1px rgb(206, 206, 206) solid;
-  overflow: scroll;
-  height: 50vh;
+  height: 40vh;
+  min-height: 400px;
   background-color: white;
 }
 .addPaymentMethod h1 {
