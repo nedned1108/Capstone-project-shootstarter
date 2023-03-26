@@ -16,7 +16,7 @@ const Footer = () => {
           {/* <p onClick={() => openInNewTab('https://github.com/nedned1108/capstone-project-shootstarter')}>{<i class="fa-brands fa-github"></i>}</p>
           <p onClick={() => openInNewTab('https://www.linkedin.com/in/ned-nguyen-693575257/')}>{<i class="fa-brands fa-linkedin"></i>}</p> */}
           <a target='_blank' href='https://github.com/nedned1108/capstone-project-shootstarter'>{<i class="fa-brands fa-github"></i>}</a>
-          <a target='_blank' href='https://www.linkedin.com/in/ned-nguyen-693575257/'>{<i class="fa-brands fa-linkedin"></i>}</a>
+          <a target='_blank' href='https://www.linkedin.com/in/truong-nguyen-693575257/'>{<i class="fa-brands fa-linkedin"></i>}</a>
         </div>
       </div>
       <div className='footerTech'>
