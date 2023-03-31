@@ -67,8 +67,11 @@
   row-gap: 10px;
 }
 .recommendedProjectsDiv img {
-  width: 120px;
+  width: 10vw;
+  height: 10vh;
+  max-width: 200px;
 }
+
 .singleProject a {
   display: flex;
   justify-content: flex-start;
@@ -76,7 +79,6 @@
   column-gap: 20px;
   overflow: hidden;
 }
-
 .singleProjectInfo h5{
   margin: 0;
   font-size: 14px;
