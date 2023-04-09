@@ -69,8 +69,24 @@ const ProjectDetail = () => {
             <p>pledged of ${currentProject.goal}</p>
             <h4>{currentProject.backers}</h4>
             <p>backers</p>
-            <h4>{daysToGo}</h4>
-            <p>days to go</p>
+            {
+              daysToGo < 0 ?
+              <>
+                <h4>End</h4>
+                <p>{Math.abs(daysToGo)} days ago</p>
+              </>
+              :
+              (daysToGo == 1 || daysToGo == 0) ?
+              <>
+                <h4>{daysToGo}</h4>
+                <p>day to go</p>
+              </>
+              :
+              <>
+                <h4>{daysToGo}</h4>
+                <p>days to go</p>
+              </>
+            }
             <div className="pledgeButton">
               <NavLink to={`/project/${currentProject.id}/pledge`}>
                 Back this project
