@@ -138,3 +138,10 @@
   padding: 5px;
   cursor: pointer;
 }
+
+.projectEnd {
+  background-color: rgb(206, 206, 206);
+  cursor: not-allowed;
+  width: fit-content;
+  padding: 10px;
+}

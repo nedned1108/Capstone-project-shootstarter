@@ -12,7 +12,7 @@ import ConfirmDeletePledge from "./ConfirmDeletePledge";
 import './PledgeCard.css'
 
 
-const PledgeCard = ({ pledge, payment_methods }) => {
+const PledgeCard = ({ pledge, payment_methods, daysToGo }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const currentUser = useSelector(state => state.session.user)
@@ -22,7 +22,7 @@ const PledgeCard = ({ pledge, payment_methods }) => {
 
   const deletePledge = (e) => {
     return dispatch(thunkDeletePledge(e))
-  } 
+  }
   const choosePledge = async (e) => {
     e.preventDefault();
 
@@ -34,7 +34,7 @@ const PledgeCard = ({ pledge, payment_methods }) => {
     if (currentUser.pledges.includes(pledge.id)) {
       setModalContent(<ChooseOtherModal />)
     } else {
-      setModalContent(<PaymentModal payment_methods={payment_methods} choice={choice}/>)
+      setModalContent(<PaymentModal payment_methods={payment_methods} choice={choice} />)
     }
   }
 
@@ -59,20 +59,24 @@ const PledgeCard = ({ pledge, payment_methods }) => {
         <h6>{delivery}</h6>
         <p>Ships to</p>
         <h6>{pledge.ships_to}</h6>
-        {currentUser && pledge.owner_id == currentUser.id && 
+        {currentUser && pledge.owner_id == currentUser.id &&
           <div className="update_delete">
-            <OpenModalButton 
+            <OpenModalButton
               buttonText='Update Pledge'
               modalComponent={<UpdatePledgeModal pledge={pledge} />}
             />
-            <OpenModalButton 
+            <OpenModalButton
               buttonText="Delete Pledge"
               modalComponent={<ConfirmDeletePledge pledge={pledge} />}
             />
-          </div> 
+          </div>
         }
-        {currentUser && pledge.owner_id != currentUser.id && 
-          <button onClick={choosePledge} >Choose this reward</button>
+        {daysToGo < 0 ?
+          <h4 className="projectEnd" >Funding Ended</h4>
+          :
+          (currentUser && pledge.owner_id != currentUser.id &&
+            <button onClick={choosePledge} >Choose this reward</button>
+          )
         }
       </div>
     </div>

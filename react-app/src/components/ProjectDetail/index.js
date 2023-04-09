@@ -69,12 +69,33 @@ const ProjectDetail = () => {
             <p>pledged of ${currentProject.goal}</p>
             <h4>{currentProject.backers}</h4>
             <p>backers</p>
-            <h4>{daysToGo}</h4>
-            <p>days to go</p>
-            <div className="pledgeButton">
-              <NavLink to={`/project/${currentProject.id}/pledge`}>
-                Back this project
-              </NavLink>
+            {
+              daysToGo < 0 ?
+              <>
+                <h4>End</h4>
+                <p>{Math.abs(daysToGo)} days ago</p>
+              </>
+              :
+              (daysToGo == 1 || daysToGo == 0) ?
+              <>
+                <h4>{daysToGo}</h4>
+                <p>day to go</p>
+              </>
+              :
+              <>
+                <h4>{daysToGo}</h4>
+                <p>days to go</p>
+              </>
+            }
+            <div className={`pledgeButton ${daysToGo < 0 ? 'disableButton' : ''}`}>
+              {daysToGo < 0 
+                ? 
+                  <p>Funding Ended</p>
+                :
+                <NavLink to={`/project/${currentProject.id}/pledge`}>
+                  Back this project
+                </NavLink>
+              }
             </div>
             {currentUser && currentUser.id == currentProject.owner_id ? 
             <div className="editDelete">
