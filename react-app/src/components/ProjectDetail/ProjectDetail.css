@@ -62,6 +62,10 @@
   color: white;
   font-weight: 500;
 }
+.disableButton {
+  background-color: rgb(206, 206, 206);
+  cursor: not-allowed;
+}
 
 .editDelete {
   display: flex;

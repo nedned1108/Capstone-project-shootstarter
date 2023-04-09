@@ -9,6 +9,8 @@ import AddImageModal from "./AddImageModal";
 import ConfirmDeleteProject from "./ConfirmDeleteProject";
 import CommentCard from "../CommentCard";
 import CreateCommentModal from "../CreateCommentModal";
+import ProjectFundingEnd from "./ProjectFundingEnd";
+import setModalContent from "../../context/Modal";
 
 import './ProjectDetail.css'
 import no_image from '../../images/empty-image.png' 
@@ -87,10 +89,15 @@ const ProjectDetail = () => {
                 <p>days to go</p>
               </>
             }
-            <div className="pledgeButton">
-              <NavLink to={`/project/${currentProject.id}/pledge`}>
-                Back this project
-              </NavLink>
+            <div className={`pledgeButton ${daysToGo < 0 ? 'disableButton' : ''}`}>
+              {daysToGo < 0 
+                ? 
+                  <p>Funding Ended</p>
+                :
+                <NavLink to={`/project/${currentProject.id}/pledge`}>
+                  Back this project
+                </NavLink>
+              }
             </div>
             {currentUser && currentUser.id == currentProject.owner_id ? 
             <div className="editDelete">
