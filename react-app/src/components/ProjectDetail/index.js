@@ -9,8 +9,6 @@ import AddImageModal from "./AddImageModal";
 import ConfirmDeleteProject from "./ConfirmDeleteProject";
 import CommentCard from "../CommentCard";
 import CreateCommentModal from "../CreateCommentModal";
-import ProjectFundingEnd from "./ProjectFundingEnd";
-import setModalContent from "../../context/Modal";
 
 import './ProjectDetail.css'
 import no_image from '../../images/empty-image.png' 

@@ -18,6 +18,13 @@ const PledgePage = () => {
   const projects = useSelector(state => state.project.projects)
   const payment_methodsData = useSelector(state => state.payment.payments)
   const currentProject = Object.values(projects).find(project => project.id == projectId)
+  let daysToGo
+  let today = new Date()
+  if (currentProject) {
+    const oneDay = 1000*60*60*24;
+    const endDay = new Date(currentProject.end_day.split('-').join('/'))
+    daysToGo = Math.ceil((endDay.getTime() - today.getTime())/oneDay)
+  }
 
   let pledges;
   if (allPledgesData) {
@@ -59,7 +66,7 @@ const PledgePage = () => {
             />
           }
         </div>
-        {pledges && pledges.map(pledge => <PledgeCard pledge={pledge} payment_methods={payment_methods} key={pledge.id} />)}
+        {pledges && pledges.map(pledge => <PledgeCard pledge={pledge} payment_methods={payment_methods} daysToGo={daysToGo} key={pledge.id} />)}
       </div>
     </div>
   )
