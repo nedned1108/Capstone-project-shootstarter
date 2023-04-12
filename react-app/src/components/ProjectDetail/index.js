@@ -126,6 +126,11 @@ const ProjectDetail = () => {
           </div>
         </div>
         <div className="middleDiv">
+          <div className="author">
+            <img alt="owner-profile-image" src={currentProject.owner.profile_image} onError={onProfileImageError}/>
+            <h4>{currentProject.owner.first_name} {currentProject.owner.last_name}</h4>
+            <p>{currentProject.owner.bio}</p>
+          </div>
           <div>
             <h2 className="story">Story</h2>
             {currentProject.story}
