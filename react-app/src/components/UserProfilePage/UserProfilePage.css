@@ -97,3 +97,25 @@
   border: none;
   cursor: pointer;
 }
+
+/* -----------------------media screen--------------------- */
+@media screen and (max-width: 768px) {
+  .pageMainDiv {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .profileMainDiv {
+    flex-direction: column;
+    align-items: center;
+  }
+  .userProfileMainDiv {
+    width: 80vw;
+    margin-top: 20px;
+  }
+  .yourPledgesDiv {
+    width: 80vw;
+  }
+  .walletDiv {
+    width: 80vw;
+  }
+}
