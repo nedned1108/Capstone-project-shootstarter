@@ -18,3 +18,14 @@ export const getGPT = () => async (dispatch) => {
     }
     return "Could not get the GPT"
 }
+
+const initialState = {}
+
+export default function reducer(state = initialState, action) {
+    switch (action.type) {
+        case GET_GPT:
+            return { key: action.gpt }
+        default:
+            return state
+    }
+}
