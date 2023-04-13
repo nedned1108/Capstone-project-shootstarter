@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getGPT } from "../../store/chatgpt";
+import "./ChatGPT.css";
 
 const ChatGPT = () => {
   const dispatch = useDispatch();
@@ -43,7 +44,6 @@ const ChatGPT = () => {
     if (json.choices) {
       setMessages([...messages, message, json.choices[0].text]);
       setMessage("");
-      // setAnswer(json.choices[0].text);
     } else {
       setError(true);
     }
@@ -60,16 +60,15 @@ const ChatGPT = () => {
       <h1>ChatGPT</h1>
       {loading && <p>Loading...</p>}
       {error && <p>Error</p>}
-      {/* <p>{answer}</p> */}
       <form onSubmit={handleSubmit}>
         <ul>
           {messages.map((message, idx) => (
             (idx % 2 === 0) ? 
-              <li key={idx} className="gpt-question" style={{ color: "red" }}>
+              <li key={idx} className="gpt-question" >
                 {message}
               </li>
             :
-              <li key={idx} className="gpt-response" style={{ color: "blue" }}>
+              <li key={idx} className="gpt-response" >
                 {message}
               </li>
           ))}
