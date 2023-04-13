@@ -129,6 +129,9 @@
   width: 100%;
 }
 
+.author {
+  display: none;
+}
 /* --------------------comment Div---------------------- */
 .comments button {
   background-color: green;
@@ -243,4 +246,62 @@
   color: white;
   padding: 5px;
   cursor: pointer;
+}
+
+/* -----------media screen----------------- */
+
+@media screen and (max-width: 768px) {
+  .projectMainDiv {
+    width: 100vw;
+  }
+  .projectImgInfo {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .projectInfo {
+    flex-direction: column;
+    width: 100%;
+  }
+  .projectInfoNum {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .bottomMainDiv {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .author {
+    display: flex;
+    width: 95%;
+    position: relative;
+    top: 40px;
+    margin-bottom: 60px;
+    flex-direction: column;
+    border: 1px black solid;
+    padding: 10px;
+    margin-top: 25px;
+    align-items: center;
+    align-self: center;
+  }
+  .author img {
+    align-self: center;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 100%;
+    position: absolute;
+    top: -45px;
+  }
+  .author h4 {
+    margin-top: 35px;
+  }
+  .author p {
+    margin: 0;
+    overflow: hidden;
+  }
+  .rightDiv {
+    display: none;
+  }
 }
