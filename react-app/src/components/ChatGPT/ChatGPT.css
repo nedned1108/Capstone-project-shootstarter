@@ -1,7 +1,38 @@
 .gpt-question {
-  color: red
+  display: flex;
+  color: black;
+  justify-content: flex-end;
+  margin-left: 20px;
 }
+.question-inner {
+  padding: 5px;
+  border: 1px black solid;
+  background-color: rgb(180, 255, 217);
+} 
 
 .gpt-response {
-  color: blue
+  color: black;
+  justify-content: flex-start;
+  margin-right: 20px;
+}
+.response-inner {
+  border: 1px black solid;
+  padding: 3px;
+  background-color: rgb(231, 231, 231);
+}
+
+.chatBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: white;
+  height: 250px;
+  width: 220px;
+  overflow-y: scroll;
+  padding: 0;
+  row-gap: 5px;
+  justify-content: flex-end;
+  margin-bottom: 20px;
 }

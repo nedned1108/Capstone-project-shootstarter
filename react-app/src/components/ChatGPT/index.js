@@ -7,7 +7,7 @@ const ChatGPT = () => {
   const dispatch = useDispatch();
   const gptKey = useSelector((state) => state.chatGPT.key);
   const [message, setMessage] = useState("");
-  const [answer, setAnswer] = useState([]);
+  const [visible, setVisible] = useState(true);
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -50,38 +50,44 @@ const ChatGPT = () => {
     setLoading(false);
   };
 
-  const handleAnswer = (e) => {
-    e.preventDefault();
-    setAnswer(e.target.value);
+  const hideChat = () => {
+    setVisible(false);
+  };
+  const showChat = () => {
+    setVisible(true);
   };
 
   return (
-    <div>
-      <h1>ChatGPT</h1>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error</p>}
-      <form onSubmit={handleSubmit}>
-        <ul>
-          {messages.map((message, idx) => (
-            (idx % 2 === 0) ? 
-              <li key={idx} className="gpt-question" >
-                {message}
-              </li>
-            :
-              <li key={idx} className="gpt-response" >
-                {message}
-              </li>
-          ))}
-        </ul>
-        <input
-          type="text"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          required
-        />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+      <div>
+        <h1>AI Assistant</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="chatBox" >
+            {loading && <p>Loading...</p>}
+            {error && <p>Error</p>}
+            {messages.map((message, idx) => (
+              (idx % 2 === 0) ? 
+                <div key={idx} className="gpt-question" >
+                  <div className="question-inner" >
+                    {message}
+                  </div>
+                </div>
+              :
+                <div key={idx} className="gpt-response" >
+                  <div className="response-inner" > 
+                    {message}
+                  </div>
+                </div>
+            ))}
+          </div>
+          <input
+            type="text"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
   )
 }
 

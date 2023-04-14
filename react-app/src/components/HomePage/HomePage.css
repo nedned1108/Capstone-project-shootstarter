@@ -119,6 +119,17 @@
   padding-left: 30px;
 }
 /* -----------------------gpt box---------------- */
+.gptShowChatButton {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: green;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  width: 300px;
+}
 .gptBox {
   position: fixed;
   display: flex;
@@ -133,7 +144,16 @@
   z-index: 1;
   background-color: whitesmoke;
 }
-
+.hideChatButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: red;
+  color: white;
+  width: 30px;
+  cursor: pointer;
+  font-weight: 800;
+}
 
 /* --------------------media screen---------------------- */
 @media screen and (max-width: 768px) {
