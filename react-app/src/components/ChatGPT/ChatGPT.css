@@ -29,10 +29,9 @@
   overflow: auto;
   background-color: white;
   height: 250px;
-  width: 220px;
-  overflow-y: scroll;
+  width: 250px;
   padding: 0;
   row-gap: 5px;
-  justify-content: flex-end;
+  overflow-y: auto;
   margin-bottom: 20px;
 }

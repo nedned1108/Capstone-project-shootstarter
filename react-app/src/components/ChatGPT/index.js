@@ -11,7 +11,7 @@ const ChatGPT = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const apiUrl = "https://api.openai.com/v1/engines/davinci/completions";
+  const apiUrl = "https://api.openai.com/v1/engines/text-curie-001/completions";
 
   useEffect(async () => {
     await dispatch(getGPT());
@@ -23,12 +23,11 @@ const ChatGPT = () => {
     setError(false);
     const data = {
       prompt: message,
-      max_tokens: 20,
+      max_tokens: 30,
       temperature: 0.7,
-      top_p: 1,
       frequency_penalty: 0,
       presence_penalty: 0,
-      stop: ["\ { "],
+      stop: ["Thank you for your assistance."],
 
     };
     const response = await fetch(apiUrl, {
@@ -56,29 +55,35 @@ const ChatGPT = () => {
   const showChat = () => {
     setVisible(true);
   };
+  const scrollToBottom = () => {
+    const chatBox = document.querySelector(".endChat");
+    chatBox.scrollIntoView({ behavior: "smooth" });
+  };
+  useEffect(scrollToBottom, [messages]);
 
   return (
       <div>
         <h1>AI Assistant</h1>
+        <div className="chatBox" >
+          {loading && <p>Loading...</p>}
+          {error && <p>Error</p>}
+          {messages.map((message, idx) => (
+            (idx % 2 === 0) ? 
+              <div key={idx} className="gpt-question" >
+                <div className="question-inner" >
+                  {message}
+                </div>
+              </div>
+            :
+              <div key={idx} className="gpt-response" >
+                <div className="response-inner" > 
+                  {message}
+                </div>
+              </div>
+          ))}
+          <div className="endChat"></div>
+        </div>
         <form onSubmit={handleSubmit}>
-          <div className="chatBox" >
-            {loading && <p>Loading...</p>}
-            {error && <p>Error</p>}
-            {messages.map((message, idx) => (
-              (idx % 2 === 0) ? 
-                <div key={idx} className="gpt-question" >
-                  <div className="question-inner" >
-                    {message}
-                  </div>
-                </div>
-              :
-                <div key={idx} className="gpt-response" >
-                  <div className="response-inner" > 
-                    {message}
-                  </div>
-                </div>
-            ))}
-          </div>
           <input
             type="text"
             value={message}
