@@ -63,7 +63,7 @@ const ChatGPT = () => {
 
   return (
       <div>
-        <h1>AI Assistant</h1>
+        <h3>AI Assistant</h3>
         <div className="chatBox" >
           {loading && <p>Loading...</p>}
           {error && <p>Error</p>}

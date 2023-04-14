@@ -61,7 +61,7 @@ const HomePage = () => {
   const showChat = () => {
     setVisible(true);
   };
-
+  console.log(visible)
   if (projects.length == 0 && pledges.length == 0 && mostPledges == undefined && random3.length == 0) {
     return null
   }
@@ -142,14 +142,13 @@ const HomePage = () => {
           </NavLink>
         )}
       </div>
-      {visible ?
-        <div className="gptBox">
+      <div>
+        <div className={`${visible ? "gptBox" : "gptBox-hidden"}`}>
           <button className="hideChatButton" onClick={hideChat} >_</button>
           <ChatGPT />
         </div>
-        :
-        <button className="gptShowChatButton" onClick={showChat} >AI Assistant</button> 
-      }
+        <button className={`${visible ? "gptShowChatButton-hidden" : "gptShowChatButton"}`} onClick={showChat} >AI Assistant</button> 
+      </div>
     </div>
   )
 };
