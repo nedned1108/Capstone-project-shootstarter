@@ -8,6 +8,7 @@
   padding: 5px;
   border: 1px black solid;
   background-color: rgb(180, 255, 217);
+  border-radius: 10px;
 } 
 
 .gpt-response {
@@ -19,6 +20,7 @@
   border: 1px black solid;
   padding: 3px;
   background-color: rgb(231, 231, 231);
+  border-radius: 10px;
 }
 
 .chatBox {

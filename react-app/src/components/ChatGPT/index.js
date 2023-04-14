@@ -8,7 +8,7 @@ const ChatGPT = () => {
   const gptKey = useSelector((state) => state.chatGPT.key);
   const [message, setMessage] = useState("");
   const [visible, setVisible] = useState(true);
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState(["Hi, I'm your AI assistant. How can I help you?"]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const apiUrl = "https://api.openai.com/v1/engines/text-curie-001/completions";
@@ -68,7 +68,7 @@ const ChatGPT = () => {
           {loading && <p>Loading...</p>}
           {error && <p>Error</p>}
           {messages.map((message, idx) => (
-            (idx % 2 === 0) ? 
+            (idx % 2 != 0) ? 
               <div key={idx} className="gpt-question" >
                 <div className="question-inner" >
                   {message}
@@ -90,7 +90,7 @@ const ChatGPT = () => {
             onChange={(e) => setMessage(e.target.value)}
             required
           />
-          <button type="submit">Submit</button>
+          <button type="submit">Send</button>
         </form>
       </div>
   )
