@@ -118,56 +118,11 @@
   width: 50%;
   padding-left: 30px;
 }
-/* -----------------------gpt box---------------- */
-.gptShowChatButton-hidden {
-  display: none;
-}
-.gptShowChatButton {
-  display: flex;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  background-color: green;
-  color: white;
-  padding: 5px;
-  cursor: pointer;
-  width: 300px;
-}
-.gptBox-hidden {
-  display: none;
-}
-.gptBox {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px;
-  height: 400px;
-  border: 1px black solid;
-  box-shadow: 2px 2px 8px 2px rgb(207, 207, 207);
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  background-color: whitesmoke;
-}
-.hideChatButton {
-  position: absolute;
-  right: 0;
-  top: 0;
-  background-color: red;
-  color: white;
-  width: 30px;
-  cursor: pointer;
-  font-weight: 800;
-}
-
 
 /* --------------------media screen---------------------- */
 @media screen and (max-width: 768px) {
   .mainDiv {
     width: 100vw;
-    /* display: block; */
     margin-left: 5vw;
     margin-right: 5vw;
   }

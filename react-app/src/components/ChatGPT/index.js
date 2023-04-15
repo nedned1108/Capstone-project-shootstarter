@@ -86,14 +86,14 @@ const ChatGPT = () => {
             ))}
             <div className="endChat"></div>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form className="chatForm" onSubmit={handleSubmit}>
             <input
               type="text"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
             />
-            <button type="submit">Send</button>
+            <button className="sendChatButton" type="submit">Send</button>
           </form>
         </div>
       </div>
