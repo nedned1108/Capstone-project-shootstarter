@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { thunkLoadAllProjects } from "../../store/project";
 import { thunkLoadAllPledges } from "../../store/pledge";
 import { NavLink } from "react-router-dom";
-// import ChatGPT from "../ChatGPT";
 
 import "./HomePage.css";
 import no_image from '../../images/empty-image.png' 
@@ -142,13 +141,6 @@ const HomePage = () => {
           </NavLink>
         )}
       </div>
-      {/* <div>
-        <div className={`${visible ? "gptBox" : "gptBox-hidden"}`}>
-          <button className="hideChatButton" onClick={hideChat} >_</button>
-          <ChatGPT />
-        </div>
-        <button className={`${visible ? "gptShowChatButton-hidden" : "gptShowChatButton"}`} onClick={showChat} >AI Assistant</button> 
-      </div> */}
     </div>
   )
 };
