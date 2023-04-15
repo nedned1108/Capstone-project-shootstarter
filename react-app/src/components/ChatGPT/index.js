@@ -62,37 +62,44 @@ const ChatGPT = () => {
   useEffect(scrollToBottom, [messages]);
 
   return (
-      <div>
-        <h3>AI Assistant</h3>
-        <div className="chatBox" >
-          {loading && <p>Loading...</p>}
-          {error && <p>Error</p>}
-          {messages.map((message, idx) => (
-            (idx % 2 != 0) ? 
-              <div key={idx} className="gpt-question" >
-                <div className="question-inner" >
-                  {message}
+    <div>
+      <div className={`${visible ? "gptBox" : "gptBox-hidden"}`}>
+        <button className="hideChatButton" onClick={hideChat} >_</button>
+        <div>
+          <h3>AI Assistant</h3>
+          <div className="chatBox" >
+            {loading && <p>Loading...</p>}
+            {error && <p>Error</p>}
+            {messages.map((message, idx) => (
+              (idx % 2 != 0) ?
+                <div key={idx} className="gpt-question" >
+                  <div className="question-inner" >
+                    {message}
+                  </div>
                 </div>
-              </div>
-            :
-              <div key={idx} className="gpt-response" >
-                <div className="response-inner" > 
-                  {message}
+                :
+                <div key={idx} className="gpt-response" >
+                  <div className="response-inner" >
+                    {message}
+                  </div>
                 </div>
-              </div>
-          ))}
-          <div className="endChat"></div>
+            ))}
+            <div className="endChat"></div>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+            />
+            <button type="submit">Send</button>
+          </form>
         </div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-          />
-          <button type="submit">Send</button>
-        </form>
       </div>
+      <button className={`${visible ? "gptShowChatButton-hidden" : "gptShowChatButton"}`} onClick={showChat} >AI Assistant</button>
+    </div>
+
   )
 }
 

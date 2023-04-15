@@ -10,6 +10,7 @@ import ProjectDetail from "./components/ProjectDetail";
 import PledgePage from "./components/PledgePage";
 import UserProfilePage from "./components/UserProfilePage";
 import Footer from "./components/Footer";
+import ChatGPT from "./components/ChatGPT";
 
 function App() {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <ChatGPT />
       <Footer />
     </>
   );
