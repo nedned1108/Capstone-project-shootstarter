@@ -68,7 +68,6 @@ const ChatGPT = () => {
         <div>
           <h3>AI Assistant</h3>
           <div className="chatBox" >
-            {loading && <p>Loading...</p>}
             {error && <p>Error</p>}
             {messages.map((message, idx) => (
               (idx % 2 != 0) ?
@@ -84,6 +83,7 @@ const ChatGPT = () => {
                   </div>
                 </div>
             ))}
+            {loading && <p>Loading...</p>}
             <div className="endChat"></div>
           </div>
           <form className="chatForm" onSubmit={handleSubmit}>
