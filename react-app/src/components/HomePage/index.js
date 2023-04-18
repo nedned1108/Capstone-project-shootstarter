@@ -1,14 +1,16 @@
 //react-app/src/components/HomePage/index.js
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { thunkLoadAllProjects } from "../../store/project";
 import { thunkLoadAllPledges } from "../../store/pledge";
 import { NavLink } from "react-router-dom";
+
 import "./HomePage.css";
 import no_image from '../../images/empty-image.png' 
 
 const HomePage = () => {
   const dispatch = useDispatch();
+  const [visible, setVisible] = useState(true);
   const allProjectsData = useSelector(state => state.project.projects)
   const allPledgesData = useSelector(state => state.pledge.pledges)
   let projects;
@@ -52,6 +54,13 @@ const HomePage = () => {
     dispatch(thunkLoadAllPledges())
   }, [dispatch])
 
+  const hideChat = () => {
+    setVisible(false);
+  };
+  const showChat = () => {
+    setVisible(true);
+  };
+  console.log(visible)
   if (projects.length == 0 && pledges.length == 0 && mostPledges == undefined && random3.length == 0) {
     return null
   }
