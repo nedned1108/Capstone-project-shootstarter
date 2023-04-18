@@ -123,7 +123,6 @@
 @media screen and (max-width: 768px) {
   .mainDiv {
     width: 100vw;
-    /* display: block; */
     margin-left: 5vw;
     margin-right: 5vw;
   }

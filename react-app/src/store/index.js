@@ -5,13 +5,15 @@ import project from './project'
 import pledge from './pledge'
 import comment from './comment'
 import payment from './payment_method'
+import chatGPT from './chatgpt';
 
 const rootReducer = combineReducers({
   session,
   project,
   pledge,
   comment,
-  payment
+  payment,
+  chatGPT
 });
 
 
