@@ -1,9 +1,15 @@
-const puppeteer = require('puppeteer');
+import puppeteer from 'puppeteer';
+
+// const puppeteer = require('puppeteer');
 const fs = require('fs').promises;
 
 const reactCrawler = async (url) => {
   // Launch a new browser
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    executablePath: 'chrome.exe',
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
   // Open a new page
   const page = await browser.newPage();
   // Go to the url
@@ -17,3 +23,5 @@ const reactCrawler = async (url) => {
   await browser.close();
   return html;
 }
+
+export default reactCrawler;

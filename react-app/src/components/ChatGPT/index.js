@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getGPT } from "../../store/chatgpt";
+// import reactCrawler from "../../utils/react-crawler";
 import "./ChatGPT.css";
 
 const ChatGPT = () => {
@@ -12,6 +13,7 @@ const ChatGPT = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const apiUrl = "https://api.openai.com/v1/engines/text-curie-001/completions";
+  // const result = reactCrawler("https://www.google.com/");
 
   useEffect(async () => {
     await dispatch(getGPT());
@@ -23,7 +25,7 @@ const ChatGPT = () => {
     setError(false);
     const data = {
       prompt: message,
-      max_tokens: 30,
+      max_tokens: 150,
       temperature: 0.7,
       frequency_penalty: 0,
       presence_penalty: 0,

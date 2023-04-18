@@ -11,6 +11,7 @@ import PledgePage from "./components/PledgePage";
 import UserProfilePage from "./components/UserProfilePage";
 import Footer from "./components/Footer";
 import ChatGPT from "./components/ChatGPT";
+import ChatBot from "./components/ChatBot";
 
 function App() {
   const dispatch = useDispatch();
@@ -44,7 +45,8 @@ function App() {
           </Route>
         </Switch>
       )}
-      <ChatGPT />
+      <ChatBot />
+      {/* <ChatGPT /> */}
       <Footer />
     </>
   );
